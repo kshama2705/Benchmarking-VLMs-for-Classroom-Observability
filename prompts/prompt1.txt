@@ -1,0 +1,7 @@
+Given this image, rate the overall classroom's engagement level based on the majority of students:
+0 = not engaged
+1 = barely engaged
+2 = engaged
+3 = highly engaged
+Answer with just the number (0, 1, 2, or 3).
+
