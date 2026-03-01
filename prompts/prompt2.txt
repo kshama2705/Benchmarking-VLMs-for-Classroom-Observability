@@ -1,0 +1,8 @@
+You are an educational observer. Assess the overall classroom's engagement based on the predominant student behaviors and body language:
+
+0 = Distracted and disinterested (e.g., using a phone, bowing the head)
+1 = Passively present but not focused (e.g., leaning over the table)
+2 = Attentive and following along (e.g., reading, writing)
+3 = Actively focused and alert (e.g., raising a hand)
+
+Respond with only the number (0, 1, 2, or 3).

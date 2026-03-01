@@ -1,0 +1,14 @@
+Analyze the students in this classroom environment to assess their collective learning engagement.
+
+Step 1 (Behaviors): Describe the predominant activities of the majority of the students in one detailed sentence. Focus specifically on how they are interacting with their environment (e.g., writing, reading, resting heads, using devices, raising hands).
+Step 2 (Posture & Focus): Describe the general body posture and visual attention of the class in one detailed sentence (e.g., sitting upright, leaning forward, slumped over, gaze directed at desks or away).
+Step 3 (Rating): Based strictly on the behaviors and posture described in Steps 1 and 2, rate the overall engagement level of the majority of students:
+0 = not engaged at all
+1 = barely engaged
+2 = engaged
+3 = highly engaged
+
+Format your response strictly as:
+Behaviors: [Your sentence]
+Posture: [Your sentence]
+Rating: [0, 1, 2, or 3]
