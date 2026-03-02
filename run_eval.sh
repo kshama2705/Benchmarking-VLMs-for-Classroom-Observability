@@ -1,3 +1,10 @@
-# Evaluation with first prompt, gpt4o model
-# temp set to 0.0 for deterministic responses
-python evaluate_metrics.py --pred_csv gpt4o_prompt1_run1.csv
+# Evaluate over all the files in runs/output_files
+
+for file in /home/ubuntu/Benchmarking-VLMs-for-Classroom-Observability/SCB-05-Dataset/runs/output_files/*.csv
+do
+  echo "Evaluating $file"
+  
+  python evaluation/evaluate_metrics.py \
+    --pred_csv "$file" \
+    --out_folder /home/ubuntu/Benchmarking-VLMs-for-Classroom-Observability/SCB-05-Dataset/runs/results
+done

@@ -1,0 +1,2 @@
+model_run,accuracy,f1_macro,kappa_qw,mse
+blip_vqa_prompt2_run1.csv,0.3356,0.1256,0.0,0.7209

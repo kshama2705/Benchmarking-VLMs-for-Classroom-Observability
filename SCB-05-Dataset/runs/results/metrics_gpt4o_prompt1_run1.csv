@@ -1,0 +1,2 @@
+model_run,accuracy,f1_macro,kappa_qw,mse
+gpt4o_prompt1_run1.csv,0.3913,0.2108,0.1544,0.6884

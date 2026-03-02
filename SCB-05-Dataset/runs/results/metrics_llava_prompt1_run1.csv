@@ -1,0 +1,2 @@
+model_run,accuracy,f1_macro,kappa_qw,mse
+llava_prompt1_run1.csv,0.0736,0.0671,0.0273,5.3425

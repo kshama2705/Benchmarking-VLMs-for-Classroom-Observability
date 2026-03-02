@@ -1,0 +1,2 @@
+model_run,accuracy,f1_macro,kappa_qw,mse
+clip_prompt3_run1.csv,0.6729,0.4715,0.5908,0.5856
