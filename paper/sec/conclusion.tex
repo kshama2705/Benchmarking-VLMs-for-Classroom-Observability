@@ -1,0 +1,17 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented a systematic zero-shot benchmark of four Vision-Language
+Models for classroom engagement recognition, evaluated across two
+datasets and three prompt designs.  Our results establish that current
+VLMs cannot reliably classify individual student engagement---with
+Cohen's $\kappa$ never exceeding 0.10 on DAiSEE---but show substantially
+more promise at the scene level, where CLIP and GPT-4o reach
+$\kappa \approx 0.60$ on SCB.  We characterise three failure modes
+(near-random ordinal agreement, class collapse, and extreme prompt
+sensitivity) and document a practical deployment barrier (GPT-4o safety
+refusals for individual face analysis).  We hope these baselines serve
+as a rigorous starting point for the community, and that the identified
+failure modes motivate targeted improvements: scene-level pre-aggregation,
+prompt-robust fine-tuning, and temporal modelling to go beyond
+single-frame analysis.

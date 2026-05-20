@@ -1,0 +1,38 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Engagement detection in educational settings.}
+Early work by Whitehill \etal~\cite{whitehill2014faces} demonstrated
+that facial features encode cognitive states relevant to learning.
+The release of DAiSEE~\cite{gupta2016daisee} established the first large
+publicly-available benchmark for four-level engagement classification
+from student video.  Subsequent supervised methods leveraged spatiotemporal
+features from video~\cite{liao2021deep}, recurrent networks over facial
+action units~\cite{thomas2018predicting}, and attention-based
+architectures~\cite{huang2019fine}.  More recently, spatiotemporal and attention-based
+models trained on DAiSEE have reported accuracy of 55--65\%~\cite{liao2021deep,huang2019fine}, underscoring
+the difficulty even for task-specific supervised models.
+Classroom-level engagement has received comparatively less attention,
+though several works address student behaviour recognition from overhead
+cameras~\cite{wang2023scb,kaur2018classroom}.
+
+\paragraph{Zero-shot visual recognition with VLMs.}
+CLIP~\cite{radford2021learning} pioneered zero-shot image classification
+via image-text cosine similarity, demonstrating competitive performance
+on many standard benchmarks.  BLIP~\cite{li2022blip} introduced
+bootstrapped image-text alignment that enabled visual question answering
+without task-specific training.  Instruction-tuned generative models
+such as LLaVA~\cite{liu2023visual} and GPT-4V/4o~\cite{openai2024gpt4o}
+further extend this to open-ended visual reasoning.  A growing body of
+work has applied these models to medical imaging~\cite{zhang2023pmc},
+document understanding, and remote sensing, but their application to
+affect recognition and educational observation has not been
+systematically studied.
+
+\paragraph{Prompt design and sensitivity.}
+The sensitivity of VLMs to prompt phrasing has been studied in the
+context of natural language processing~\cite{zhao2021calibrate,
+lu2022fantastically}, but visual prompting for classification remains
+less understood.  Studies on zero-shot classification~\cite{menon2022visual}
+demonstrate that performance can vary by 10--30 percentage points across
+prompt phrasings---a phenomenon we observe and quantify here.

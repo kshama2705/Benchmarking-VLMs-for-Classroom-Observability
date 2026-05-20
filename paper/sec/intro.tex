@@ -1,0 +1,71 @@
+\section{Introduction}
+\label{sec:intro}
+
+Understanding student engagement is central to effective teaching.
+Disengagement---whether manifested as wandering attention, passive
+participation, or behavioural withdrawal---predicts lower learning
+outcomes and higher attrition~\cite{fredricks2004school}.
+Traditionally, measuring engagement at scale requires trained human
+observers~\cite{pianta2008classroom}, a resource-intensive process that
+is difficult to replicate in large lecture halls or remote learning
+environments.  The rapid proliferation of cameras in educational
+settings, coupled with powerful visual recognition models, has therefore
+sparked interest in automated engagement sensing~\cite{whitehill2014faces,
+gupta2016daisee,thomas2018predicting,liao2021deep}.
+
+Contemporary Vision-Language Models (VLMs) represent a potential leap
+forward for this problem.  Unlike supervised classifiers that require
+large labelled corpora specific to each school or cultural context,
+models such as CLIP~\cite{radford2021learning},
+BLIP~\cite{li2022blip}, GPT-4o~\cite{openai2024gpt4o}, and
+LLaVA~\cite{liu2023visual} can be queried zero-shot via natural language,
+with no task-specific fine-tuning.  Their ability to reason from open
+prompts makes them attractive as \emph{plug-and-play} educational
+observers.  Yet, to our knowledge, no prior work has systematically
+benchmarked VLMs for classroom engagement recognition under controlled,
+zero-shot conditions.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig3_cross_dataset.pdf}
+    \caption{Best zero-shot accuracy and Cohen's $\kappa$ per model on
+    DAiSEE (individual student, video frames) versus SCB (classroom
+    scene images).  Scene-level classification is substantially more
+    tractable, with CLIP and GPT-4o achieving $\kappa\!\approx\!0.60$
+    on SCB while remaining near-random on DAiSEE.}
+    \label{fig:cross_dataset}
+\end{figure}
+
+\paragraph{Our contributions.}  This paper presents the following:
+
+\begin{itemize}
+  \item A zero-shot benchmark of four VLMs on two complementary
+    datasets: the individual-student DAiSEE dataset~\cite{gupta2016daisee}
+    and the scene-level Student Classroom Behaviour (SCB)
+    dataset~\cite{wang2023scb}, using three systematically-designed
+    prompt variants (minimal, rubric, chain-of-thought).
+
+  \item A rigorous quantitative analysis documenting class collapse,
+    near-random agreement on individual-level data ($\kappa \leq 0.10$),
+    and substantial prompt sensitivity (accuracy variance up to 32 pp).
+
+  \item The finding that scene-level engagement classification is
+    significantly more tractable for VLMs, with CLIP achieving
+    $\kappa = 0.60$ and GPT-4o achieving $\kappa = 0.58$ on SCB.
+
+  \item Documentation of GPT-4o's safety-guardrail refusals blocking
+    chain-of-thought engagement analysis for individual student faces,
+    with practical implications for educational AI deployment.
+
+  \item A self-consistency analysis showing that generative VLMs
+    (GPT-4o, LLaVA) change their predictions for 27--32\% of images
+    across repeated runs at temperature $T\!=\!0.7$, raising reliability
+    concerns for classroom monitoring applications.
+\end{itemize}
+
+Our results paint a nuanced picture: while VLMs are not yet reliable
+individual engagement observers, they demonstrate meaningful capability
+at the scene level.  This gap between individual and scene-level
+performance has direct implications for system design---aggregating
+information spatially before querying a VLM may be a more productive
+paradigm than per-student analysis.

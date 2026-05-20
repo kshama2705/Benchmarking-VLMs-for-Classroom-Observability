@@ -1,0 +1,20 @@
+[09:47:49] Extracting pose signals from 8571 frames
+[09:47:59]   500/8571  rate=51.4 fps  elapsed=10s  detected=500/500 (100.0%)
+[09:48:09]   1000/8571  rate=50.9 fps  elapsed=20s  detected=1000/1000 (100.0%)
+[09:48:20]   1500/8571  rate=49.1 fps  elapsed=31s  detected=1500/1500 (100.0%)
+[09:48:30]   2000/8571  rate=49.6 fps  elapsed=40s  detected=2000/2000 (100.0%)
+[09:48:40]   2500/8571  rate=49.8 fps  elapsed=50s  detected=2500/2500 (100.0%)
+[09:48:49]   3000/8571  rate=50.1 fps  elapsed=60s  detected=3000/3000 (100.0%)
+[09:48:59]   3500/8571  rate=50.2 fps  elapsed=70s  detected=3500/3500 (100.0%)
+[09:49:09]   4000/8571  rate=50.3 fps  elapsed=80s  detected=4000/4000 (100.0%)
+[09:49:19]   4500/8571  rate=50.2 fps  elapsed=90s  detected=4500/4500 (100.0%)
+[09:49:29]   5000/8571  rate=50.4 fps  elapsed=99s  detected=5000/5000 (100.0%)
+[09:49:38]   5500/8571  rate=50.5 fps  elapsed=109s  detected=5500/5500 (100.0%)
+[09:49:48]   6000/8571  rate=50.6 fps  elapsed=119s  detected=5999/6000 (100.0%)
+[09:49:58]   6500/8571  rate=50.7 fps  elapsed=128s  detected=6499/6500 (100.0%)
+[09:50:07]   7000/8571  rate=50.8 fps  elapsed=138s  detected=6999/7000 (100.0%)
+[09:50:17]   7500/8571  rate=50.8 fps  elapsed=148s  detected=7499/7500 (100.0%)
+[09:50:27]   8000/8571  rate=50.8 fps  elapsed=158s  detected=7999/8000 (100.0%)
+[09:50:37]   8500/8571  rate=50.8 fps  elapsed=167s  detected=8499/8500 (100.0%)
+[09:50:38] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_pose_signals.npz  detection_rate=100.0%
+[09:50:38] POSE_SIGNALS_DONE

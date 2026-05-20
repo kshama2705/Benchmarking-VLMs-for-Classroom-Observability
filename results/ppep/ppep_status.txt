@@ -1,0 +1,45 @@
+[23:38:53] Encoding 8571 frames with DINOv2 (vectorized face/bg pooling)
+[23:38:58]   32/8571  elapsed=3s
+[23:40:38]   352/8571  elapsed=102s
+[23:42:27]   672/8571  elapsed=211s
+[23:43:34]   992/8571  elapsed=278s
+[23:44:42]   1312/8571  elapsed=347s
+[23:57:28]   1632/8571  elapsed=1112s
+[23:57:41]   1952/8571  elapsed=1125s
+[00:00:07]   2272/8571  elapsed=1271s
+[00:18:09]   2592/8571  elapsed=2353s
+[00:26:13]   2912/8571  elapsed=2837s
+[00:26:26]   3232/8571  elapsed=2850s
+[00:26:38]   3552/8571  elapsed=2862s
+[00:26:51]   3872/8571  elapsed=2875s
+[00:27:03]   4192/8571  elapsed=2887s
+[00:27:16]   4512/8571  elapsed=2900s
+[00:27:28]   4832/8571  elapsed=2912s
+[00:27:40]   5152/8571  elapsed=2925s
+[00:27:53]   5472/8571  elapsed=2937s
+[00:28:05]   5792/8571  elapsed=2949s
+[00:28:17]   6112/8571  elapsed=2961s
+[00:28:29]   6432/8571  elapsed=2974s
+[00:28:41]   6752/8571  elapsed=2986s
+[00:28:54]   7072/8571  elapsed=2998s
+[00:29:06]   7392/8571  elapsed=3011s
+[00:29:19]   7712/8571  elapsed=3023s
+[00:29:31]   8032/8571  elapsed=3036s
+[00:29:43]   8352/8571  elapsed=3048s
+[00:29:55] Saved features: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/dinov2_patch_face_features.npz
+[00:29:55]   face_patch_counts: median=24  zero_count_frames=227
+[00:29:55] Probe splits: train=5358 val=1429 test=1784
+[00:29:55] --- face_feat ---
+[00:30:26]   face_feat  LR    κ_q=0.057 [0.017088381847205732, 0.09715347502740267]  acc=0.399
+[00:30:26]   face_feat  Ridge κ_q=0.067 [0.02673420282762372, 0.1046680871042019]  acc=0.449
+[00:30:26] --- bg_feat ---
+[00:30:40]   bg_feat    LR    κ_q=0.067 [0.026932349561720585, 0.1053569704816733]  acc=0.391
+[00:30:40]   bg_feat    Ridge κ_q=0.041 [-0.003376743765235095, 0.08800782570038662]  acc=0.480
+[00:30:40] --- cls_feat ---
+[00:31:05]   cls_feat   LR    κ_q=0.107 [0.07134579319738119, 0.14188942090703027]  acc=0.320
+[00:31:05]   cls_feat   Ridge κ_q=0.090 [0.0452748770586041, 0.13471730632009132]  acc=0.524
+[00:31:05] --- mean_feat ---
+[00:31:21]   mean_feat  LR    κ_q=0.011 [-0.02562747533717648, 0.04993182873175909]  acc=0.351
+[00:31:21]   mean_feat  Ridge κ_q=0.046 [0.0021143011622995205, 0.09032162301927821]  acc=0.488
+[00:31:21] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/ppep/ppep_results.json
+[00:31:21] PPEP_DONE

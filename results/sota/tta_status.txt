@@ -1,0 +1,35 @@
+[10:27:04] Loading cached SigLIP-L features...
+[10:27:04]   Train=5358 Val=1429 Test=1784
+[10:27:09]   baseline probe (no TTA): val=0.149 C=1.0
+[10:27:09]   baseline test κ_q=0.199 [0.15555974336041398, 0.2422785123560395]
+[10:27:09] 
+Encoding test set with TTA augmentations...
+[10:27:09]   1784 test images for TTA
+[10:27:09] Loading SigLIP-L...
+[10:27:25]   Aug 1/3: hflip
+[10:27:27]     16/1784 elapsed=2s
+[10:44:33]     496/1784 elapsed=1027s
+[10:45:40]     976/1784 elapsed=1095s
+[10:46:57]     1456/1784 elapsed=1172s
+[10:50:43]   Aug 2/3: crop_center_110
+[10:50:45]     16/1784 elapsed=2s
+[10:51:51]     496/1784 elapsed=68s
+[10:52:59]     976/1784 elapsed=137s
+[10:54:29]     1456/1784 elapsed=226s
+[10:55:45]   Aug 3/3: crop_center_90
+[10:55:49]     16/1784 elapsed=4s
+[10:57:42]     496/1784 elapsed=117s
+[10:59:40]     976/1784 elapsed=234s
+[11:01:37]     1456/1784 elapsed=352s
+[11:03:02] Saved augmented features: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_siglip_l_tta_test.npz
+[11:03:02] 
+Probing TTA fusion variants...
+[11:03:03]   hflip                     κ_q=0.171 [0.12820325626140797, 0.21152752825810883]
+[11:03:04]   crop_center_110           κ_q=0.179 [0.13156146871645272, 0.2322644092152807]
+[11:03:04]   crop_center_90            κ_q=0.192 [0.14370363727005048, 0.24134151016892672]
+[11:03:05]   TTA mean (4 versions)    κ_q=0.205 [0.15626830605209058, 0.25231798773033876]
+[11:03:08]   TTA pair orig+hflip           κ_q=0.180 [0.13840387564276446, 0.2232250756072621]
+[11:03:08]   TTA pair orig+crop_center_110 κ_q=0.203 [0.15803338781427148, 0.248806234642994]
+[11:03:09]   TTA pair orig+crop_center_90  κ_q=0.200 [0.1545301671471481, 0.24469554520804812]
+[11:03:09] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/sota/tta_siglip_l.json
+[11:03:09] TTA_DONE

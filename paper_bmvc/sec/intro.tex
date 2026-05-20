@@ -1,0 +1,123 @@
+\section{Introduction}
+\label{sec:intro}
+
+Automated recognition of individual student engagement from classroom
+video would underpin every form of scalable learning analytics ---
+from automated formative feedback to teacher dashboards that flag
+at-risk learners in real time. The challenge: the standard benchmark
+for this task --- \textbf{DAiSEE}~\cite{gupta2016daisee}, a
+subject-disjoint dataset of 8{,}925 ten-second clips of 112 students
+labelled with ordinal four-class engagement --- is widely cited but
+poorly characterised in the frozen-feature regime that deployment
+systems increasingly use. The standard linear-probe baseline on the
+strongest publicly-available pre-trained encoder we tested
+(SigLIP-L~\cite{zhai2023siglip}) achieves
+$\kappa_q^{\text{argmax}} = 0.199$ --- enough to be useful, but no
+prior paper has reported a careful recipe-tuned upper bound on this
+regime.
+
+\textbf{Our headline contribution} is \textbf{SETA} (Subject-aware
+Engagement via Threshold-tuned Aggregation), the strongest
+frozen-feature DAiSEE engagement recipe we are aware of:
+\begin{enumerate}\itemsep0pt
+  \item Encode the mid-clip frame ($t = 5$~s) with SigLIP-L
+   (1024-d CLS).
+  \item Train $K = 20$ bootstrap-resampled class-balanced logistic
+   regression probes over five outer seeds (100 probes total),
+   $C$-tuned per probe on validation $\kappa_q$, and average their
+   predicted probabilities.
+  \item Compute the expected-class score
+   $\mathbb{E}[y] = \sum_{k} k \cdot p_k$ on validation and test.
+  \item On validation, exhaustively search a grid of three ordinal
+   thresholds $0 \le t_1 < t_2 < t_3 \le 3$ (step $0.04$) and select
+   the triple maximising val $\kappa_q$; apply the same thresholds
+   on test.
+\end{enumerate}
+
+SETA achieves \textbf{$\kappa_q = 0.247~[0.201, 0.294]$} (95\%
+bootstrap CI, $n = 1{,}000$ resamples) on the full 1{,}784-clip
+subject-disjoint DAiSEE test split --- a \textbf{$+0.048$ absolute
+($+24\%$ relative)} improvement over the standard single-LR argmax
+baseline, with the lower CI 0.201 statistically above the baseline
+point estimate 0.199. The recipe runs end-to-end in under thirty
+minutes on a single CPU; no encoder fine-tuning, no proprietary
+inputs.
+
+\textbf{Why does the ceiling sit here?} The natural follow-up
+question is whether some readout-level or encoder-level trick
+exceeds SETA. We investigate this systematically and find a
+\emph{structural} answer.
+
+\paragraph{The IDEP entanglement curve.} A class-balanced linear
+classifier recovers subject identity from frozen SigLIP-L features
+at \textbf{99.5\%} accuracy. We trace the engagement and identity
+subspaces by ranking the identity classifier's weight rows by L2
+norm and projecting features onto the orthogonal complement of the
+top-$k$ identity directions. The result --- the
+\textbf{identity-engagement entanglement (IDEP) curve}, our first
+diagnostic contribution --- exhibits an asymmetric structure:
+identity is encoded across dozens of redundant directions
+(remaining recoverable at $> 95\%$ even after removing the top 20);
+engagement variance is concentrated in only two-to-five
+directions that overlap with the top of the identity basis.
+Linear concept erasure~\cite{belrose2023leace} of identity
+collapses engagement $\kappa_q$ to $0.04$ alongside it.
+
+\paragraph{Within-subject ranking is essentially zero.} Our second
+diagnostic shows that SETA's global $\kappa_q = 0.247$ hides a
+striking behavioural pattern: within each test subject, the
+Spearman rank correlation between predicted and true engagement
+is \textbf{$\rho \approx 0.05$}. SETA --- and every other method we
+tested --- captures \emph{which student} is typically more engaged
+(subject-level priors) but cannot rank \emph{which of that
+student's clips} is more engaged.
+
+\paragraph{Cross-task control.} The same frozen encoders that
+plateau at $\kappa_q \le 0.25$ on DAiSEE engagement reach
+$\kappa = 0.55$ on FER2013 emotion classification --- bounding our
+claim: the DAiSEE ceiling is engagement-task-specific, not
+encoder-generic.
+
+\paragraph{DREAM as constructive falsification.} The natural
+remedy for identity dominance is per-subject personalization. We
+introduce \textbf{DREAM}, a self-supervised neutral-anchor
+personalization scheme: for each subject, select $K$
+low-blendshape-activation frames (engagement-agnostic neutral
+anchors, via MediaPipe FaceLandmarker~\cite{lugaresi2019mediapipe}),
+compute the per-subject anchor embedding as the mean SigLIP-L
+feature over those frames, and probe engagement on the residual.
+DREAM is the gentlest linear identity intervention we can construct
+--- yet it fails (best DREAM-cat $K{=}5$ bagged $\kappa_q = 0.218$,
+below SETA), for an explainable reason that directly mirrors the
+LEACE result and confirms the structural diagnosis: even gentle
+linear identity removal disturbs the entangled engagement subspace.
+
+\paragraph{Contributions.} We make five contributions:
+\begin{enumerate}\itemsep0pt
+  \item \textbf{SETA}: the strongest frozen-feature DAiSEE recipe in
+   the literature, $\kappa_q = 0.247~[0.201, 0.294]$, $+24\%$
+   relative over the argmax baseline, with bootstrap-significant
+   improvement. Single-encoder, parameter-light, single-CPU
+   reproducible.
+  \item \textbf{IDEP entanglement curve}: a quantitative diagnostic
+   that exposes the high-rank redundant structure of subject
+   identity vs.\ the low-rank fragile structure of engagement in
+   frozen features (Sec.~\ref{sec:idep}).
+  \item \textbf{Within-subject ranking diagnostic}: a behavioural
+   characterization showing that even at SETA's global $\kappa_q$,
+   per-clip discrimination within a single subject is essentially
+   random (Sec.~\ref{sec:within}).
+  \item \textbf{DREAM}: a self-supervised neutral-anchor
+   personalization scheme that constructively falsifies the
+   ``remove identity, recover engagement'' hypothesis at the
+   readout level (Sec.~\ref{sec:dream}).
+  \item \textbf{Comprehensive method-family decomposition}: more
+   than sixty method variants across eight encoder/data adaptation
+   families (zero-shot, linear probe, ordinal, calibration,
+   contrastive, ensemble, adapter, encoder fine-tune), all
+   converging at $\kappa_q \in [0.20, 0.25]$ (Sec.~\ref{sec:results}).
+\end{enumerate}
+
+\paragraph{Reproducibility.} All extracted features, neutral
+anchors, the full method-family grid, scripts, and bootstrap CIs
+are released as supplementary material.

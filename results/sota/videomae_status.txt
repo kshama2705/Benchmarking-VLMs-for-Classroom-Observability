@@ -1,0 +1,36 @@
+[01:32:54] Loading VideoMAE-base...
+[01:32:56] Processing 8571 clips
+[01:33:29]   50/8571  rate=1.55 clips/s  elapsed=32s  ETA=5507s  success=50/50
+[01:33:59]   100/8571  rate=1.59 clips/s  elapsed=63s  ETA=5323s  success=100/100
+[01:34:30]   150/8571  rate=1.60 clips/s  elapsed=94s  ETA=5265s  success=150/150
+[01:35:01]   200/8571  rate=1.61 clips/s  elapsed=124s  ETA=5201s  success=200/200
+[01:35:31]   250/8571  rate=1.62 clips/s  elapsed=155s  ETA=5148s  success=250/250
+[01:36:02]   300/8571  rate=1.62 clips/s  elapsed=186s  ETA=5115s  success=300/300
+[01:36:36]   350/8571  rate=1.60 clips/s  elapsed=219s  ETA=5154s  success=350/350
+[01:37:10]   400/8571  rate=1.57 clips/s  elapsed=254s  ETA=5191s  success=400/400
+[01:37:45]   450/8571  rate=1.56 clips/s  elapsed=289s  ETA=5212s  success=450/450
+[01:38:20]   500/8571  rate=1.55 clips/s  elapsed=323s  ETA=5217s  success=500/500
+[01:38:54]   550/8571  rate=1.54 clips/s  elapsed=357s  ETA=5210s  success=550/550
+[01:39:32]   600/8571  rate=1.52 clips/s  elapsed=395s  ETA=5253s  success=600/600
+[01:40:10]   650/8571  rate=1.50 clips/s  elapsed=434s  ETA=5288s  success=650/650
+[01:40:49]   700/8571  rate=1.48 clips/s  elapsed=473s  ETA=5318s  success=700/700
+[01:41:29]   750/8571  rate=1.46 clips/s  elapsed=513s  ETA=5345s  success=750/750
+[01:42:07]   800/8571  rate=1.45 clips/s  elapsed=551s  ETA=5352s  success=800/800
+[01:42:44]   850/8571  rate=1.45 clips/s  elapsed=588s  ETA=5340s  success=850/850
+[01:43:24]   900/8571  rate=1.43 clips/s  elapsed=627s  ETA=5347s  success=900/900
+[01:44:02]   950/8571  rate=1.43 clips/s  elapsed=665s  ETA=5339s  success=950/950
+[01:44:41]   1000/8571  rate=1.42 clips/s  elapsed=705s  ETA=5334s  success=1000/1000
+[01:45:20]   1050/8571  rate=1.41 clips/s  elapsed=743s  ETA=5324s  success=1050/1050
+[01:45:59]   1100/8571  rate=1.40 clips/s  elapsed=783s  ETA=5318s  success=1100/1100
+[01:46:38]   1150/8571  rate=1.40 clips/s  elapsed=821s  ETA=5301s  success=1150/1150
+[01:47:16]   1200/8571  rate=1.40 clips/s  elapsed=860s  ETA=5282s  success=1200/1200
+[01:47:56]   1250/8571  rate=1.39 clips/s  elapsed=900s  ETA=5269s  success=1250/1250
+[01:48:37]   1300/8571  rate=1.38 clips/s  elapsed=940s  ETA=5259s  success=1300/1300
+[01:49:43]   1350/8571  rate=1.34 clips/s  elapsed=1007s  ETA=5384s  success=1350/1350
+[01:53:45]   1400/8571  rate=1.12 clips/s  elapsed=1249s  ETA=6398s  success=1400/1400
+[01:56:56]   1450/8571  rate=1.01 clips/s  elapsed=1439s  ETA=7068s  success=1450/1450
+[01:57:27]   1500/8571  rate=1.02 clips/s  elapsed=1470s  ETA=6932s  success=1500/1500
+[01:58:02]   1550/8571  rate=1.03 clips/s  elapsed=1506s  ETA=6821s  success=1550/1550
+[02:13:23]   1600/8571  rate=0.66 clips/s  elapsed=2427s  ETA=10574s  success=1600/1600
+[02:13:53]   1650/8571  rate=0.67 clips/s  elapsed=2456s  ETA=10303s  success=1650/1650
+[02:15:12]   1700/8571  rate=0.67 clips/s  elapsed=2536s  ETA=10248s  success=1700/1700

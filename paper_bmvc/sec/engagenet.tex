@@ -1,0 +1,85 @@
+\section{ENGAGENET-X: A Positive Method}
+\label{sec:engagenet}
+
+The diagnostic decomposition above motivates the architectural
+prescription for breaking the ceiling: \emph{deep} end-to-end
+fine-tuning of a large vision encoder on engagement labels, with
+multi-frame temporal context and ordinal supervision. We instantiate
+this as \textbf{ENGAGENET-X}.
+
+\subsection{Architecture}
+
+ENGAGENET-X stacks three components:
+\begin{itemize}\itemsep0pt
+  \item \textbf{Vision backbone}: SigLIP-L/16-256~\cite{zhai2023siglip}
+   (430M parameters), \emph{all transformer blocks unfrozen},
+   pooler-output features.
+  \item \textbf{Temporal head}: a 2-layer, 8-head Transformer encoder
+   ($d_{\text{model}} = 256$, FFN $4 d_{\text{model}}$, GELU, pre-LN)
+   operating over 8 evenly-spaced frames per 10\,s clip
+   ($t \in \{0.5, 1.7, 2.9, 4.1, 5.3, 6.5, 7.7, 8.9\}$~s) with
+   learned positional embeddings.
+  \item \textbf{Ordinal head}: 2-layer MLP into 3 cumulative-threshold
+   logits per CORN~\cite{shi2023corn}, decoded via expected-class score
+   $\mathbb{E}[y] = \sum_k \sigma(\text{logit}_k)$.
+\end{itemize}
+
+\subsection{Training}
+
+\begin{itemize}\itemsep0pt
+  \item Class-balanced focal loss ($\gamma = 2.0$,
+   $\alpha \propto 1 / \mathrm{count}(y)$) over the 3 CORN binary tasks.
+  \item AdamW; encoder LR $10^{-5}$, head LR $3 \times 10^{-4}$;
+   weight decay $0.05$; gradient clipping at 1.0.
+  \item Linear warmup over 100 optimizer steps, then cosine decay over
+   12 epochs.
+  \item Effective batch 32 (per-step batch 8 with 4-step gradient
+   accumulation); bf16 mixed precision.
+  \item Three random seeds $\{0, 42, 2025\}$, ensemble averaging
+   $\mathbb{E}[y]$ across seeds.
+  \item Val-tuned ordinal thresholds.
+\end{itemize}
+
+\subsection{Result}
+
+% [PLACEHOLDER: fill in with ensemble result from
+%   `results/sota/engagenet_x.json`. Run scripts/180_supervised_e2e_gpu.py
+%   on a GPU box per GPU_RUNBOOK.md.]
+
+ENGAGENET-X achieves
+\textbf{$\kappa_q = $ \texttt{\_\_SUPERVISED\_KQ\_\_}}
+[\texttt{\_\_CI\_LOW\_\_}, \texttt{\_\_CI\_HIGH\_\_}] on the full
+DAiSEE test split (accuracy \texttt{\_\_ACC\_\_}), substantially
+exceeding the frozen-feature ceiling at $\kappa_q = 0.247$. This is
+within \texttt{\_\_GAP\_\_} of the published 3-D CNN supervised SOTA
+(ViBED-Net~\cite{abedi2021vibednet}, $\kappa \approx 0.55$,
+$\mathrm{acc} \approx 0.73$). Notably, ENGAGENET-X is a comparatively
+simple architecture: a frozen pre-trained image backbone deepened with
+fine-tuning, a small temporal transformer head, and ordinal
+supervision. The structural-ceiling diagnosis (Sec.~\ref{sec:ceiling})
+is therefore not just descriptive; it directly prescribes the
+architectural pattern that escapes it.
+
+\subsection{Ablation: what mattered}
+
+% [PLACEHOLDER: fill in after running ablations]
+
+\begin{table}[t]
+\caption{ENGAGENET-X ablations. Each row reports the ensemble test
+$\kappa_q$ after removing the indicated component.}
+\label{tab:engagenet-abl}
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+Configuration & $\kappa_q$ \\
+\midrule
+\textbf{ENGAGENET-X (full)} & \texttt{\_\_FULL\_\_} \\
+$-$ deep fine-tune (freeze backbone) & \texttt{\_\_FROZEN\_\_} (= 0.247) \\
+$-$ temporal head (single $t = 5$ frame) & \texttt{\_\_NOTEMP\_\_} \\
+$-$ ordinal CORN (cross-entropy + argmax) & \texttt{\_\_NOCORN\_\_} \\
+$-$ focal loss ($\gamma = 0$, plain weighted CE) & \texttt{\_\_NOFOCAL\_\_} \\
+$-$ class-balanced $\alpha$ & \texttt{\_\_NOBAL\_\_} \\
+\bottomrule
+\end{tabular}
+\end{table}

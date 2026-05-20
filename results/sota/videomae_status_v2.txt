@@ -1,0 +1,149 @@
+[02:02:54] Total clips in manifest: 8571
+[02:02:54] Loading VideoMAE-base...
+[02:04:41]   50/8571  rate=0.49/s  ETA=289min
+[02:06:06]   100/8571  rate=0.53/s  ETA=264min
+[02:07:25]   150/8571  rate=0.56/s  ETA=249min
+[02:08:42]   200/8571  rate=0.58/s  ETA=239min
+[02:08:43]   checkpoint saved at 200/8571
+[02:10:00]   250/8571  rate=0.59/s  ETA=234min
+[02:11:17]   300/8571  rate=0.60/s  ETA=229min
+[02:12:20]   350/8571  rate=0.62/s  ETA=220min
+[02:13:49]   400/8571  rate=0.62/s  ETA=221min
+[02:13:49]   checkpoint saved at 400/8571
+[02:31:05]   450/8571  rate=0.27/s  ETA=507min
+[02:31:51]   500/8571  rate=0.29/s  ETA=466min
+[02:32:39]   550/8571  rate=0.31/s  ETA=433min
+[02:33:29]   600/8571  rate=0.33/s  ETA=405min
+[02:33:29]   checkpoint saved at 600/8571
+[02:35:03]   650/8571  rate=0.34/s  ETA=391min
+[02:36:23]   700/8571  rate=0.35/s  ETA=376min
+[02:37:37]   750/8571  rate=0.36/s  ETA=361min
+[02:38:55]   800/8571  rate=0.37/s  ETA=349min
+[02:38:55]   checkpoint saved at 800/8571
+[02:55:17]   850/8571  rate=0.27/s  ETA=475min
+[02:56:01]   900/8571  rate=0.28/s  ETA=452min
+[03:13:55]   950/8571  rate=0.22/s  ETA=569min
+[03:28:15]   1000/8571  rate=0.20/s  ETA=646min
+[03:28:15]   checkpoint saved at 1000/8571
+[03:28:59]   1050/8571  rate=0.20/s  ETA=616min
+[03:29:40]   1100/8571  rate=0.21/s  ETA=589min
+[03:30:22]   1150/8571  rate=0.22/s  ETA=564min
+[03:31:04]   1200/8571  rate=0.23/s  ETA=541min
+[03:31:04]   checkpoint saved at 1200/8571
+[03:31:47]   1250/8571  rate=0.23/s  ETA=520min
+[03:48:35]   1300/8571  rate=0.21/s  ETA=591min
+[03:49:14]   1350/8571  rate=0.21/s  ETA=568min
+[03:49:53]   1400/8571  rate=0.22/s  ETA=548min
+[03:49:54]   checkpoint saved at 1400/8571
+[03:50:37]   1450/8571  rate=0.22/s  ETA=529min
+[03:51:22]   1500/8571  rate=0.23/s  ETA=511min
+[04:07:34]   1550/8571  rate=0.21/s  ETA=564min
+[04:08:13]   1600/8571  rate=0.21/s  ETA=546min
+[04:08:14]   checkpoint saved at 1600/8571
+[04:08:54]   1650/8571  rate=0.22/s  ETA=528min
+[04:09:38]   1700/8571  rate=0.22/s  ETA=512min
+[04:10:21]   1750/8571  rate=0.23/s  ETA=496min
+[04:11:05]   1800/8571  rate=0.23/s  ETA=482min
+[04:11:06]   checkpoint saved at 1800/8571
+[04:27:45]   1850/8571  rate=0.21/s  ETA=526min
+[04:28:32]   1900/8571  rate=0.22/s  ETA=511min
+[04:29:14]   1950/8571  rate=0.22/s  ETA=497min
+[04:29:59]   2000/8571  rate=0.23/s  ETA=483min
+[04:30:00]   checkpoint saved at 2000/8571
+[04:30:41]   2050/8571  rate=0.23/s  ETA=470min
+[04:31:23]   2100/8571  rate=0.24/s  ETA=457min
+[04:48:10]   2150/8571  rate=0.22/s  ETA=493min
+[04:48:46]   2200/8571  rate=0.22/s  ETA=480min
+[04:48:47]   checkpoint saved at 2200/8571
+[04:49:29]   2250/8571  rate=0.23/s  ETA=468min
+[04:50:13]   2300/8571  rate=0.23/s  ETA=456min
+[04:50:54]   2350/8571  rate=0.23/s  ETA=445min
+[04:51:36]   2400/8571  rate=0.24/s  ETA=434min
+[04:51:36]   checkpoint saved at 2400/8571
+[04:52:21]   2450/8571  rate=0.24/s  ETA=423min
+[04:53:15]   2500/8571  rate=0.24/s  ETA=413min
+[04:54:19]   2550/8571  rate=0.25/s  ETA=405min
+[04:55:19]   2600/8571  rate=0.25/s  ETA=396min
+[04:55:20]   checkpoint saved at 2600/8571
+[04:56:17]   2650/8571  rate=0.25/s  ETA=387min
+[04:57:16]   2700/8571  rate=0.26/s  ETA=379min
+[04:58:16]   2750/8571  rate=0.26/s  ETA=371min
+[04:59:25]   2800/8571  rate=0.26/s  ETA=364min
+[04:59:26]   checkpoint saved at 2800/8571
+[05:00:37]   2850/8571  rate=0.27/s  ETA=357min
+[05:01:41]   2900/8571  rate=0.27/s  ETA=349min
+[05:02:50]   2950/8571  rate=0.27/s  ETA=343min
+[05:04:10]   3000/8571  rate=0.28/s  ETA=336min
+[05:04:12]   checkpoint saved at 3000/8571
+[05:08:53]   3050/8571  rate=0.27/s  ETA=337min
+[05:45:28]   3100/8571  rate=0.23/s  ETA=393min
+[05:46:11]   3150/8571  rate=0.24/s  ETA=384min
+[05:46:53]   3200/8571  rate=0.24/s  ETA=376min
+[05:46:54]   checkpoint saved at 3200/8571
+[05:47:33]   3250/8571  rate=0.24/s  ETA=368min
+[05:48:13]   3300/8571  rate=0.24/s  ETA=360min
+[06:04:59]   3350/8571  rate=0.23/s  ETA=377min
+[06:05:36]   3400/8571  rate=0.23/s  ETA=369min
+[06:05:38]   checkpoint saved at 3400/8571
+[06:06:20]   3450/8571  rate=0.24/s  ETA=361min
+[06:07:00]   3500/8571  rate=0.24/s  ETA=354min
+[06:07:42]   3550/8571  rate=0.24/s  ETA=346min
+[06:24:41]   3600/8571  rate=0.23/s  ETA=361min
+[06:24:42]   checkpoint saved at 3600/8571
+[06:25:19]   3650/8571  rate=0.23/s  ETA=354min
+[06:25:59]   3700/8571  rate=0.23/s  ETA=346min
+[06:26:37]   3750/8571  rate=0.24/s  ETA=339min
+[06:27:16]   3800/8571  rate=0.24/s  ETA=332min
+[06:27:17]   checkpoint saved at 3800/8571
+[06:43:19]   3850/8571  rate=0.23/s  ETA=344min
+[06:43:56]   3900/8571  rate=0.23/s  ETA=336min
+[07:00:44]   3950/8571  rate=0.22/s  ETA=348min
+[07:01:25]   4000/8571  rate=0.22/s  ETA=341min
+[07:01:26]   checkpoint saved at 4000/8571
+[07:02:06]   4050/8571  rate=0.23/s  ETA=334min
+[07:02:45]   4100/8571  rate=0.23/s  ETA=327min
+[07:03:25]   4150/8571  rate=0.23/s  ETA=320min
+[07:09:42]   4200/8571  rate=0.23/s  ETA=319min
+[07:09:43]   checkpoint saved at 4200/8571
+[07:10:30]   4250/8571  rate=0.23/s  ETA=313min
+[07:11:12]   4300/8571  rate=0.23/s  ETA=306min
+[07:11:55]   4350/8571  rate=0.23/s  ETA=300min
+[07:12:36]   4400/8571  rate=0.24/s  ETA=294min
+[07:12:37]   checkpoint saved at 4400/8571
+[07:13:20]   4450/8571  rate=0.24/s  ETA=287min
+[07:14:18]   4500/8571  rate=0.24/s  ETA=282min
+[07:15:15]   4550/8571  rate=0.24/s  ETA=276min
+[07:16:15]   4600/8571  rate=0.24/s  ETA=270min
+[07:16:16]   checkpoint saved at 4600/8571
+[07:17:13]   4650/8571  rate=0.25/s  ETA=265min
+[07:18:09]   4700/8571  rate=0.25/s  ETA=260min
+[07:35:49]   4750/8571  rate=0.24/s  ETA=268min
+[07:36:30]   4800/8571  rate=0.24/s  ETA=262min
+[07:36:32]   checkpoint saved at 4800/8571
+[07:37:12]   4850/8571  rate=0.24/s  ETA=256min
+[07:37:53]   4900/8571  rate=0.24/s  ETA=251min
+[07:38:38]   4950/8571  rate=0.25/s  ETA=246min
+[07:39:23]   5000/8571  rate=0.25/s  ETA=240min
+[07:39:25]   checkpoint saved at 5000/8571
+[07:55:49]   5050/8571  rate=0.24/s  ETA=246min
+[07:56:25]   5100/8571  rate=0.24/s  ETA=241min
+[07:57:06]   5150/8571  rate=0.24/s  ETA=235min
+[08:10:27]   5200/8571  rate=0.24/s  ETA=238min
+[08:10:28]   checkpoint saved at 5200/8571
+[08:11:08]   5250/8571  rate=0.24/s  ETA=233min
+[08:11:49]   5300/8571  rate=0.24/s  ETA=228min
+[08:12:30]   5350/8571  rate=0.24/s  ETA=222min
+[08:13:10]   5400/8571  rate=0.24/s  ETA=217min
+[08:13:11]   checkpoint saved at 5400/8571
+[08:13:50]   5450/8571  rate=0.24/s  ETA=212min
+[08:14:28]   5500/8571  rate=0.25/s  ETA=207min
+[08:15:10]   5550/8571  rate=0.25/s  ETA=203min
+[08:16:03]   5600/8571  rate=0.25/s  ETA=198min
+[08:16:04]   checkpoint saved at 5600/8571
+[08:16:56]   5650/8571  rate=0.25/s  ETA=193min
+[08:17:46]   5700/8571  rate=0.25/s  ETA=189min
+[08:18:36]   5750/8571  rate=0.26/s  ETA=184min
+[08:19:27]   5800/8571  rate=0.26/s  ETA=180min
+[08:19:28]   checkpoint saved at 5800/8571
+[08:20:19]   5850/8571  rate=0.26/s  ETA=176min
+[08:20:55] FINAL saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_videomae_features.npz  success=5883/8571

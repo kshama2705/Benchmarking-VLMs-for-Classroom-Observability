@@ -1,0 +1,66 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Why does scene-level outperform individual-level?}
+The performance gap between DAiSEE ($\kappa \leq 0.10$) and SCB
+($\kappa$ up to 0.60) is not simply a function of dataset difficulty.
+We hypothesise three contributing factors.  First, \emph{behavioural
+salience}: SCB labels derive from overt physical actions (raised hand,
+phone use) that are visually unambiguous to a language-grounded model,
+whereas DAiSEE labels reflect internal cognitive states that manifest
+only subtly in facial microexpressions.  Second, \emph{context richness}:
+a classroom scene provides spatial layout, group dynamics, and object
+context (\eg, desks, boards) that help ground engagement inference,
+while a webcam close-up of a single face offers minimal contextual anchors.
+Third, \emph{label construction}: the SCB aggregation scheme maps
+explicit physical categories to ordinal scores, creating a more
+objective signal than subjective per-clip engagement ratings.
+
+\paragraph{Implications for system design.}
+Our findings suggest that deploying VLMs as individual student observers
+in their current zero-shot form is premature.  A more productive
+paradigm may be \emph{scene-first analysis}: aggregate visual information
+at the classroom level, then query a VLM.  This approach aligns better
+with how teachers actually monitor classrooms---by scanning the room
+rather than studying individual faces.  For privacy reasons, scene-level
+analysis is also preferable as it avoids close facial analysis of minors.
+
+\paragraph{Prompt engineering as unreliable compensation.}
+The wide prompt sensitivity we observe means that practitioners who tune
+prompts on a small validation set risk over-fitting to that distribution.
+A prompt that yields 67.9\% accuracy for GPT-4o on SCB could easily
+degrade by 28 pp on a different class distribution.  Reliable deployment
+requires either task-specific fine-tuning or principled prompt selection
+with held-out validation.
+
+\paragraph{Open vs. closed source.}
+LLaVA-1.5-7B (4-bit quantised, running locally) matches or outperforms
+GPT-4o on DAiSEE, and achieves competitive performance on SCB at zero
+API cost and without data leaving the institution.  This is
+encouraging for privacy-sensitive educational deployments, though the
+comparison is not perfectly controlled given the quantisation difference.
+
+\paragraph{Limitations.}
+This study is limited to zero-shot evaluation.  Fine-tuning VLMs on even
+modest task-specific data would likely close the gap substantially.
+The single-frame assumption discards temporal dynamics known to carry
+engagement information.  The SCB engagement labels are derived from
+behaviour categories rather than direct human ratings, which may not
+fully align with teachers' engagement judgements.  Finally, results on
+21 subjects in a webcam setting (DAiSEE) may not generalise to diverse
+classroom environments.
+
+\paragraph{Ethical considerations.}
+This study relies exclusively on publicly available datasets
+(DAiSEE~\cite{gupta2016daisee} and SCB~\cite{wang2023scb}), both
+released for academic research under their respective
+terms of use.  No new human data was collected, and no individuals
+are re-identified or tracked.  DAiSEE was originally collected under
+informed consent with institutional ethical oversight; our use is
+restricted to zero-shot inference on pre-existing anonymised clips.
+The involvement of minors in classroom imagery underscores the
+importance of privacy-preserving design: our findings---particularly
+the GPT-4o safety refusals and the superior performance of
+scene-level over individual-level analysis---reinforce that
+aggregated, non-facial approaches are both more tractable and more
+ethically appropriate for real-world educational deployment.

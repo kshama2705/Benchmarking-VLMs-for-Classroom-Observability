@@ -1,0 +1,901 @@
+clip_id,raw_answer,predicted,ground_truth
+9289010118.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+9403280234.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+907001480.mp4,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting at a desk in front of a computer screen, which suggests they are focused on the content being displayed.
+Rating: 2 - The student seems to be engaged but not highly engaged, as their attention appears to be directed away from the camera and towards something else.",2,1
+5100401078.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100342048.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly distracted expression.
+Posture: The student is sitting in front of a computer screen, leaning forward slightly with their arms resting on the desk.
+Rating: 2",2,1
+8264120275.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of the camera, but their body posture is not clearly visible due to the angle of the photo.
+Rating: 1 [Based on the limited information available, it's difficult to accurately assess engagement level without more context.]",1,3
+5100471023.avi,"Expression: The student appears to be deep in thought, with a contemplative or pondering expression.
+Posture: The student is sitting upright at a desk, with their hand on their chin, suggesting they are focused and engaged in the content of the video.
+Rating: 3 [The student's posture and facial expression indicate a high level of engagement.]",3,2
+5100462023.avi,"Expression: The student appears to be making a funny face, possibly smirking or grimacing.
+Posture: The student is sitting with their head slightly tilted and looking directly at the camera.
+Rating: 2",2,2
+5100462031.avi,"Expression: The student appears to be making a funny face, possibly smirking or grimacing.
+Posture: The student is sitting with their head slightly tilted and looking directly at the camera.
+Rating: 2",2,2
+5000951033.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100401071.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+907001560.mp4,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk and raised eyebrow.
+Posture: The student is sitting at a desk in front of a computer screen, leaning slightly forward with their chin resting on their hand.
+Rating: 2 [The student seems to be engaged but not highly engaged, as they are making a funny face which could indicate a lack of focus or interest in the educational video.]",2,2
+5100472014.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+8264120266.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their hands clasped together in front of them, which could suggest they are deep in thought or focused on the content.
+Rating: 2",2,1
+5000952036.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100351002.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, with their head turned towards the side.
+Rating: 2",2,1
+5000671042.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting in front of the camera, likely at a desk or table, with their hands resting on their lap.
+Rating: 2",2,1
+5100422060.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, wearing headphones and has his hands resting on a surface.
+Rating: 2",2,2
+5100381004.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of the camera, possibly on a chair or couch, with their arms resting by their sides.
+Rating: 2 [Based on the image, it's difficult to determine the level of engagement without more context about the student's actions and reactions during the video.]",2,2
+5000442019.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera directly.
+Rating: 2",2,2
+5100462011.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a wall with posters on it, possibly in a bedroom or dorm room setting.
+Rating: 2 - The student seems to be engaged but not highly focused on the content they are watching.",2,3
+5100452049.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100342036.avi,"Expression: The student appears to be bored or disinterested, with a slight frown and a hand on their chin.
+Posture: The student is sitting in front of the camera with one arm resting on their head.
+Rating: 1",1,1
+5100461007.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, and they are wearing headphones.
+Rating: 2",2,1
+9877360140.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly distracted expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk, with their body facing forward but not fully engaged.
+Rating: 1",1,3
+5100462032.avi,"Expression: The student appears to be making a funny face, possibly smirking or grimacing.
+Posture: The student is sitting with their head tilted slightly to the side and looking directly at the camera.
+Rating: 2",2,2
+5100401023.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, but their body posture does not provide enough information to make a confident assessment.
+Rating: 2 [Based on the limited visual information available, it's difficult to accurately assess the student's engagement level.]",2,1
+5100351039.avi,"Expression: The student appears to be drowsy or sleepy.
+Posture: The student is sitting with their head down, possibly resting on their hand.
+Rating: 1",1,3
+5000671041.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer or laptop, with their arms resting on their legs.
+Rating: 2",2,1
+5100362028.avi,"Expression: The student appears to be focused and attentive.
+Posture: The student is sitting upright with a straight back, indicating an alert posture.
+Rating: 2",2,3
+5100451041.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100371024.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+8264120268.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their hands on their chin, which could indicate contemplation or boredom.
+Rating: 2",2,3
+8264120231.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a computer screen, leaning forward slightly.
+Rating: 2",2,1
+826412013.avi,"Expression: The student appears to be smiling and looking directly at the camera, which could indicate engagement or interest in the content.
+Posture: The student is sitting with their arms crossed, which might suggest a relaxed posture but not necessarily high engagement.
+Rating: 2",2,1
+5100462012.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, but their body posture does not provide enough information to accurately assess engagement level.
+Rating: 2 [Based on the limited visual information available, it's difficult to accurately rate the student's engagement level.]",2,2
+5100452016.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100402001.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, wearing headphones, and has their hands resting on their lap or arms crossed.
+Rating: 2",2,1
+5000952083.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+8264120123.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in a chair, with their arms resting on the table or desk.
+Rating: 2 [Based on the image, it seems like the student is engaged but not highly engaged, as they are looking directly at the camera and maintaining an upright posture.]",2,1
+8264120284.avi,"Expression: The student appears to be in a state of confusion or frustration, with their hand on their head and a concerned look.
+Posture: They are sitting down, leaning slightly forward with their elbow on the table.
+Rating: 2",2,1
+9289010115.avi,"Expression: The student appears to be focused and attentive.
+Posture: The student is sitting upright with a neutral posture.
+Rating: 2",2,3
+5100091069.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a red door, possibly in a classroom or study area.
+Rating: 2 - The student seems to be engaged but not highly focused on the content being displayed.",2,3
+5100381017.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, which is not visible in the image.
+Rating: 2",2,2
+5100422041.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a desk, leaning slightly forward with their arms resting on the table.
+Rating: 2",2,2
+5100402020.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000951067.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a wall with a light on behind them.
+Rating: 2",2,2
+5100091051.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9289010274.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+5100091059.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100092057.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000671057.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100092071.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+987736024.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a desk or table, possibly at a computer or workstation.
+Rating: 2",2,2
+9877360241.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing the camera but not directly engaging with it.
+Rating: 1",1,3
+5100091049.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+9877360143.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing the camera but not directly engaging with it.
+Rating: 1",1,3
+5000671033.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+8264120120.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the screen.
+Rating: 2",2,1
+8264120239.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral or possibly contemplative expression.
+Posture: The student is seated in front of a computer screen, which suggests they are focused on the content being displayed.
+Rating: 2 - The student seems to be engaged but not highly engaged, as their attention appears to be directed away from the camera and towards something else.",2,1
+8264120211.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their head slightly tilted downwards, which could indicate a lack of engagement or concentration.
+Rating: 1",1,1
+88265402200.mp4,"Expression: The student appears to be making a funny face, possibly smirking or rolling their eyes.
+Posture: They are sitting in front of the camera with one hand on their chin and the other arm resting on the table.
+Rating: 2 - The student seems to be somewhat engaged but not fully focused on the content of the video.",2,3
+5000952046.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9877360120.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in their chair, facing the camera.
+Rating: 2",2,1
+9289010152.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,1
+5000671005.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+88265402340.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,2
+9403280229.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000441024.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100341028.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, leaning forward slightly.
+Rating: 2",2,2
+5000671048.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting in front of the camera, leaning slightly forward with their arms resting on their knees or thighs.
+Rating: 2",2,1
+5000672013.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100382003.avi,"Expression: The student appears to be smiling and looking directly at the camera.
+Posture: The student is sitting with their arms crossed in front of them.
+Rating: 2",2,3
+5100381002.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of the camera with their arms crossed.
+Rating: 2",2,3
+5100382013.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, which suggests they are engaged in watching something on the screen.
+Rating: 2",2,3
+5000671030.avi,"Expression: The student appears to be in a state of deep thought or contemplation, with their hand on their forehead and a focused gaze.
+Posture: The student is sitting at a desk with their legs crossed and their body leaning slightly forward.
+Rating: 2",2,3
+5000442054.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+8264120139.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of the camera, but their body posture seems relaxed and not particularly engaged.
+Rating: 1",1,3
+826412019.avi,"Expression: The student appears to be looking slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of the camera, with their body facing forward and their head turned to one side.
+Rating: 2",2,2
+5100461064.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, but their body posture does not indicate high engagement.
+Rating: 1 [The student's gaze is directed away from the content they are supposed to be engaged with, suggesting low engagement.]",1,3
+9877360215.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk or table.
+Rating: 2",2,3
+9289010269.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+5000441058.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera directly.
+Rating: 2",2,1
+5100422046.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, and he has his headphones on.
+Rating: 2",2,3
+5000671020.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a computer, with their head slightly tilted and their hands resting on their lap or arms.
+Rating: 2 [Based on the image, it seems like the student is engaged but not highly engaged, as they are looking at the camera rather than focusing intently on the content.]",2,2
+5100341061.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+5000671058.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,1
+5000441067.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+9070011060.mp4,"Expression: The student appears to be frowning or pondering, with their hand on their chin.
+Posture: They are sitting in a chair and looking down at the camera.
+Rating: 2 - The student seems to be somewhat engaged, as they are watching the video and have a thoughtful expression.",2,3
+5000951039.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a wall, with their body facing forward but not fully engaged.
+Rating: 1",1,2
+5100381003.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, with their arms resting on the table or desk.
+Rating: 2",2,3
+907001670.mp4,"Expression: The student appears to be making a playful or cheeky face, with their mouth slightly open and tongue sticking out.
+Posture: The student is sitting at a desk in front of a computer screen, with their hands resting on the table.
+Rating: 2",2,3
+9403280271.avi,"Expression: The student appears to be smiling and looking directly at the camera.
+Posture: The student is sitting with their headphones on, facing the camera.
+Rating: 2",2,1
+9877360270.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in their chair, with one hand on their head.
+Rating: 2",2,1
+5100402024.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+5100402063.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,1
+8264120232.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100342024.avi,"Expression: The student appears to be in a state of deep thought or contemplation, with their hand on their face and a pensive expression.
+Posture: The student is sitting at a desk with their arms crossed over their chest.
+Rating: 2",2,1
+928901014.avi,"Expression: The student appears to be focused and attentive, with a slight smile on their face.
+Posture: The student is sitting upright in a chair, wearing headphones and looking at the screen.
+Rating: 2",2,1
+88265402230.mp4,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk or table.
+Rating: 2 - The student seems to be engaged but not highly focused on the content they are watching.",2,2
+5000441021.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100092008.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000441051.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera directly.
+Rating: 2",2,2
+5000672077.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a bed with headphones on, suggesting they are focused on the content they are watching or listening to.
+Rating: 2",2,2
+5100352030.avi,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk.
+Posture: The student is sitting in front of the camera, leaning slightly forward with one hand resting on their chin.
+Rating: 2",2,3
+9877360258.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing the camera but not directly engaging with it.
+Rating: 1",1,2
+5100462053.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, but their body posture does not indicate high engagement.
+Rating: 1",1,3
+90700170.mp4,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk, with their body facing forward.
+Rating: 2 - The student seems to be engaged but not highly focused on the content they are watching.",2,3
+5100092067.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100422006.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their hands resting on the table in front of them, and they are wearing headphones.
+Rating: 2",2,3
+88265402900.mp4,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2",2,3
+8264120279.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100451049.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9877360172.avi,"Expression: The student appears to be looking off to the side with a neutral expression.
+Posture: The student is sitting upright in their chair, with one hand resting on their head and the other arm resting on the table.
+Rating: 2",2,1
+5100351022.avi,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk and raised eyebrows.
+Posture: The student is sitting in front of the camera, leaning slightly forward with one hand resting on their chin.
+Rating: 2",2,0
+9403280251.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9877360157.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly distracted expression.
+Posture: The student is sitting in an office chair at a desk, facing towards the camera but not directly engaging with it.
+Rating: 1",1,1
+5100462071.avi,"Expression: The student appears to be making a funny face, possibly smirking or grimacing.
+Posture: The student is sitting with their head slightly tilted and looking directly at the camera.
+Rating: 2",2,2
+9289010145.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the screen.
+Rating: 2",2,1
+5100401034.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100422071.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a computer, with their head slightly tilted and hands resting on their lap or arms crossed.
+Rating: 2",2,3
+8264120269.avi,"Expression: The student appears to be pondering or deep in thought, with a slight frown and a hand on their chin.
+Posture: The student is sitting upright with a relaxed posture.
+Rating: 2",2,1
+5000671050.avi,"Expression: The student appears to be focused and attentive, with a slight frown or serious expression.
+Posture: The student is sitting upright in front of the camera, with their hands resting on their lap.
+Rating: 2",2,2
+8264120169.avi,"Expression: The student appears to be in a state of confusion or frustration, with their hand on their head and a concerned look.
+Posture: They are sitting upright at a desk.
+Rating: 2",2,1
+5100461057.avi,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk and raised eyebrows.
+Posture: The student is sitting in front of the camera, looking directly at it.
+Rating: 2",2,2
+5100401026.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100352031.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in their chair, with one hand resting on their chin.
+Rating: 2",2,3
+8264120254.avi,"Expression: The student appears to be looking downwards with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+88265402880.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,2
+5000672012.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000951047.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk or table.
+Rating: 2",2,2
+5100422073.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their legs crossed, and they are wearing headphones.
+Rating: 2",2,2
+9877360185.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral or possibly mildly disinterested expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2",2,2
+5100372011.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9877360127.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in an office chair, leaning forward slightly with their hands resting on the desk.
+Rating: 2",2,2
+5100472021.avi,"Expression: The student appears to be deep in thought or contemplation, with a focused gaze and slight furrowing of the brow.
+Posture: The student is sitting upright at a desk, leaning slightly forward with their hands resting on the table.
+Rating: 2",2,3
+5100451027.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+8264120240.avi,"Expression: The student appears to be looking downwards with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,0
+5000951027.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100402015.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9403280246.avi,"Expression: The student appears to be smiling and looking directly at the camera.
+Posture: The student is sitting with a relaxed posture, wearing headphones around their neck.
+Rating: 2",2,3
+9289010114.avi,"Expression: The student appears to be focused and attentive.
+Posture: The student is sitting upright with a neutral posture, looking directly at the camera.
+Rating: 2",2,1
+5100351042.avi,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk and raised eyebrows.
+Posture: The student is sitting in front of a computer screen, leaning slightly forward with one hand resting on the desk.
+Rating: 2",2,1
+5000671038.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in a chair, with their head slightly tilted downwards.
+Rating: 2",2,2
+88265401660.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+907001310.mp4,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk and raised eyebrow.
+Posture: The student is sitting at a desk in front of a computer screen, looking directly at the camera.
+Rating: 2 - The student seems to be engaged but not highly focused on the educational video.",2,3
+5100452023.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+8264120127.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting upright in a chair, with their hands resting on their lap.
+Rating: 2",2,1
+8264120263.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their hands on their face, which could indicate a moment of contemplation or boredom.
+Rating: 1",1,1
+5100471012.avi,"Expression: The student appears to be pondering or deep in thought, with a slight frown and furrowed brow.
+Posture: The student is sitting upright at a desk, leaning slightly forward with their hands resting on the table.
+Rating: 2",2,2
+5100091012.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000442015.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera directly.
+Rating: 2",2,2
+5100381037.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of a white wall.
+Rating: 2",2,2
+5100091025.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a red door, with their hands resting on their lap or arms crossed.
+Rating: 2 - The student seems to be engaged but not highly focused on the content they are watching.",2,2
+5100092040.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000952015.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source.
+Rating: 2",2,3
+5100351004.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, with their head slightly tilted downwards.
+Rating: 2",2,2
+5100471045.avi,"Expression: The student appears to be pondering or deep in thought, with a slight frown and furrowed brow.
+Posture: The student is sitting upright with their hands resting on their knees.
+Rating: 2",2,2
+5100382011.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, with their arms resting on their knees.
+Rating: 2",2,3
+8264120136.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright, leaning slightly forward.
+Rating: 2",2,2
+9403280241.avi,"Expression: The student is smiling and appears to be enjoying the video.
+Posture: The student is sitting with a relaxed posture, looking directly at the camera.
+Rating: 2",2,3
+5100471069.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+5000672019.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+5000952038.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100351010.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio file or watching a video, with their head turned to one side.
+Rating: 2 [The student seems to be engaged but not highly focused on the content they are viewing.]",2,2
+5000951024.avi,"Expression: The student appears to be bored or disinterested, with a slight frown and a hand on their chin.
+Posture: The student is sitting in front of the camera with one arm resting on their head.
+Rating: 1",1,1
+5100472001.avi,"Expression: The student appears to be making a face, possibly in reaction to the content of the video.
+Posture: The student is sitting down with their hand near their nose.
+Rating: 2",2,1
+5000952062.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a wall with a light on behind them.
+Rating: 2",2,1
+5100361056.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000952077.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100401065.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+9403280260.avi,"Expression: The student has a neutral expression, with a slight smile.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100471080.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a red door, leaning slightly forward with their hands resting on their knees.
+Rating: 2",2,2
+5100342008.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100381054.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9289010210.avi,"Expression: The student appears to be focused and attentive.
+Posture: The student is sitting upright with a neutral posture, looking directly at the camera.
+Rating: 2",2,3
+5100462045.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9289010276.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,1
+9877360234.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing towards the camera but not directly engaging with it.
+Rating: 1",1,3
+5100401062.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000672048.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000671070.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, with their head turned towards it.
+Rating: 2",2,1
+8264120156.avi,"Expression: The student appears to be in a state of distress or discomfort, with their hand on their head and a concerned or worried expression.
+Posture: They are sitting down, possibly at a desk or table, with their body leaning slightly forward.
+Rating: 2",2,1
+907001950.mp4,"Expression: The student appears to be making a face, possibly in reaction to the content of the video or an external stimulus.
+Posture: The student is sitting at a desk with their hand near their mouth.
+Rating: 2 - The student seems to be somewhat engaged, as they are watching the video and reacting to it. However, their body posture does not indicate high engagement, so it's rated as a 2.",2,1
+88265402690.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100401043.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of the camera, but their body posture is not clearly visible due to the angle of the photo.
+Rating: 1 [Based on the limited information available, it's difficult to accurately rate the student's engagement level.]",1,1
+998826011.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100461038.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall, facing the camera.
+Rating: 2",2,2
+5100092061.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a red door, with their hands resting on their lap or arms crossed.
+Rating: 2",2,3
+5100421026.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+8264120132.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk or table.
+Rating: 2 - The student seems to be engaged but not highly focused on the content being displayed on the screen.",2,2
+5100341033.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+88265401740.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+88265401750.mp4,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in front of the screen.
+Rating: 2",2,1
+5100472005.avi,"Expression: The student appears to be focused and attentive, with a slight frown or concentration on their face.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+88265401190.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+8264120229.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100342022.avi,"Expression: The student appears to be in a state of deep thought or contemplation, with their hand on their face and a pensive expression.
+Posture: The student is sitting down with their arms crossed over their chest.
+Rating: 2",2,0
+5000671065.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100471047.avi,"Expression: The student appears to be pondering or deep in thought, with a slight frown and furrowed brow.
+Posture: The student is sitting upright with their hands resting on their knees.
+Rating: 2",2,3
+5000951015.avi,"Expression: The student appears to be making a funny face, possibly rolling his eyes or smirking.
+Posture: He is sitting with one hand on his chin and the other arm resting on the table.
+Rating: 2",2,3
+5000441009.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+8264120150.avi,"Expression: The student appears to be bored or disinterested, with a slight frown and closed eyes.
+Posture: The student is leaning on their hand, which could indicate a lack of engagement or fatigue.
+Rating: 1",1,1
+9403280138.avi,"Expression: The student appears to have a neutral expression, with no visible signs of engagement or disinterest.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2 [Based on the image alone, it's difficult to accurately assess their level of engagement without more context.]",2,2
+5000952064.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000441046.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100402062.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in their chair, suggesting an active engagement with the content of the video.
+Rating: 2",2,1
+8264120243.avi,"Expression: The student appears to be frowning or making a face, possibly indicating confusion or frustration.
+Posture: The student is sitting with their head resting on one hand, which could suggest they are deep in thought or feeling overwhelmed.
+Rating: 2 - The student seems to be somewhat engaged, but their facial expression and posture might indicate that they are struggling to understand the content of the educational video.",2,1
+5100341038.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, leaning forward slightly.
+Rating: 2",2,2
+5100341043.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,1
+5100472027.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+5100381058.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+987736017.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly puzzled expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2",2,2
+5000671061.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5000671010.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100381008.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source or watching a video.
+Rating: 2",2,2
+9877360147.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing away from the camera.
+Rating: 2",2,3
+5000952054.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000952034.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+88265402660.mp4,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2",2,3
+5100401011.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+8264120282.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100462003.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, and their body is facing forward.
+Rating: 2 [Based on the image, it seems like the student is somewhat engaged but not highly engaged.]",2,1
+5100451004.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000672052.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, with their head turned to one side.
+Rating: 2",2,3
+5100472054.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a red door, leaning slightly forward with their hands resting on their knees.
+Rating: 2",2,2
+5000671047.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a computer, with their arms resting on their legs and their head slightly tilted forward.
+Rating: 2",2,2
+88265401490.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+8264120116.avi,"Expression: The student appears to be making a face, possibly in reaction to the content of the video or expressing frustration.
+Posture: The student is sitting with their hand on their mouth, which could indicate surprise, disbelief, or contemplation.
+Rating: 2 - The student seems to be engaged but not highly engaged, as they are making a face and have their hand on their mouth, which might suggest some level of emotional response to the content of the video.",2,1
+8264120256.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100342028.avi,"Expression: The student appears to be bored or disinterested, with a slight frown and a hand on their chin.
+Posture: The student is sitting in front of the camera with one arm resting on their head, suggesting a relaxed posture.
+Rating: 1",1,1
+5100092002.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a red door, with their hands resting on their lap or desk.
+Rating: 2 - The student seems to be engaged but not highly focused on the content they are watching.",2,3
+88265401260.mp4,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9877360256.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in an office chair at a desk, facing the camera.
+Rating: 2",2,1
+9403280245.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5100401016.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in their chair, suggesting an active engagement with the content of the video.
+Rating: 2",2,2
+5000951019.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their hand on their chin, which could indicate deep thought or contemplation.
+Rating: 2",2,1
+5100342023.avi,"Expression: The student appears to be in a state of deep thought or contemplation, with their hand on their face and a pensive expression.
+Posture: The student is sitting at a desk with their arms crossed over their chest.
+Rating: 2",2,1
+5000671022.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5000671063.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,2
+5100381021.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, which suggests they are engaged in an activity on the device.
+Rating: 2",2,2
+5000671069.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, with their head turned towards it.
+Rating: 2",2,1
+5100422034.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, and he has his headphones on.
+Rating: 2",2,2
+5100381023.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio source, but their body posture does not provide enough information to accurately assess engagement level.
+Rating: 2 [Based on the limited visual information available, it's difficult to accurately rate the student's engagement level.]",2,3
+5100091028.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a red door, leaning slightly forward.
+Rating: 2",2,2
+5000441059.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera directly.
+Rating: 2",2,2
+5100402023.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000441048.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100461031.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall with posters, and they are wearing headphones.
+Rating: 2",2,2
+9403280145.avi,"Expression: The student appears to be making a funny or sarcastic face, with a slight smirk.
+Posture: The student is sitting in front of a computer screen, wearing headphones and looking directly at the camera.
+Rating: 2",2,2
+5100381034.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their arms crossed, which could indicate a relaxed or contemplative posture.
+Rating: 2",2,3
+5100341074.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a red door, leaning slightly forward with their arms resting on a table or desk.
+Rating: 2",2,1
+5100472058.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a red door, leaning slightly forward with their arms resting on their knees.
+Rating: 2",2,1
+5000441064.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100382014.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a laptop or computer screen, with their arms resting on their legs.
+Rating: 2",2,3
+9289010266.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000441008.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+9289010262.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,3
+8264120265.avi,"Expression: The student appears to be pondering or deep in thought, with a hand on their chin.
+Posture: They are sitting upright and facing the camera.
+Rating: 2",2,1
+5100421054.avi,"Expression: The student appears to be focused and attentive, with a slight smile on their face.
+Posture: The student is sitting in front of the camera, with one hand raised near their face.
+Rating: 2",2,2
+5000672075.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a bed, wearing headphones and has his hands resting on his lap.
+Rating: 2",2,3
+5100461033.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a wall, facing the camera.
+Rating: 2",2,2
+5100461004.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a wall with posters on it.
+Rating: 2 [Based on the image, it's difficult to determine their level of engagement without more context or information about their actions during the video.]",2,2
+5100382062.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of the camera, with their arms resting on their knees.
+Rating: 2",2,3
+5000442009.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9403280217.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, wearing headphones.
+Rating: 2",2,2
+5000951023.avi,"Expression: The student appears to be bored or disinterested, with a slight frown and a hand on their chin.
+Posture: The student is sitting in front of the camera with one arm resting on their chin, suggesting a relaxed posture.
+Rating: 1",1,1
+5100352022.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly bored facial expression.
+Posture: The student is sitting in front of a computer screen, with their head turned to one side.
+Rating: 1",1,1
+8264120117.avi,"Expression: The student appears to be making a face, possibly in reaction to the content of the video or expressing frustration.
+Posture: The student is sitting with their hand on their mouth, which could indicate surprise, disbelief, or contemplation.
+Rating: 2",2,3
+5100351001.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,1
+5100352054.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their head slightly tilted forward, and they are wearing headphones.
+Rating: 2",2,1
+9877360133.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in their chair, facing the camera.
+Rating: 2",2,0
+5100451017.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+987736022.avi,"Expression: The student appears to be focused and attentive, with a slight smile.
+Posture: The student is sitting upright in their chair, facing the camera.
+Rating: 2",2,2
+5000671049.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting in front of the camera, leaning slightly forward with their arms resting on their knees or thighs.
+Rating: 2",2,1
+5000951045.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100351013.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly disinterested expression.
+Posture: The student is sitting in front of a computer screen, possibly listening to an audio file, with their head turned to one side.
+Rating: 2 [The student seems to be engaged but not highly engaged, as they are looking away from the camera and not directly interacting with the content.]",2,1
+5100462048.avi,"Expression: The student appears to be making a funny face, possibly smirking or grimacing.
+Posture: The student is sitting with their head turned slightly to the side and their mouth open.
+Rating: 2",2,2
+9289010271.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the computer screen.
+Rating: 2",2,2
+8264120249.avi,"Expression: The student appears to be frowning or concentrating, with a slight furrowing of the brow.
+Posture: The student is sitting with their arms crossed and resting their head on one hand.
+Rating: 2",2,1
+5100422004.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting in front of a computer, with their head slightly tilted and their hands resting on their lap or arms.
+Rating: 2",2,3
+5100452067.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+88265401240.mp4,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2 [The student seems to be engaged, but not highly engaged.]",2,3
+5100381055.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100401066.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+5000671002.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,2
+5100461005.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a wall with posters on it.
+Rating: 2 [Based on the image, it's difficult to determine their level of engagement without more context or information about their actions during the video.]",2,2
+5100382070.avi,"Expression: The student appears to be smiling and looking directly at the camera.
+Posture: The student is sitting with their arms resting on a table or desk, facing the camera.
+Rating: 2",2,3
+5100092011.avi,"Expression: The student appears to be looking directly at the camera with a neutral expression.
+Posture: The student is sitting upright in front of a red door, possibly in a classroom or study area.
+Rating: 2 - The student seems to be engaged but not highly focused on the content being displayed.",2,2
+928901013.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in front of the camera.
+Rating: 2",2,3
+9877360183.avi,"Expression: The student appears to be looking down and slightly away from the camera, with a neutral expression.
+Posture: The student is sitting upright in front of a computer screen.
+Rating: 2",2,3
+5100352060.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their head slightly tilted, wearing headphones, and looking at the camera.
+Rating: 2",2,2
+9877360169.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk or table.
+Rating: 2",2,1
+9877360152.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in their chair, facing the camera.
+Rating: 2",2,3
+5100452031.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+8264120262.avi,"Expression: The student appears to be focused and attentive, with a neutral facial expression.
+Posture: The student is sitting upright in front of the screen.
+Rating: 2",2,1
+8264120261.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly contemplative expression.
+Posture: The student is sitting in front of the camera, but their body posture is not clearly visible due to the angle of the photo.
+Rating: 2 [Based on the limited information available, it's difficult to accurately assess engagement level without more context.]",2,1
+5100341055.avi,"Expression: The student appears to be focused and attentive, with a neutral expression.
+Posture: The student is sitting upright in a chair, facing the camera.
+Rating: 2",2,3
+5100352043.avi,"Expression: The student appears to be looking down and has a neutral expression.
+Posture: The student is sitting with their head slightly tilted, wearing headphones, and looking at something off-camera.
+Rating: 2",2,1
+9877360141.avi,"Expression: The student appears to be looking down and away from the camera, with a neutral or slightly distracted expression.
+Posture: The student is sitting in front of a computer screen, possibly at a desk, with their body facing forward but not fully engaged.
+Rating: 1",1,3

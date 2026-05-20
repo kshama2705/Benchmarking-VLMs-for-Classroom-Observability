@@ -1,0 +1,34 @@
+[02:15:55] Loading SigLIP-SO400M-14 ...
+[02:17:47]   output feature dim: (1, 1152)
+[02:17:49]   8/8571  rate=6.3 fps  elapsed=1s  ETA=1362s
+[02:30:44]   408/8571  rate=0.5 fps  elapsed=777s  ETA=15543s
+[02:31:56]   808/8571  rate=1.0 fps  elapsed=849s  ETA=8157s
+[02:33:06]   1208/8571  rate=1.3 fps  elapsed=918s  ETA=5598s
+[02:43:35]   1608/8571  rate=1.0 fps  elapsed=1547s  ETA=6701s
+[02:59:34]   2008/8571  rate=0.8 fps  elapsed=2507s  ETA=8193s
+[03:00:42]   2408/8571  rate=0.9 fps  elapsed=2575s  ETA=6590s
+[03:01:52]   2808/8571  rate=1.1 fps  elapsed=2645s  ETA=5427s
+[03:03:06]   3208/8571  rate=1.2 fps  elapsed=2718s  ETA=4544s
+[03:25:25]   3608/8571  rate=0.9 fps  elapsed=4058s  ETA=5582s
+[03:26:26]   4008/8571  rate=1.0 fps  elapsed=4118s  ETA=4689s
+[03:27:33]   4408/8571  rate=1.1 fps  elapsed=4185s  ETA=3953s
+[03:28:44]   4808/8571  rate=1.1 fps  elapsed=4256s  ETA=3331s
+[03:42:58]   5208/8571  rate=1.0 fps  elapsed=5111s  ETA=3300s
+[03:44:03]   5608/8571  rate=1.1 fps  elapsed=5176s  ETA=2735s
+[03:45:10]   6008/8571  rate=1.1 fps  elapsed=5242s  ETA=2236s
+[04:02:18]   6408/8571  rate=1.0 fps  elapsed=6271s  ETA=2117s
+[04:18:42]   6808/8571  rate=0.9 fps  elapsed=7254s  ETA=1879s
+[04:19:57]   7208/8571  rate=1.0 fps  elapsed=7329s  ETA=1386s
+[04:21:04]   7608/8571  rate=1.0 fps  elapsed=7397s  ETA=936s
+[04:22:11]   8008/8571  rate=1.1 fps  elapsed=7464s  ETA=525s
+[04:40:33]   8408/8571  rate=1.0 fps  elapsed=8565s  ETA=166s
+[04:40:58] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_siglip_so400m_features.npz  shape=(8571, 1152)
+[04:40:58] Loading SigLIP-SO400M features for probe...
+[04:41:03]   SO400M solo LR κ_q=0.165 [0.11928476947862947, 0.21315480858130034]  val=0.186
+[04:41:04]   SO400M solo Ridge κ_q=0.080 [0.03226653700683482, 0.12329650259994532]
+[04:41:04] 
+Fusion with EMBER explicit signals...
+[04:41:05]   SO400M + single-frame explicit (w=0.03) κ_q=0.169 [0.11714999503921589, 0.21937991393532266]
+[04:41:07]   SO400M + temporal explicit (w=0.05) κ_q=0.203 [0.1530203315457927, 0.24959860589464059]
+[04:41:07] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/sota/siglip_so400m_probe.json
+[04:41:07] SIGLIP_SO400M_DONE

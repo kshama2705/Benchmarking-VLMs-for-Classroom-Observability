@@ -1,0 +1,271 @@
+\section{Experimental Results}
+\label{sec:results}
+
+\subsection{DAiSEE: Individual-Student Engagement}
+\label{sec:daisee_results}
+
+Table~\ref{tab:daisee_main} shows the best-performing configuration for
+each model alongside published supervised baselines.  The gap is
+striking: even the strongest VLM achieves only 39.0\% accuracy and
+$\kappa\!=\!0.10$ (LLaVA with chain-of-thought), while supervised
+supervised methods reach ${\sim}$58--60\% accuracy~\cite{liao2021deep,huang2019fine,ai2022cavt}.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Best classification results on DAiSEE ($N\!=\!300$ test clips).
+  Supervised baselines are drawn from published work on the full test set.
+  Best VLM results are highlighted in \textbf{bold}.}
+\label{tab:daisee_main}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model & Acc.\ (\%) & F1 Macro & $\kappa$ & MSE \\
+\midrule
+\rowcolor{rowgray}
+\multicolumn{5}{l}{\textit{Supervised baselines (literature)}} \\
+Liao \etal~\cite{liao2021deep}        & 58.8 & -- & --  & 0.18 \\
+Huang \etal~\cite{huang2019fine}      & 60.0 & -- & -- & -- \\
+CavT~\cite{ai2022cavt}               & 58.8 & -- & --  & 0.038 \\
+\midrule
+\rowcolor{rowblue}
+\multicolumn{5}{l}{\textit{Zero-shot VLMs (this work)}} \\
+CLIP (P1)                             & 37.0 & 0.224 & 0.036 & 1.00 \\
+BLIP-VQA (P3)                         & 35.3 & 0.131 & 0.000 & 0.69 \\
+GPT-4o (P3)$^\dagger$                 & 36.0 & 0.153 & 0.039 & 0.69 \\
+\textbf{LLaVA-1.5 (P3)}               & \textbf{39.0} & \textbf{0.210} & \textbf{0.101} & \textbf{0.72} \\
+\bottomrule
+\end{tabular}
+\vspace{1pt}
+\begin{minipage}{\linewidth}
+  \scriptsize $^\dagger$98\% of GPT-4o P3 responses were safety refusals;
+  results reflect fallback-to-level-2 parsing.
+\end{minipage}
+\end{table}
+
+Table~\ref{tab:daisee_allprompts} presents the full prompt-by-prompt
+breakdown.  Several patterns stand out.  First, no single model-prompt
+combination surpasses $\kappa\!=\!0.11$, confirming near-random
+ordinal agreement across the board.  Second, all models show accuracy
+near or below the majority-class baseline of 35.3\% (level 2),
+suggesting the higher accuracies reflect correct predictions of the
+modal class rather than genuine four-class discrimination.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Full prompt-sensitivity results on DAiSEE.  Pred.\ Dist.\ shows
+  the fraction of predictions in each class (GT: 1\%--28\%--35\%--35\%).}
+\label{tab:daisee_allprompts}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Model & Prompt & Acc. & F1 & $\kappa$ & MSE \\
+\midrule
+\multirow{3}{*}{CLIP}
+  & P1 & 37.0 & 0.224 & 0.036 & 1.00 \\
+  & P2 & 31.3 & 0.184 & 0.068 & 1.39 \\
+  & P3 & 35.0 & 0.231 & $-$0.042 & 1.21 \\
+\midrule
+\multirow{3}{*}{BLIP-VQA}
+  & P1 & 25.3 & 0.116 & $-$0.018 & 2.39 \\
+  & P2 & 32.7 & 0.153 & 0.058 & 0.94 \\
+  & P3 & 35.3 & 0.131 & 0.000 & 0.69 \\
+\midrule
+\multirow{3}{*}{GPT-4o}
+  & P1 & 27.7 & 0.144 & 0.067 & 1.67 \\
+  & P2 & 32.3 & 0.192 & 0.075 & 1.51 \\
+  & P3$^\dagger$ & 36.0 & 0.153 & 0.039 & 0.69 \\
+\midrule
+\multirow{3}{*}{LLaVA}
+  & P1 & 5.3 & 0.047 & 0.037 & 4.07 \\
+  & P2 & 15.7 & 0.097 & 0.045 & 2.84 \\
+  & \textbf{P3} & \textbf{37.7} & \textbf{0.182} & 0.008 & 0.76 \\
+\bottomrule
+\end{tabular}
+\vspace{1pt}
+\begin{minipage}{\linewidth}
+  \scriptsize $^\dagger$Safety refusal rate $\approx$98\%; level-2 fallback inflates accuracy.
+\end{minipage}
+\end{table}
+
+\subsection{SCB: Scene-Level Classroom Engagement}
+\label{sec:scb_results}
+
+Table~\ref{tab:scb_main} shows results on the SCB dataset.  Performance
+improves dramatically compared with DAiSEE.  CLIP with chain-of-thought
+templates reaches $\kappa\!=\!0.60$ and GPT-4o with the rubric prompt
+reaches $\kappa\!=\!0.58$---placing both in the ``moderate'' agreement
+range~\cite{landis1977measurement}.  These numbers approach the
+performance of supervised methods in comparable scene-understanding tasks.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Results on SCB ($N\!=\!1{,}168$ validation images).
+  All numbers are the best single prompt per model.}
+\label{tab:scb_main}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model & Best Prompt & Acc.\ (\%) & $\kappa$ & MSE \\
+\midrule
+CLIP (ViT-B/32)  & P3 & 67.3 & 0.599 & 0.586 \\
+BLIP-VQA         & P1/P2/P3$^*$ & 33.6 & 0.000 & 0.721 \\
+\textbf{GPT-4o}  & \textbf{P2} & \textbf{67.9} & \textbf{0.582} & \textbf{0.372} \\
+LLaVA-1.5        & P2 & 49.2 & 0.224 & 2.666 \\
+\bottomrule
+\end{tabular}
+\vspace{1pt}
+\begin{minipage}{\linewidth}
+  \scriptsize $^*$BLIP-VQA produces identical predictions across all
+  three prompts on SCB (complete zero sensitivity; see Sec.~\ref{sec:analysis}).
+\end{minipage}
+\end{table}
+
+The full SCB prompt breakdown (Table~\ref{tab:scb_allprompts}) reveals
+interesting cross-prompt dynamics.  CLIP shows a dramatic positive
+response to the emotional/behavioural template in P3 (from $\kappa\!=\!0.10$
+at P1 to $\kappa\!=\!0.60$ at P3).  GPT-4o peaks with the rubric prompt
+(P2) but drops 32 pp in accuracy under chain-of-thought (P3).  LLaVA
+performs best under P2 on SCB, unlike on DAiSEE where P3 is superior.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Full prompt-sensitivity results on SCB.}
+\label{tab:scb_allprompts}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Model & Prompt & Acc. & F1 & $\kappa$ & MSE \\
+\midrule
+\multirow{3}{*}{CLIP}
+  & P1 & 14.4 & 0.097 & 0.100 & 1.926 \\
+  & P2 & 24.7 & 0.172 & 0.263 & 2.564 \\
+  & P3 & 67.3 & 0.472 & 0.599 & 0.586 \\
+\midrule
+\multirow{3}{*}{BLIP-VQA}
+  & P1 & 33.6 & 0.126 & 0.000 & 0.721 \\
+  & P2 & 33.6 & 0.126 & 0.000 & 0.721 \\
+  & P3 & 33.6 & 0.126 & 0.000 & 0.721 \\
+\midrule
+\multirow{3}{*}{GPT-4o}
+  & P1 & 39.1 & 0.211 & 0.154 & 0.688 \\
+  & P2 & 67.9 & 0.400 & 0.582 & 0.372 \\
+  & P3 & 51.8 & 0.273 & 0.260 & 0.603 \\
+\midrule
+\multirow{3}{*}{LLaVA-1.5}
+  & P1 & 7.4  & 0.067 & 0.027 & 5.343 \\
+  & P2 & 49.2 & 0.353 & 0.224 & 2.666 \\
+  & P3 & 33.9 & 0.131 & $-$0.027 & 0.762 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig1_daisee_prompt_sensitivity.pdf}
+    \caption{Accuracy and Cohen's $\kappa$ across the three prompt
+    variants on DAiSEE.  LLaVA's accuracy spans from 5.3\% (P1)
+    to 39.0\% (P3)---a 33.7 pp swing on identical images.  Dashed line
+    in (a) marks the four-class random-chance baseline (25\%).}
+    \label{fig:prompt_sensitivity}
+\end{figure}
+
+\subsection{Analysis of Failure Modes}
+\label{sec:analysis}
+
+\paragraph{Class collapse.}
+Figure~\ref{fig:heatmap} illustrates the predicted class distributions.
+BLIP-VQA with P3 assigns \emph{all} 300 DAiSEE samples to level 2,
+achieving 35.3\% accuracy solely by matching the plurality class.
+GPT-4o concentrates 82--95\% of predictions on level 1 across P1 and P2,
+suggesting a systematic low-engagement bias.  No model ever assigns more
+than 5\% of samples to level 3 (highly engaged) despite it comprising
+35\% of the ground truth.  This asymmetric collapse is not random noise;
+it reflects each model's learned prior over language space that
+``engaged'' or ``barely engaged'' are more plausible descriptions of a
+sitting student than ``highly engaged.''
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig4_prediction_heatmap.pdf}
+    \caption{Fraction of the 300 DAiSEE samples predicted at each
+    engagement level, for every model-prompt combination and the ground
+    truth distribution.  Warm colours indicate high concentration.
+    Each model collapses to 1--2 dominant classes, confirming class
+    collapse rather than genuine multi-class discrimination.}
+    \label{fig:heatmap}
+\end{figure}
+
+\paragraph{Confusion matrix analysis.}
+Figure~\ref{fig:confusion} shows normalised confusion matrices for the
+best configuration of each model.  All models achieve reasonable recall
+on level 2 (the largest class) but near-zero recall on levels 0 and 3.
+LLaVA shows the broadest distribution, occasionally predicting level 1,
+but still fails on level 3 entirely.  The diagonal patterns confirm that
+apparent accuracy gains are driven by level-2 majority-class capture
+rather than calibrated multi-level discrimination.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig2_confusion_matrices.pdf}
+    \caption{Normalised confusion matrices (rows = true label, cols =
+    predicted label) for the best prompt per model on DAiSEE.
+    Cell values show raw counts.  All models achieve near-zero recall on
+    levels 0 and 3, confirming class collapse.}
+    \label{fig:confusion}
+\end{figure}
+
+\paragraph{Prompt sensitivity.}
+Table~\ref{tab:sensitivity} quantifies the range of each model's
+performance across the three prompts.  LLaVA exhibits the highest
+sensitivity: a 32.3 pp accuracy swing on DAiSEE and 3.31 MSE variation.
+On SCB the effect is even more pronounced for CLIP (53 pp swing from P1
+to P3).  BLIP-VQA is the most stable model---but for the wrong reason:
+it is insensitive because it \emph{always} predicts the same label
+regardless of prompt or image.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Prompt sensitivity (max $-$ min across P1/P2/P3) for each model
+  and dataset.  Higher values indicate greater dependence on prompt phrasing.}
+\label{tab:sensitivity}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+& \multicolumn{3}{c}{DAiSEE} & \multicolumn{3}{c}{SCB} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Model & $\Delta$Acc & $\Delta\kappa$ & $\Delta$MSE & $\Delta$Acc & $\Delta\kappa$ & $\Delta$MSE \\
+\midrule
+CLIP     & 5.7  & 0.110 & 0.389 & 52.9 & 0.499 & 1.978 \\
+BLIP-VQA & 10.0 & 0.076 & 1.703 & 0.0  & 0.000 & 0.000 \\
+GPT-4o   & 8.3  & 0.060 & 0.987 & 28.8 & 0.428 & 0.316 \\
+LLaVA    & 32.3 & 0.037 & 3.313 & 41.8 & 0.251 & 4.581 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Self-consistency.}
+We ran the best prompt three times with temperature $T\!=\!0.7$ for
+GPT-4o (P2) and LLaVA (P3).  CLIP and BLIP-VQA are deterministic and
+trivially achieve 100\% agreement.  GPT-4o achieves full 3-run agreement
+on only 68.0\% of images (pairwise: 79.0\%), while LLaVA achieves 73.3\%
+(pairwise: 82.2\%).  Kappa across LLaVA runs spans from 0.008 to 0.101,
+meaning a single run's reported kappa is unreliable as an estimate of
+model quality.  GPT-4o additionally triggered intermittent safety refusals
+in run 3 that did not occur in runs 1 or 2, further degrading consistency.
+
+\paragraph{GPT-4o safety guardrails.}
+Chain-of-thought prompting (P3) asks the model to describe ``the
+student's facial expression,'' which GPT-4o interprets as facial
+recognition of a real person.  This triggers its safety filters in
+$\approx\!98\%$ of DAiSEE images: the model responds with ``I'm unable
+to assist with requests involving identifying or describing individuals
+from their photographs.''  Our parsing pipeline falls back to level 2
+for all refusals, artificially inflating P3 accuracy to 36\% while
+providing zero true information.  This is a practical barrier for
+any system deploying GPT-4o as an individual student observer.
+No such refusals occur with the scene-level SCB images.

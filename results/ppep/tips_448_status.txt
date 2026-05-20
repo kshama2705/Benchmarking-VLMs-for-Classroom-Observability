@@ -1,0 +1,60 @@
+[02:37:59] Encoding 8571 frames with TIPSv2-B14 at 448→32×32 grid...
+[02:38:02]   cls=(1, 1, 768) patches=(1, 1024, 768)  grid=32
+[02:38:03]   TIPS-448 4/8571  elapsed=1s
+[02:38:39]   TIPS-448 204/8571  elapsed=37s
+[02:39:31]   TIPS-448 404/8571  elapsed=89s
+[02:40:26]   TIPS-448 604/8571  elapsed=144s
+[02:41:23]   TIPS-448 804/8571  elapsed=201s
+[02:42:19]   TIPS-448 1004/8571  elapsed=257s
+[02:43:17]   TIPS-448 1204/8571  elapsed=315s
+[02:44:15]   TIPS-448 1404/8571  elapsed=373s
+[02:45:10]   TIPS-448 1604/8571  elapsed=428s
+[02:46:07]   TIPS-448 1804/8571  elapsed=485s
+[02:47:05]   TIPS-448 2004/8571  elapsed=544s
+[02:48:05]   TIPS-448 2204/8571  elapsed=603s
+[02:49:06]   TIPS-448 2404/8571  elapsed=665s
+[02:50:07]   TIPS-448 2604/8571  elapsed=725s
+[02:51:06]   TIPS-448 2804/8571  elapsed=785s
+[02:52:07]   TIPS-448 3004/8571  elapsed=845s
+[02:53:10]   TIPS-448 3204/8571  elapsed=908s
+[02:54:15]   TIPS-448 3404/8571  elapsed=973s
+[02:55:16]   TIPS-448 3604/8571  elapsed=1034s
+[02:56:18]   TIPS-448 3804/8571  elapsed=1096s
+[02:57:20]   TIPS-448 4004/8571  elapsed=1158s
+[02:58:26]   TIPS-448 4204/8571  elapsed=1224s
+[02:59:30]   TIPS-448 4404/8571  elapsed=1288s
+[03:00:32]   TIPS-448 4604/8571  elapsed=1350s
+[03:01:33]   TIPS-448 4804/8571  elapsed=1411s
+[03:02:36]   TIPS-448 5004/8571  elapsed=1474s
+[03:03:41]   TIPS-448 5204/8571  elapsed=1539s
+[03:04:45]   TIPS-448 5404/8571  elapsed=1603s
+[03:05:48]   TIPS-448 5604/8571  elapsed=1666s
+[03:06:51]   TIPS-448 5804/8571  elapsed=1729s
+[03:07:54]   TIPS-448 6004/8571  elapsed=1792s
+[03:08:59]   TIPS-448 6204/8571  elapsed=1858s
+[03:10:04]   TIPS-448 6404/8571  elapsed=1922s
+[03:11:07]   TIPS-448 6604/8571  elapsed=1985s
+[03:12:10]   TIPS-448 6804/8571  elapsed=2048s
+[03:13:16]   TIPS-448 7004/8571  elapsed=2114s
+[03:14:25]   TIPS-448 7204/8571  elapsed=2183s
+[03:15:33]   TIPS-448 7404/8571  elapsed=2251s
+[03:16:37]   TIPS-448 7604/8571  elapsed=2315s
+[03:17:42]   TIPS-448 7804/8571  elapsed=2380s
+[03:18:49]   TIPS-448 8004/8571  elapsed=2447s
+[03:19:57]   TIPS-448 8204/8571  elapsed=2516s
+[03:21:00]   TIPS-448 8404/8571  elapsed=2578s
+[03:21:58] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/tipsv2_b14_448_patch_face_features.npz
+[03:21:58] --- TIPS-448 | face_feat ---
+[03:22:12]   face_feat  LR    κ_q=0.093 [0.060564678879880936, 0.12437463642599758]
+[03:22:12]   face_feat  Ridge κ_q=0.030 [-0.013136957919612452, 0.06910356086513803]
+[03:22:12] --- TIPS-448 | bg_feat ---
+[03:22:24]   bg_feat    LR    κ_q=0.021 [-0.01911147083105443, 0.06108452754419843]
+[03:22:24]   bg_feat    Ridge κ_q=0.055 [0.011467070861914742, 0.0966500767475242]
+[03:22:24] --- TIPS-448 | cls_feat ---
+[03:22:32]   cls_feat   LR    κ_q=-0.000 [-0.03892797670570822, 0.03626544842583191]
+[03:22:32]   cls_feat   Ridge κ_q=-0.108 [-0.14992609926250286, -0.06254052562544894]
+[03:22:32] --- TIPS-448 | mean_feat ---
+[03:22:42]   mean_feat  LR    κ_q=0.016 [-0.020792335090807787, 0.05925105543531595]
+[03:22:42]   mean_feat  Ridge κ_q=0.048 [0.0014728376523510177, 0.09044937262945535]
+[03:22:42] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/ppep/ppep_results_tipsv2_448.json
+[03:22:42] TIPS_448_DONE

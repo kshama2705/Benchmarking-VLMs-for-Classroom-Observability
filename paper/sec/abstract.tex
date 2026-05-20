@@ -1,0 +1,26 @@
+\begin{abstract}
+Automated classroom engagement recognition holds substantial promise for
+scalable learning analytics, yet the suitability of modern
+Vision-Language Models (VLMs) for this task under zero-shot conditions
+remains largely unexplored.  We present a systematic benchmark that
+evaluates four widely-used VLMs---CLIP, BLIP-VQA, GPT-4o, and
+LLaVA-1.5-7B---across two complementary educational datasets: DAiSEE,
+an individual-student video dataset (300 sampled test clips), and the
+Student Classroom Behaviour dataset (SCB, 1{,}168 scene-level images).
+Each model is probed with three prompt variants spanning minimal,
+rubric-anchored, and chain-of-thought designs.  Our experiments reveal
+three primary failure modes of zero-shot VLMs for engagement recognition:
+(1)~\emph{near-random performance on individual students}, with Cohen's
+$\kappa$ never exceeding 0.10 on DAiSEE; (2)~\emph{severe class
+collapse}, where models assign 85--100\% of predictions to a single
+engagement level regardless of visual content; and (3)~\emph{extreme
+prompt sensitivity}, with accuracy swings of up to 32 percentage points
+on identical images depending solely on prompt phrasing.  Remarkably,
+scene-level classification on SCB is substantially more tractable:
+CLIP and GPT-4o achieve $\kappa \approx 0.60$ when prompted with
+behaviorally-grounded rubrics.  We also document a practical barrier for
+deployment---GPT-4o's safety filters reject 98\% of chain-of-thought
+requests involving individual student faces.  Our findings provide a
+calibrated baseline and surface critical design considerations for the
+use of VLMs in educational observation systems.
+\end{abstract}

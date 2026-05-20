@@ -1,0 +1,29 @@
+[09:54:24] Loading...
+[09:54:24] Train=5358 Val=1429 Test=1784
+[09:54:24] 
+[1/5] LR bagged on SigLIP-L (vanilla, K=30)...
+[10:57:57]   done in 3813s. solo κ_q = 0.213
+[10:57:57] 
+[2/5] LR bagged on SigLIP-L (RSB, frac=0.45, K=30)...
+[11:02:56]   done in 299s. solo κ_q = 0.220
+[11:02:56] 
+[3/5] GBC bagged on SigLIP-L (K=20, max_iter=300, lr=0.05, depth=7)...
+[13:25:13]   done in 8537s. solo κ_q = 0.189
+[13:25:13] 
+[4/5] LR bagged on SO400M (K=30)...
+[13:37:33]   done in 741s. solo κ_q = 0.089
+[13:37:33] 
+[5/5] LR bagged on EMBER explicit (K=30)...
+[13:40:09]   done in 156s. solo κ_q = 0.056
+[13:40:09] 
+=== Late fusion ===
+[13:40:19]   5-way: κ_q=0.113 [0.06449955282275845, 0.15531712395387479]  val=0.228
+[13:40:19]   ws: {'LR_SigLIP_L': '0.042', 'LR_SigLIP_L_RSB45': '0.028', 'GBC_SigLIP_L': '0.106', 'LR_SO400M': '0.731', 'LR_explicit': '0.093'}
+[13:40:19] 
+=== Pair fusions (LR_SigLIP_L + each) ===
+[13:40:20]   LR_SigLIP_L+LR_SigLIP_L_RSB45         (w_other=0.75)  κ_q=0.223 [0.1785288557890382, 0.26847246238315586]  val=0.177
+[13:40:20]   LR_SigLIP_L+GBC_SigLIP_L              (w_other=0.03)  κ_q=0.215 [0.1669326231788839, 0.2583695849596866]  val=0.165
+[13:40:20]   LR_SigLIP_L+LR_SO400M                 (w_other=0.83)  κ_q=0.119 [0.07592326993003025, 0.15757483423218388]  val=0.186
+[13:40:20]   LR_SigLIP_L+LR_explicit               (w_other=0.12)  κ_q=0.217 [0.1731099064543514, 0.26326203167558726]  val=0.171
+[13:40:20] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/sota/mega_heterogeneous_fusion.json
+[13:40:20] MEGA_HETERO_DONE

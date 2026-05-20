@@ -1,0 +1,301 @@
+clip_id,raw_answer,predicted,ground_truth
+9289010118.avi,1,1,3
+9403280234.avi,I can't determine the level of engagement from the image provided.,2,3
+907001480.mp4,1,1,1
+5100401078.avi,1,1,2
+5100342048.avi,0,0,1
+8264120275.avi,1,1,3
+5100471023.avi,1,1,2
+5100462023.avi,1,1,2
+5100462031.avi,1,1,2
+5000951033.avi,1,1,2
+5100401071.avi,1,1,2
+907001560.mp4,1,1,2
+5100472014.avi,2,2,2
+8264120266.avi,1,1,1
+5000952036.avi,1,1,2
+5100351002.avi,1,1,1
+5000671042.avi,1,1,1
+5100422060.avi,1,1,2
+5100381004.avi,"I'm sorry, I can't assess the student's engagement based on their expression or body language.",2,2
+5000442019.avi,1,1,2
+5100462011.avi,1,1,3
+5100452049.avi,"I'm sorry, I can't help with that.",2,3
+5100342036.avi,1,1,1
+5100461007.avi,1,1,1
+9877360140.avi,1,1,3
+5100462032.avi,1,1,2
+5100401023.avi,1,1,1
+5100351039.avi,0,0,3
+5000671041.avi,"I'm sorry, I can't determine the engagement level from the image.",2,1
+5100362028.avi,1,1,3
+5100451041.avi,1,1,3
+5100371024.avi,1,1,2
+8264120268.avi,0,0,3
+8264120231.avi,1,1,1
+826412013.avi,1,1,1
+5100462012.avi,1,1,2
+5100452016.avi,I'm unable to determine the engagement level from the image.,2,1
+5100402001.avi,1,1,1
+5000952083.avi,1,1,1
+8264120123.avi,1,1,1
+8264120284.avi,1,1,1
+9289010115.avi,1,1,3
+5100091069.avi,1,1,3
+5100381017.avi,1,1,2
+5100422041.avi,1,1,2
+5100402020.avi,1,1,2
+5000951067.avi,"I'm sorry, I can't help with that.",2,2
+5100091051.avi,1,1,2
+9289010274.avi,"I'm sorry, I can't assess the student's engagement from the image provided.",2,3
+5100091059.avi,"I'm sorry, I can't determine the engagement level based on the image provided.",2,2
+5100092057.avi,2,2,2
+5000671057.avi,1,1,2
+5100092071.avi,"I'm sorry, I can't determine engagement levels from the image.",2,3
+987736024.avi,I'm unable to assess the student's engagement based on the image provided.,2,2
+9877360241.avi,1,1,3
+5100091049.avi,2,2,1
+9877360143.avi,1,1,3
+5000671033.avi,0,0,3
+8264120120.avi,1,1,1
+8264120239.avi,1,1,1
+8264120211.avi,1,1,1
+88265402200.mp4,2,2,3
+5000952046.avi,1,1,3
+9877360120.avi,0,0,1
+9289010152.avi,1,1,1
+5000671005.avi,I'm unable to assess the student's engagement based on the image provided.,2,2
+88265402340.mp4,1,1,2
+9403280229.avi,1,1,3
+5000441024.avi,1,1,1
+5100341028.avi,1,1,2
+5000671048.avi,1,1,1
+5000672013.avi,1,1,3
+5100382003.avi,1,1,3
+5100381002.avi,1,1,3
+5100382013.avi,1,1,3
+5000671030.avi,1,1,3
+5000442054.avi,1,1,3
+8264120139.avi,1,1,3
+826412019.avi,"I'm sorry, I can't assess the student's engagement based on their facial expression and body language.",2,2
+5100461064.avi,1,1,3
+9877360215.avi,2,2,3
+9289010269.avi,"I'm sorry, I can't determine the engagement level from the image.",2,3
+5000441058.avi,1,1,1
+5100422046.avi,1,1,3
+5000671020.avi,1,1,2
+5100341061.avi,1,1,2
+5000671058.avi,1,1,1
+5000441067.avi,1,1,1
+9070011060.mp4,1,1,3
+5000951039.avi,"I'm sorry, I can't determine the engagement level based on the image.",2,2
+5100381003.avi,1,1,3
+907001670.mp4,"I'm sorry, I can't determine the level of engagement from the image.",2,3
+9403280271.avi,I'm unable to assess the student's engagement based on their facial expression and body language.,2,1
+9877360270.avi,1,1,1
+5100402024.avi,1,1,3
+5100402063.avi,1,1,1
+8264120232.avi,1,1,2
+5100342024.avi,1,1,1
+928901014.avi,1,1,1
+88265402230.mp4,1,1,2
+5000441021.avi,"I'm sorry, I can't help with assessing engagements based on images.",2,3
+5100092008.avi,"I'm sorry, I can't determine engagement from the image.",2,3
+5000441051.avi,1,1,2
+5000672077.avi,1,1,2
+5100352030.avi,2,2,3
+9877360258.avi,1,1,2
+5100462053.avi,1,1,3
+90700170.mp4,2,2,3
+5100092067.avi,1,1,3
+5100422006.avi,1,1,3
+88265402900.mp4,1,1,3
+8264120279.avi,1,1,1
+5100451049.avi,1,1,3
+9877360172.avi,1,1,1
+5100351022.avi,1,1,0
+9403280251.avi,1,1,2
+9877360157.avi,"I'm sorry, I can't assess the student's engagement based on the image.",2,1
+5100462071.avi,1,1,2
+9289010145.avi,I don't know.,2,1
+5100401034.avi,1,1,1
+5100422071.avi,1,1,3
+8264120269.avi,1,1,1
+5000671050.avi,1,1,2
+8264120169.avi,1,1,1
+5100461057.avi,1,1,2
+5100401026.avi,1,1,3
+5100352031.avi,1,1,3
+8264120254.avi,1,1,1
+88265402880.mp4,1,1,2
+5000672012.avi,1,1,2
+5000951047.avi,1,1,2
+5100422073.avi,1,1,2
+9877360185.avi,I'm unable to determine the student's engagement based on facial expression and body language.,2,2
+5100372011.avi,1,1,3
+9877360127.avi,1,1,2
+5100472021.avi,2,2,3
+5100451027.avi,"I'm sorry, I can't assess engagement based on this image.",2,3
+8264120240.avi,1,1,0
+5000951027.avi,1,1,1
+5100402015.avi,1,1,2
+9403280246.avi,"I'm sorry, I can't help with that.",2,3
+9289010114.avi,2,2,1
+5100351042.avi,1,1,1
+5000671038.avi,0,0,2
+88265401660.mp4,2,2,3
+907001310.mp4,1,1,3
+5100452023.avi,1,1,2
+8264120127.avi,1,1,1
+8264120263.avi,1,1,1
+5100471012.avi,2,2,2
+5100091012.avi,I'm unable to assess the student’s engagement based on their facial expression and body language from the image.,2,2
+5000442015.avi,1,1,2
+5100381037.avi,1,1,2
+5100091025.avi,1,1,2
+5100092040.avi,2,2,3
+5000952015.avi,1,1,3
+5100351004.avi,0,0,2
+5100471045.avi,2,2,2
+5100382011.avi,"I'm sorry, I can't assess the student's engagement based on their image.",2,3
+8264120136.avi,1,1,2
+9403280241.avi,"I'm sorry, I can't assess the engagement level from the image.",2,3
+5100471069.avi,1,1,3
+5000672019.avi,1,1,3
+5000952038.avi,1,1,3
+5100351010.avi,1,1,2
+5000951024.avi,1,1,1
+5100472001.avi,1,1,1
+5000952062.avi,1,1,1
+5100361056.avi,1,1,2
+5000952077.avi,"I'm sorry, I can't assess the engagement of the student based on the image.",2,2
+5100401065.avi,1,1,1
+9403280260.avi,"I'm sorry, I can't help with that.",2,3
+5100471080.avi,1,1,2
+5100342008.avi,1,1,2
+5100381054.avi,1,1,2
+9289010210.avi,I'm unable to assess the student's engagement based on their facial expression and body language.,2,3
+5100462045.avi,"I'm sorry, I can't determine the engagement level from the image.",2,2
+9289010276.avi,1,1,1
+9877360234.avi,1,1,3
+5100401062.avi,1,1,3
+5000672048.avi,1,1,2
+5000671070.avi,1,1,1
+8264120156.avi,1,1,1
+907001950.mp4,1,1,1
+88265402690.mp4,1,1,3
+5100401043.avi,1,1,1
+998826011.avi,1,1,3
+5100461038.avi,1,1,2
+5100092061.avi,"I'm sorry, I can't determine the engagement level from the image.",2,3
+5100421026.avi,1,1,3
+8264120132.avi,"I'm sorry, I can't assess the engagement level of individuals in images.",2,2
+5100341033.avi,1,1,2
+88265401740.mp4,1,1,3
+88265401750.mp4,0,0,1
+5100472005.avi,2,2,2
+88265401190.mp4,1,1,3
+8264120229.avi,"I'm sorry, I can't assess the student's engagement based on the image.",2,2
+5100342022.avi,1,1,0
+5000671065.avi,1,1,2
+5100471047.avi,2,2,3
+5000951015.avi,1,1,3
+5000441009.avi,1,1,3
+8264120150.avi,1,1,1
+9403280138.avi,I cannot determine the student's engagement based on the image.,2,2
+5000952064.avi,1,1,3
+5000441046.avi,1,1,3
+5100402062.avi,1,1,1
+8264120243.avi,2,2,1
+5100341038.avi,1,1,2
+5100341043.avi,1,1,1
+5100472027.avi,1,1,3
+5100381058.avi,1,1,2
+987736017.avi,1,1,2
+5000671061.avi,1,1,1
+5000671010.avi,1,1,3
+5100381008.avi,1,1,2
+9877360147.avi,"I'm sorry, I can't assess the engagement level based on the image.",2,3
+5000952054.avi,1,1,2
+5000952034.avi,"I'm sorry, I can't assess the student's engagement based on their facial expression and body language.",2,1
+88265402660.mp4,1,1,3
+5100401011.avi,1,1,2
+8264120282.avi,1,1,1
+5100462003.avi,"I'm sorry, I can't assess the student's engagement based on this image.",2,1
+5100451004.avi,1,1,3
+5000672052.avi,1,1,3
+5100472054.avi,1,1,2
+5000671047.avi,1,1,2
+88265401490.mp4,1,1,3
+8264120116.avi,1,1,1
+8264120256.avi,1,1,1
+5100342028.avi,0,0,1
+5100092002.avi,2,2,3
+88265401260.mp4,1,1,3
+9877360256.avi,1,1,1
+9403280245.avi,"I'm sorry, I can't determine the engagement level based on the image.",2,3
+5100401016.avi,1,1,2
+5000951019.avi,1,1,1
+5100342023.avi,1,1,1
+5000671022.avi,1,1,2
+5000671063.avi,1,1,2
+5100381021.avi,1,1,2
+5000671069.avi,1,1,1
+5100422034.avi,1,1,2
+5100381023.avi,1,1,3
+5100091028.avi,2,2,2
+5000441059.avi,1,1,2
+5100402023.avi,1,1,3
+5000441048.avi,1,1,2
+5100461031.avi,"I'm sorry, I can't help with that.",2,2
+9403280145.avi,1,1,2
+5100381034.avi,1,1,3
+5100341074.avi,1,1,1
+5100472058.avi,1,1,1
+5000441064.avi,1,1,2
+5100382014.avi,"I'm sorry, I can't evaluate the student's engagement based on their facial expression and body language.",2,3
+9289010266.avi,"I'm sorry, I can't determine the student's engagement from the image provided.",2,3
+5000441008.avi,1,1,2
+9289010262.avi,1,1,3
+8264120265.avi,1,1,1
+5100421054.avi,1,1,2
+5000672075.avi,1,1,3
+5100461033.avi,1,1,2
+5100461004.avi,1,1,2
+5100382062.avi,1,1,3
+5000442009.avi,1,1,3
+9403280217.avi,"I'm sorry, I can't help with that.",2,2
+5000951023.avi,1,1,1
+5100352022.avi,1,1,1
+8264120117.avi,1,1,3
+5100351001.avi,1,1,1
+5100352054.avi,1,1,1
+9877360133.avi,1,1,0
+5100451017.avi,1,1,2
+987736022.avi,1,1,2
+5000671049.avi,1,1,1
+5000951045.avi,"I'm sorry, I can't help with assessing the student's engagement based on this image.",2,2
+5100351013.avi,1,1,1
+5100462048.avi,1,1,2
+9289010271.avi,"I'm sorry, I can't determine the student's engagement based on the image.",2,2
+8264120249.avi,1,1,1
+5100422004.avi,1,1,3
+5100452067.avi,"I'm sorry, I can't determine the engagement level from the image.",2,3
+88265401240.mp4,I'm unable to assess the student's engagement based on the image provided.,2,3
+5100381055.avi,"I'm sorry, I can't evaluate the student's engagement based on their facial expression and body language.",2,2
+5100401066.avi,1,1,3
+5000671002.avi,2,2,2
+5100461005.avi,"I'm sorry, I can't assess the student's engagement based on the image.",2,2
+5100382070.avi,1,1,3
+5100092011.avi,1,1,2
+928901013.avi,1,1,3
+9877360183.avi,1,1,3
+5100352060.avi,1,1,2
+9877360169.avi,1,1,1
+9877360152.avi,1,1,3
+5100452031.avi,1,1,3
+8264120262.avi,1,1,1
+8264120261.avi,1,1,1
+5100341055.avi,1,1,3
+5100352043.avi,1,1,1
+9877360141.avi,1,1,3

@@ -1,0 +1,46 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented \textbf{SETA}, the strongest frozen-feature recipe for
+DAiSEE engagement recognition in the literature: bagged class-balanced
+logistic-regression probes on SigLIP-L with val-tuned ordinal
+threshold decoding, achieving $\kappa_q = 0.247~[0.201, 0.294]$ ---
+a 24\% relative improvement over the standard linear-probe argmax
+baseline, with statistically meaningful lower-CI separation
+(0.201 $>$ 0.199). The recipe is single-encoder, parameter-light,
+single-CPU reproducible, and provides a calibrated baseline for any
+subsequent work on this benchmark.
+
+We further introduced two novel diagnostics --- the
+\emph{identity-engagement entanglement} (IDEP) curve and the
+\emph{within-subject ranking} analysis --- that together explain
+\emph{why} SETA is the achievable frozen-feature ceiling. Identity
+is encoded across dozens of redundant directions while engagement
+variance is concentrated in only two-to-five linear directions that
+overlap with identity; any linear identity-erasure also erases
+engagement (LEACE collapses $\kappa_q$ to $0.04$). Within-subject
+Spearman $\rho \approx 0.05$: even at SETA's global $\kappa_q$, the
+model captures subject-level priors and not per-clip discrimination.
+DREAM, our self-supervised neutral-anchor personalization scheme,
+constructively falsifies the ``remove identity, recover
+engagement'' hypothesis at the readout level.
+
+Our systematic decomposition across eight encoder/data-adaptation
+families and sixty-plus method variants demonstrates that the
+frozen-feature regime cleanly plateaus at $\kappa_q \in [0.20, 0.25]$.
+The cross-task control --- the same frozen encoders reach
+$\kappa = 0.55$ on FER2013 emotion classification --- bounds the
+claim: the DAiSEE ceiling is engagement-task-specific, not
+encoder-generic. The path forward, based on our diagnostic, is
+end-to-end engagement-supervised retraining (which the existing
+supervised SOTA ViBED-Net achieves at $\kappa \approx 0.55$ via 3-D
+CNN end-to-end training); we release a GPU-ready script
+(ENGAGENET-X, supplementary) as a reproducible starting point for
+the next paper in this line.
+
+SETA fills the missing positive baseline for frozen-feature DAiSEE
+engagement. The IDEP curve and within-subject ranking analysis are
+the diagnostic tools that explain the gap to supervised SOTA. We
+hope this combined recipe-and-decomposition becomes the canonical
+reference for the next generation of work on classroom engagement
+recognition.

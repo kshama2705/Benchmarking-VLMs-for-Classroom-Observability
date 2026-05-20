@@ -1,0 +1,107 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Datasets}
+
+\paragraph{DAiSEE.}
+The Dataset for Affective States in E-Environments
+(DAiSEE)~\cite{gupta2016daisee} contains 9{,}068 ten-second video clips
+from 112 subjects recorded via webcam during e-learning sessions.  Each
+clip is annotated on a four-point Likert scale for engagement (0 = not
+engaged, 3 = highly engaged) along with boredom, confusion, and
+frustration.  We focus exclusively on engagement.  The official test
+split comprises 1{,}784 clips across 21 subjects; the label distribution
+is heavily skewed, with only 4 samples at level 0 and approximately 850
+each at levels 2 and 3.
+
+We evaluate on a stratified sample of $N\!=\!300$ test clips, retaining
+all 4 level-0 clips, all 84 level-1 clips, and randomly sampling 106
+clips each from levels 2 and 3.  From each 10-second clip, we extract
+a single representative frame at $t\!=\!5$\,s (the temporal midpoint)
+using \texttt{ffmpeg}.  This setup tests whether static visual cues
+visible in a single webcam frame are sufficient for zero-shot engagement
+inference.
+
+\paragraph{Student Classroom Behaviour (SCB).}
+The SCB dataset~\cite{wang2023scb} contains classroom scene images with
+per-student bounding box annotations across six behaviour categories:
+\emph{reading}, \emph{writing}, \emph{raising hand}, \emph{using phone},
+\emph{bowing head}, and \emph{leaning over table}.  We use a combined
+split of 1{,}168 validation images drawn from both the original 5K
+corpus and an additional university subset.
+
+Following the aggregation strategy proposed in the dataset documentation,
+we derive a scene-level engagement label from the per-student annotations.
+Each behaviour is mapped to an engagement score (0--3): disruptive
+behaviours (\emph{phone}, \emph{bowing head}) score 0; passive
+disengagement (\emph{leaning over}) scores 1; productive behaviours
+(\emph{reading}, \emph{writing}) score 2; and active participation
+(\emph{raising hand}) scores 3.  The scene-level label is the
+mean across all annotated students, discretised via uniform thresholds
+($\left[0,\,0.75\right) \to 0$; $\left[0.75,\,1.75\right) \to 1$;
+$\left[1.75,\,2.75\right) \to 2$; $\left[2.75,\,3\right] \to 3$).
+The resulting label distribution is highly imbalanced: 54.5\% of images
+fall at level 3, 33.6\% at level 2, 10.1\% at level 1, and 1.9\%
+at level 0.
+
+\subsection{Models}
+
+We evaluate four models at substantially different points on the
+capability-cost spectrum:
+
+\textbf{CLIP (ViT-B/32)}~\cite{radford2021learning} is a discriminative
+contrastive model.  Classification proceeds by computing cosine
+similarity between the image embedding and embeddings of textual
+descriptions of each engagement level; the class with the highest
+similarity is the prediction.  Inference is fully deterministic.
+
+\textbf{BLIP-VQA (blip-vqa-base)}~\cite{li2022blip} is a discriminative
+VQA model.  We pose a natural-language question about student engagement;
+the model generates a short free-text answer (\eg, ``not very'',
+``yes'') that is mapped to a level via a hand-crafted lookup table.
+Beam decoding with $k\!=\!3$ ensures deterministic output.
+
+\textbf{GPT-4o}~\cite{openai2024gpt4o} is a proprietary closed-source
+multimodal model accessed via the OpenAI API.  Images are submitted as
+base64-encoded JPEG at ``low'' detail resolution.  Temperature is 0.0
+for run 1 and 0.7 for subsequent consistency runs.
+
+\textbf{LLaVA-1.5-7B}~\cite{liu2023visual} is an open-source instruction-tuned
+model served locally through Ollama at 4-bit quantisation (reducing
+memory from ${\sim}14$\,GB to ${\sim}4$\,GB) on a local machine with 16\,GB RAM.
+We use the same prompts as GPT-4o to enable direct comparison.
+Temperature follows the same protocol as GPT-4o.
+
+\subsection{Prompt Variants}
+
+Three prompts are applied to each model to quantify sensitivity:
+
+\textbf{P1 (Minimal)} provides only a four-label numeric scale with no
+contextual guidance.  It establishes a lower bound on what each model
+can infer from minimal language grounding.
+
+\textbf{P2 (Rubric-Anchored)} augments P1 with explicit behavioural
+anchors for each level, \eg, \emph{``looking away, yawning''} for
+level 0 and \emph{``leaning forward, showing curiosity''} for level 3.
+This mirrors how human annotators are typically trained.
+
+\textbf{P3 (Chain-of-Thought)} instructs the model to first describe
+the student's or class's observed facial expression and body posture
+before committing to a rating.  This structured reasoning format has
+shown benefits in language-only tasks~\cite{wei2022chain} and is
+evaluated here in the visual domain.
+
+For CLIP, the prompts are class-specific text templates.  For BLIP-VQA,
+the prompts are question strings.  For GPT-4o and LLaVA, identical
+prompt text is used to enable direct cross-model comparison.
+
+\subsection{Evaluation Metrics}
+
+All experiments are evaluated with four metrics: (i)~\textbf{Accuracy}
+(exact-match 4-class); (ii)~\textbf{F1 Macro}, the unweighted mean of
+per-class F1 scores, which penalises class collapse; (iii)~\textbf{Cohen's
+$\kappa$ (quadratic weighted)}, which accounts for ordinal agreement
+structure and penalises predictions far from ground truth more severely;
+and (iv)~\textbf{MSE} (mean squared error), measuring average ordinal
+distance.  For self-consistency, we report full 3-run agreement rate
+and pairwise agreement rate.

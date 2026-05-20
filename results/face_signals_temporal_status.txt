@@ -1,0 +1,21 @@
+[09:36:03] Extracting temporal face signals from 8571 clips × 3 frames
+[09:36:17]   500/8571  elapsed=14s  rate=107.0 fps  all-3-detected=500/500
+[09:36:31]   1000/8571  elapsed=28s  rate=107.2 fps  all-3-detected=1000/1000
+[09:36:45]   1500/8571  elapsed=42s  rate=107.3 fps  all-3-detected=1500/1500
+[09:36:59]   2000/8571  elapsed=56s  rate=107.6 fps  all-3-detected=2000/2000
+[09:37:13]   2500/8571  elapsed=70s  rate=107.8 fps  all-3-detected=2500/2500
+[09:37:27]   3000/8571  elapsed=83s  rate=107.9 fps  all-3-detected=3000/3000
+[09:37:41]   3500/8571  elapsed=97s  rate=108.0 fps  all-3-detected=3500/3500
+[09:37:55]   4000/8571  elapsed=111s  rate=108.0 fps  all-3-detected=4000/4000
+[09:38:08]   4500/8571  elapsed=125s  rate=108.2 fps  all-3-detected=4500/4500
+[09:38:22]   5000/8571  elapsed=139s  rate=107.9 fps  all-3-detected=5000/5000
+[09:38:36]   5500/8571  elapsed=153s  rate=108.2 fps  all-3-detected=5500/5500
+[09:38:50]   6000/8571  elapsed=166s  rate=108.4 fps  all-3-detected=6000/6000
+[09:39:03]   6500/8571  elapsed=180s  rate=108.4 fps  all-3-detected=6498/6500
+[09:39:17]   7000/8571  elapsed=194s  rate=108.4 fps  all-3-detected=6998/7000
+[09:39:31]   7500/8571  elapsed=208s  rate=108.4 fps  all-3-detected=7498/7500
+[09:39:45]   8000/8571  elapsed=221s  rate=108.5 fps  all-3-detected=7998/8000
+[09:39:58]   8500/8571  elapsed=235s  rate=108.5 fps  all-3-detected=8495/8500
+[09:40:01] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_face_signals_temporal.npz
+[09:40:01] Detection: median=3/3, all3=8566/8571 (99.9%)
+[09:40:01] TEMPORAL_FACE_SIGNALS_DONE

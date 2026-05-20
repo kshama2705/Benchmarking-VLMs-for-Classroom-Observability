@@ -1,0 +1,21 @@
+[09:17:26] Extracting face signals from 8571 frames
+[09:17:31]   500/8571  rate=108.5 fps  elapsed=5s  ETA=74s  detected=500/500 (100.0%)
+[09:17:36]   1000/8571  rate=107.9 fps  elapsed=9s  ETA=70s  detected=1000/1000 (100.0%)
+[09:17:40]   1500/8571  rate=108.4 fps  elapsed=14s  ETA=65s  detected=1500/1500 (100.0%)
+[09:17:45]   2000/8571  rate=108.2 fps  elapsed=18s  ETA=61s  detected=2000/2000 (100.0%)
+[09:17:49]   2500/8571  rate=108.3 fps  elapsed=23s  ETA=56s  detected=2500/2500 (100.0%)
+[09:17:54]   3000/8571  rate=108.3 fps  elapsed=28s  ETA=51s  detected=3000/3000 (100.0%)
+[09:17:59]   3500/8571  rate=108.2 fps  elapsed=32s  ETA=47s  detected=3500/3500 (100.0%)
+[09:18:03]   4000/8571  rate=108.3 fps  elapsed=37s  ETA=42s  detected=4000/4000 (100.0%)
+[09:18:08]   4500/8571  rate=108.2 fps  elapsed=42s  ETA=38s  detected=4500/4500 (100.0%)
+[09:18:13]   5000/8571  rate=108.3 fps  elapsed=46s  ETA=33s  detected=5000/5000 (100.0%)
+[09:18:18]   5500/8571  rate=106.7 fps  elapsed=52s  ETA=29s  detected=5500/5500 (100.0%)
+[09:18:23]   6000/8571  rate=106.6 fps  elapsed=56s  ETA=24s  detected=6000/6000 (100.0%)
+[09:18:27]   6500/8571  rate=106.7 fps  elapsed=61s  ETA=19s  detected=6498/6500 (100.0%)
+[09:18:32]   7000/8571  rate=107.0 fps  elapsed=65s  ETA=15s  detected=6998/7000 (100.0%)
+[09:18:36]   7500/8571  rate=107.0 fps  elapsed=70s  ETA=10s  detected=7498/7500 (100.0%)
+[09:18:41]   8000/8571  rate=107.2 fps  elapsed=75s  ETA=5s  detected=7998/8000 (100.0%)
+[09:18:46]   8500/8571  rate=107.1 fps  elapsed=79s  ETA=1s  detected=8497/8500 (100.0%)
+[09:18:46] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_face_signals.npz
+[09:18:46] Detection rate: 8568/8571 (100.0%)
+[09:18:46] FACE_SIGNALS_DONE

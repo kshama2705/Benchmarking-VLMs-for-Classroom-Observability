@@ -1,0 +1,34 @@
+[09:19:35] Loading emotion ViT and encoding 8571 frames...
+[09:19:37]   feat_dim=768
+[09:19:38]   32/8571  rate=27.0 fps  ETA=316s
+[09:20:03]   672/8571  rate=25.5 fps  ETA=310s
+[09:20:31]   1312/8571  rate=24.2 fps  ETA=300s
+[09:21:02]   1952/8571  rate=22.9 fps  ETA=290s
+[09:21:34]   2592/8571  rate=22.2 fps  ETA=269s
+[09:22:03]   3232/8571  rate=22.1 fps  ETA=241s
+[09:22:34]   3872/8571  rate=21.9 fps  ETA=214s
+[09:23:04]   4512/8571  rate=21.8 fps  ETA=186s
+[09:23:35]   5152/8571  rate=21.7 fps  ETA=158s
+[09:24:05]   5792/8571  rate=21.6 fps  ETA=129s
+[09:24:35]   6432/8571  rate=21.6 fps  ETA=99s
+[09:25:04]   7072/8571  rate=21.6 fps  ETA=69s
+[09:25:31]   7712/8571  rate=21.8 fps  ETA=39s
+[09:25:59]   8352/8571  rate=21.9 fps  ETA=10s
+[09:26:11] Saved features: /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_emotion_vit_features.npz  shape=(8571, 768)
+[09:26:11] Loading features for probe...
+[09:26:11] 
+=== 4-class LR (engagement, ordinal) ===
+[09:26:34]   κ_q=0.113 [0.07355089256494869, 0.1510093024578213]  C=0.001 val=0.125
+[09:26:34] 
+=== 4-class Ridge ordinal ===
+[09:26:34]   κ_q=0.147 [0.10981127074684333, 0.18483234212987382]
+[09:26:34] 
+=== Bagged emotion encoder (5 seeds × K=30) ===
+[09:42:09]   seed 0: κ_q=0.156
+[09:47:27]   seed 7: κ_q=0.151
+[09:52:58]   seed 42: κ_q=0.124
+[10:07:54]   seed 2025: κ_q=0.141
+[10:48:25]   seed 1024: κ_q=0.138
+[10:48:25]   Mega: κ_q=0.154 [0.1103783608577173, 0.1977359037266473]
+[10:48:25] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/sota/emotion_encoder.json
+[10:48:25] EMOTION_ENC_DONE

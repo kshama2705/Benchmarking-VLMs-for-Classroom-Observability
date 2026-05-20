@@ -1,0 +1,71 @@
+[2026-05-08 01:03:03] STAGE A: Downloading FER2013 (clip-benchmark/wds_fer2013)
+[2026-05-08 01:03:14]   Splits: ['train', 'test'], sizes: {'train': 28709, 'test': 7178}
+[2026-05-08 01:03:16]   FER2013 train=28709  test=7178
+[2026-05-08 01:03:16]   train label dist: [3995, 436, 4097, 7215, 4965, 4830, 3171]
+[2026-05-08 01:03:16] STAGE B/C: encoding FER2013 with clip
+[2026-05-08 01:03:22]   [FER-clip-tr] 64/28709
+[2026-05-08 01:03:44]   [FER-clip-tr] 3264/28709
+[2026-05-08 01:04:07]   [FER-clip-tr] 6464/28709
+[2026-05-08 01:04:30]   [FER-clip-tr] 9664/28709
+[2026-05-08 01:04:53]   [FER-clip-tr] 12864/28709
+[2026-05-08 01:05:16]   [FER-clip-tr] 16064/28709
+[2026-05-08 01:05:39]   [FER-clip-tr] 19264/28709
+[2026-05-08 01:06:01]   [FER-clip-tr] 22464/28709
+[2026-05-08 01:06:25]   [FER-clip-tr] 25664/28709
+[2026-05-08 01:06:50]   [FER-clip-te] 64/7178
+[2026-05-08 01:07:13]   [FER-clip-te] 3264/7178
+[2026-05-08 01:07:37]   [FER-clip-te] 6464/7178
+[2026-05-08 01:07:45]   saved /Users/amangoyal/Documents/CVPR 2026 Workshop/features/fer2013_clip_features.npz  shape=(28709, 512)
+[2026-05-08 01:07:45] STAGE B/C: encoding FER2013 with dinov2
+[2026-05-08 01:07:49]   [FER-dinov2-tr] 32/28709
+[2026-05-08 01:08:46]   [FER-dinov2-tr] 1632/28709
+[2026-05-08 01:09:43]   [FER-dinov2-tr] 3232/28709
+[2026-05-08 01:10:40]   [FER-dinov2-tr] 4832/28709
+[2026-05-08 01:11:56]   [FER-dinov2-tr] 6432/28709
+[2026-05-08 01:13:02]   [FER-dinov2-tr] 8032/28709
+[2026-05-08 01:14:10]   [FER-dinov2-tr] 9632/28709
+[2026-05-08 01:15:17]   [FER-dinov2-tr] 11232/28709
+[2026-05-08 01:16:27]   [FER-dinov2-tr] 12832/28709
+[2026-05-08 01:17:37]   [FER-dinov2-tr] 14432/28709
+[2026-05-08 01:18:47]   [FER-dinov2-tr] 16032/28709
+[2026-05-08 01:19:58]   [FER-dinov2-tr] 17632/28709
+[2026-05-08 01:21:17]   [FER-dinov2-tr] 19232/28709
+[2026-05-08 01:22:34]   [FER-dinov2-tr] 20832/28709
+[2026-05-08 01:23:46]   [FER-dinov2-tr] 22432/28709
+[2026-05-08 01:25:06]   [FER-dinov2-tr] 24032/28709
+[2026-05-08 01:26:20]   [FER-dinov2-tr] 25632/28709
+[2026-05-08 01:27:31]   [FER-dinov2-tr] 27232/28709
+[2026-05-08 01:28:42]   [FER-dinov2-te] 32/7178
+[2026-05-08 01:29:52]   [FER-dinov2-te] 1632/7178
+[2026-05-08 01:31:05]   [FER-dinov2-te] 3232/7178
+[2026-05-08 01:32:16]   [FER-dinov2-te] 4832/7178
+[2026-05-08 01:33:55]   [FER-dinov2-te] 6432/7178
+[2026-05-08 01:50:48]   saved /Users/amangoyal/Documents/CVPR 2026 Workshop/features/fer2013_dinov2_features.npz  shape=(28709, 768)
+[2026-05-08 01:50:48] STAGE D: FER2013 probes
+[2026-05-08 01:50:48]   clip: train=28709 test=7178 n_classes=7
+[2026-05-08 01:50:59]   LinProbe clip: acc=0.628  κ=0.554  F1=0.568
+[2026-05-08 01:50:59]   dinov2: train=28709 test=7178 n_classes=7
+[2026-05-08 02:16:28]   LinProbe dinov2: acc=0.621  κ=0.544  F1=0.578
+[2026-05-08 02:16:28]   Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/overnight/fer2013_results.json
+[2026-05-08 02:16:28] STAGE: encoding DAiSEE with siglip_l
+[2026-05-08 02:16:28]   loading 8571 frames
+[2026-05-08 02:24:33]   [DAiSEE-siglip_l] 32/8571
+[2026-05-08 02:28:07]   [DAiSEE-siglip_l] 1632/8571
+[2026-05-08 02:33:17]   [DAiSEE-siglip_l] 3232/8571
+[2026-05-08 02:49:34]   [DAiSEE-siglip_l] 4832/8571
+[2026-05-08 03:07:32]   [DAiSEE-siglip_l] 6432/8571
+[2026-05-08 03:10:48]   [DAiSEE-siglip_l] 8032/8571
+[2026-05-08 03:27:07]   saved /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_siglip_l_features.npz  shape=(8571, 1024)
+[2026-05-08 03:27:12]   LinProbe DAiSEE siglip_l: LR κ_q=0.199  Ridge κ_q=0.179
+[2026-05-08 03:27:12] STAGE: encoding DAiSEE with clip_l_14
+[2026-05-08 03:27:12]   loading 8571 frames
+[2026-05-08 03:28:27]   [DAiSEE-clip_l_14] 32/8571
+[2026-05-08 03:31:42]   [DAiSEE-clip_l_14] 1632/8571
+[2026-05-08 03:35:29]   [DAiSEE-clip_l_14] 3232/8571
+[2026-05-08 03:39:46]   [DAiSEE-clip_l_14] 4832/8571
+[2026-05-08 03:44:24]   [DAiSEE-clip_l_14] 6432/8571
+[2026-05-08 03:49:13]   [DAiSEE-clip_l_14] 8032/8571
+[2026-05-08 03:50:53]   saved /Users/amangoyal/Documents/CVPR 2026 Workshop/features/daisee_clip_l_14_features.npz  shape=(8571, 768)
+[2026-05-08 03:50:57]   LinProbe DAiSEE clip_l_14: LR κ_q=0.128  Ridge κ_q=0.189
+[2026-05-08 03:50:57] Saved tier 2: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/overnight/tier2_results.json
+[2026-05-08 03:50:57] OVERNIGHT_PIPELINE_DONE

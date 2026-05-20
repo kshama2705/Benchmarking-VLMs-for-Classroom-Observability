@@ -1,0 +1,128 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why we believe the ceiling is structural}
+
+We have shown that more than sixty method variants on frozen
+SigLIP-L features all plateau at $\kappa_q \approx 0.24$ on
+DAiSEE. The phenomenon is robust to:
+\begin{itemize}\itemsep0pt
+  \item Encoder scale (B/14 to SO400M-14): the ceiling shifts
+  upward modestly but plateaus.
+  \item Encoder objective (contrastive softmax in CLIP, sigmoid in
+  SigLIP, MIM in DINOv2, patch-text-alignment in TIPSv2).
+  \item Probe family (linear, ordinal, non-linear MLP, ensemble,
+  adapter).
+  \item Pre/post-hoc calibration.
+  \item Personalization (per-subject baseline, per-subject anchor
+  modulation).
+\end{itemize}
+
+The mechanism is clear from the IDEP curve (Sec.~\ref{sec:idep}):
+identity directions in the frozen feature space are high-rank
+redundant, while engagement variance is concentrated in only
+two-to-five directions that overlap with identity. Any linear
+operator that removes identity also removes engagement. The
+within-subject Spearman finding (Sec.~\ref{sec:within}) is the
+behavioural fingerprint of a model that is reading off subject
+priors rather than per-clip variation.
+
+\textsc{Dream}, as a deliberately gentle linear identity
+intervention, fails for an explainable reason: even the gentlest
+identity removal disturbs the small engagement subspace. This
+strengthens the structural diagnosis: the entanglement is
+irreducible \emph{in the linear-readout regime}. To break the
+ceiling, encoder weights must be adapted to expose
+identity-orthogonal engagement directions, or non-visual signals
+must be incorporated.
+
+\subsection{What this implies for practitioners}
+
+\paragraph{Don't expect zero-shot to work.} Across CLIP, LLaVA-1.5-7B,
+and GPT-4o under three prompt variants each, zero-shot prompting
+yielded $\kappa_q \in [0.00, 0.10]$. The best zero-shot is worse
+than even unadjusted linear-probe baselines. Practitioners should
+plan for at least a labelled subject-disjoint validation split.
+
+\paragraph{Use the threshold-tuning recipe.} Sec.~\ref{sec:recipe}'s
+recipe achieves $\kappa_q = 0.238$ from SigLIP-L features alone,
+without any fine-tuning. This is the strongest frozen-feature
+recipe we are aware of for DAiSEE engagement; future
+encoder-fine-tuning papers should report against it.
+
+\paragraph{Anticipate identity confound.} Whatever method is used
+on a DAiSEE-style benchmark, subject identity will be near-perfectly
+linearly recoverable from features. Methods that claim to be
+``subject-invariant'' should report id-acc on residual features as
+a sanity check, not just engagement metrics.
+
+\paragraph{Within-subject ranking is the harder task.} Global
+$\kappa_q$ is a misleading summary of how useful an engagement
+classifier is for a teacher: a classifier that ranks students by
+``typical engagement level'' but fails to rank a single student's
+clips is of limited operational value. We recommend reporting
+within-subject Spearman $\rho$ in addition to $\kappa_q$ for any
+new method on DAiSEE.
+
+\subsection{Limitations and threats to validity}
+
+\paragraph{Dataset scope.} Our claims are scoped to DAiSEE.
+Distinct engagement-recognition datasets exist
+(EngageNet~\cite{khare2024engagenet}, EmotiW~\cite{dhall2017emotiw},
+SCB~\cite{wang2024scb}), and the ceiling phenomenon may or may not
+generalize. DAiSEE-specific factors (long uniform background, small
+subject pool, label noise---see \cite{kaur2021label} for prior
+critiques of the labels) may amplify the entanglement we observe.
+
+\paragraph{Encoder choice.} We focus on contrastive
+vision-language encoders. Video-pre-trained encoders
+(VideoMAE-V2~\cite{wang2023videomae},
+InternVideo2~\cite{wang2024internvideo2}) might encode short
+temporal dynamics that frozen image encoders miss. We do not test
+these in this paper; we discuss them as future work below.
+
+\paragraph{Failure of DREAM may not generalize.} Anchor-based
+personalization may help in other settings (e.g., classroom video
+with controlled neutral-baseline clips), even if it fails here.
+\textsc{Dream}'s failure on DAiSEE specifically should be read as
+``frozen-feature anchor modulation cannot break this dataset's
+ceiling,'' not as a global statement.
+
+\paragraph{No audio.} DAiSEE is video-only; audio could carry
+substantial engagement signal but is not available. This is an
+important limitation we do not address.
+
+\subsection{Future work}
+
+\paragraph{Encoder fine-tuning with identity-adversarial
+regularization.} The structural diagnosis suggests fine-tuning
+\emph{the encoder} (LoRA or full last-block) on engagement labels
+with a gradient-reversal subject-ID auxiliary loss should expose
+identity-orthogonal engagement directions. Our preliminary LoRA
+attempt diverged at epoch~1; properly stabilized
+encoder-fine-tuning (warmup, gradient accumulation, longer
+schedule) is the most promising direction.
+
+\paragraph{Temporal video encoders.} The supervised SOTA
+(ViBED-Net) uses 3-D temporal CNNs and reaches 73\% accuracy.
+Our probe of VideoMAE-base (Kinetics pretraining, 16 frames per
+clip) achieves only $\kappa_q = 0.101$---worse than image VLMs.
+This suggests that frozen video features from action-recognition
+pretraining do not transfer to engagement; encoders pre-trained on
+affect-relevant data (FER+temporal) or supervised on engagement
+itself are likely necessary. Larger video models (VideoMAE-Large,
+InternVideo2) and engagement-supervised video pre-training remain
+open directions.
+
+\paragraph{Explicit behavioural fusion at the encoder level.} Our
+MediaPipe-explicit signals (52-d blendshapes, 6-d gaze, 16-d body
+pose) carry engagement signal at the linear-probe level but did
+not exceed the frozen-feature ceiling once fused (Sec.~\ref{sec:abl-recipe}
+analogue in supplementary). Building these signals into the
+encoder via dual-branch training rather than fusing at the
+readout level is a natural next step.
+
+\paragraph{Audio--video multi-modal.} EngageNet provides audio;
+recording audio in DAiSEE-style classroom video at deployment time
+is straightforward. This is the single largest unexplored
+information channel.

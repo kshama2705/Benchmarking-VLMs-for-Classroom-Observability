@@ -1,0 +1,208 @@
+{
+  "n_subjects": 21,
+  "per_subject": [
+    {
+      "subject": "500044",
+      "n_clips": 119,
+      "label_std": 0.5280093469715968,
+      "spearman": 0.07992984678034266,
+      "pearson": -0.06871524832177088,
+      "auc_high_engagement": 0.5258620689655173,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "500067",
+      "n_clips": 126,
+      "label_std": 0.5753831415997416,
+      "spearman": 0.11294822906887886,
+      "pearson": 0.09757343800681725,
+      "auc_high_engagement": 0.5201271186440678,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "500095",
+      "n_clips": 112,
+      "label_std": 0.5549378297592977,
+      "spearman": 0.13934158586934034,
+      "pearson": 0.17000740563381805,
+      "auc_high_engagement": 0.7401360544217687,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510009",
+      "n_clips": 84,
+      "label_std": 0.5231326795885675,
+      "spearman": 0.09684970372676141,
+      "pearson": 0.14924707026545225,
+      "auc_high_engagement": 0.18072289156626506,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510034",
+      "n_clips": 81,
+      "label_std": 0.6709964563803057,
+      "spearman": 0.28272138658564405,
+      "pearson": 0.4500356916839423,
+      "auc_high_engagement": 0.8236301369863013,
+      "auc_low_engagement": 0.9625
+    },
+    {
+      "subject": "510035",
+      "n_clips": 84,
+      "label_std": 0.6263307827602812,
+      "spearman": -0.04975400217265325,
+      "pearson": -0.13954546276721255,
+      "auc_high_engagement": 0.506578947368421,
+      "auc_low_engagement": 0.7831325301204819
+    },
+    {
+      "subject": "510036",
+      "n_clips": 6,
+      "label_std": 0.4714045207910317,
+      "spearman": -0.6210590034081188,
+      "pearson": 0.03686679060775132,
+      "auc_high_engagement": null,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510037",
+      "n_clips": 31,
+      "label_std": 0.4870860925981129,
+      "spearman": 0.01480872194397731,
+      "pearson": 0.1088886963998977,
+      "auc_high_engagement": null,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510038",
+      "n_clips": 124,
+      "label_std": 0.49993495934931825,
+      "spearman": 0.16426513737639417,
+      "pearson": 0.12266279952662804,
+      "auc_high_engagement": null,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510040",
+      "n_clips": 112,
+      "label_std": 0.5416339602893965,
+      "spearman": -0.04640827070201672,
+      "pearson": -0.05688572613900482,
+      "auc_high_engagement": 0.39863945578231297,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510042",
+      "n_clips": 129,
+      "label_std": 0.49333031245573084,
+      "spearman": -0.03671180205678291,
+      "pearson": -0.09312090027429525,
+      "auc_high_engagement": null,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510045",
+      "n_clips": 88,
+      "label_std": 0.5041152957458825,
+      "spearman": -0.0042972954199422915,
+      "pearson": -0.14542944891094467,
+      "auc_high_engagement": 0.1724137931034483,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510046",
+      "n_clips": 122,
+      "label_std": 0.4940522349481849,
+      "spearman": 0.1308784016126264,
+      "pearson": 0.1318299425126629,
+      "auc_high_engagement": 0.5458333333333333,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "510047",
+      "n_clips": 83,
+      "label_std": 0.5131455286517314,
+      "spearman": 0.07425212391160915,
+      "pearson": -0.011437750311063533,
+      "auc_high_engagement": 0.5740740740740741,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "826412",
+      "n_clips": 84,
+      "label_std": 0.8090860160736284,
+      "spearman": 0.18859022562825564,
+      "pearson": 0.07571107695355618,
+      "auc_high_engagement": 0.7057627118644068,
+      "auc_low_engagement": 0.6987951807228916
+    },
+    {
+      "subject": "882654",
+      "n_clips": 91,
+      "label_std": 0.4703502100886306,
+      "spearman": -0.09958937205073595,
+      "pearson": -0.03828457240090766,
+      "auc_high_engagement": 0.9888888888888889,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "907001",
+      "n_clips": 55,
+      "label_std": 0.512327374676559,
+      "spearman": -0.0044184123314549625,
+      "pearson": 0.08461970610480861,
+      "auc_high_engagement": 0.7641509433962264,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "928901",
+      "n_clips": 84,
+      "label_std": 0.5999811032549597,
+      "spearman": 0.2491378908476022,
+      "pearson": 0.047658325629555284,
+      "auc_high_engagement": 0.6126582278481013,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "940328",
+      "n_clips": 67,
+      "label_std": 0.5135716577338882,
+      "spearman": 0.11428446216604729,
+      "pearson": 0.054844552649749904,
+      "auc_high_engagement": 0.18181818181818182,
+      "auc_low_engagement": null
+    },
+    {
+      "subject": "987736",
+      "n_clips": 98,
+      "label_std": 0.6582225886885771,
+      "spearman": 0.04645622472705148,
+      "pearson": 0.03321249260493807,
+      "auc_high_engagement": 0.6797488226059655,
+      "auc_low_engagement": 0.7525773195876289
+    },
+    {
+      "subject": "998826",
+      "n_clips": 4,
+      "label_std": 0.4330127018922193,
+      "spearman": 0.2581988897471611,
+      "pearson": 0.07915937232611947,
+      "auc_high_engagement": null,
+      "auc_low_engagement": null
+    }
+  ],
+  "global": {
+    "kappa_q_bagged": 0.2130670244641728,
+    "pearson_ridge": 0.19877077542136057,
+    "spearman_expected": 0.24851155020643131
+  },
+  "summary": {
+    "n_subjects_analyzed": 21,
+    "mean_spearman": 0.051924984373808915,
+    "median_spearman": 0.07992984678034266,
+    "mean_pearson": 0.05185229770383323,
+    "mean_auc_high": 0.5575653531667051,
+    "mean_auc_low": 0.7992512576077506,
+    "mean_label_std": 0.5466687997284592
+  }
+}

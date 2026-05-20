@@ -1,0 +1,26 @@
+[18:04:31] Loading SigLIP-L features and DAiSEE labels...
+[18:04:31]   Train=5358 Val=1429 Test=1784
+[18:04:31]   Label dist Engagement Train: [34, 213, 2617, 2494]
+[18:04:31]   Label dist Boredom Train:    [2433, 1696, 1073, 156]
+[18:04:31]   Label dist Confusion Train:  [3616, 1245, 431, 66]
+[18:04:31]   Label dist Frustration Train:[4183, 941, 191, 43]
+[18:04:31] Config: {'d_hidden': 256, 'dropout': 0.3, 'lr': 0.0005, 'batch_size': 128, 'epochs': 30}
+[18:04:31] 
+--- seed 42 ---
+[18:04:39]   val κ_q=0.210  test κ_q=0.167 [0.12803027684065213, 0.2063585026527853]
+[18:04:39] 
+--- seed 7 ---
+[18:04:44]   val κ_q=0.202  test κ_q=0.147 [0.10122202670295463, 0.19406039707293654]
+[18:04:44] 
+--- seed 2025 ---
+[18:04:49]   val κ_q=0.216  test κ_q=0.116 [0.07189436323766234, 0.1611233781871919]
+[18:04:49] 
+--- seed 1024 ---
+[18:04:55]   val κ_q=0.212  test κ_q=0.133 [0.08290504284348861, 0.1784513179951071]
+[18:04:55] 
+--- seed 31337 ---
+[18:05:00]   val κ_q=0.203  test κ_q=0.167 [0.11853339247892035, 0.21804945002186807]
+[18:05:00] 
+Multi-task: mean=0.146 ± 0.022
+[18:05:00] Saved: /Users/amangoyal/Documents/CVPR 2026 Workshop/results/sota/multitask_results.json
+[18:05:00] MULTITASK_DONE
