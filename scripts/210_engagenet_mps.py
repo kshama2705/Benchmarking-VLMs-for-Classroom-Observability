@@ -235,14 +235,11 @@ def main():
         return [float(np.quantile(out, 0.025)), float(np.quantile(out, 0.975))]
 
     train_dl = DataLoader(DS(by_split["Train"]), batch_size=args.batch,
-                          shuffle=True, collate_fn=collate, num_workers=2,
-                          persistent_workers=True)
+                          shuffle=True, collate_fn=collate, num_workers=0)
     val_dl = DataLoader(DS(by_split["Validation"]), batch_size=args.batch*2,
-                        shuffle=False, collate_fn=collate, num_workers=2,
-                        persistent_workers=True)
+                        shuffle=False, collate_fn=collate, num_workers=0)
     test_dl = DataLoader(DS(by_split["Test"]), batch_size=args.batch*2,
-                         shuffle=False, collate_fn=collate, num_workers=2,
-                         persistent_workers=True)
+                         shuffle=False, collate_fn=collate, num_workers=0)
 
     cnt = np.zeros(4)
     for r in by_split["Train"]: cnt[int(r["engagement"])] += 1
