@@ -58,7 +58,7 @@ def main():
                     fp = os.path.join(out_clip, f"t{i:02d}.jpg")
                     r = subprocess.run([
                         "ffmpeg", "-y", "-ss", f"{t:.3f}", "-i", video,
-                        "-frames:v", "1", "-q:v", "2", fp,
+                        "-frames:v", "1", "-q:v", "2", "-update", "1", fp,
                     ], capture_output=True, timeout=20)
                     if r.returncode != 0 or not os.path.exists(fp):
                         ok = False; break
