@@ -52,8 +52,10 @@ def main():
     parser.add_argument("--epochs", type=int, default=12)
     parser.add_argument("--batch", type=int, default=8)
     parser.add_argument("--accum", type=int, default=4)
-    parser.add_argument("--lr_enc", type=float, default=1e-5)
-    parser.add_argument("--lr_head", type=float, default=3e-4)
+    parser.add_argument("--lr_enc", type=float, default=1e-6)
+    parser.add_argument("--lr_head", type=float, default=1e-4)
+    parser.add_argument("--freeze_enc_epochs", type=int, default=3,
+                        help="Freeze backbone for first N epochs, then unfreeze")
     parser.add_argument("--gamma_focal", type=float, default=2.0)
     parser.add_argument("--seeds", default="0,42,2025")
     parser.add_argument("--n_frames", type=int, default=8)
@@ -222,6 +224,11 @@ def main():
             for pg, b in zip(opt.param_groups, base):
                 pg["lr"] = b * s
 
+        # Freeze backbone initially for warm-start
+        for p in model.backbone.parameters():
+            p.requires_grad_(False)
+        print(f"  Backbone frozen for first {args.freeze_enc_epochs} epochs", flush=True)
+
         scaler = GradScaler(enabled=(amp_dtype == torch.float16))
 
         @torch.no_grad()
@@ -235,7 +242,13 @@ def main():
             return torch.cat(logits_all), torch.cat(ys).numpy()
 
         step = 0; history = []
+        best_val_kq = -1; best_e_va = None; best_e_te = None
         for ep in range(args.epochs):
+            # Unfreeze backbone after warm-start epochs
+            if ep == args.freeze_enc_epochs:
+                for p in model.backbone.parameters():
+                    p.requires_grad_(True)
+                print(f"  ep{ep}: backbone unfrozen", flush=True)
             model.train(); opt.zero_grad()
             t0 = time.time()
             for i, (pv, y) in enumerate(train_dl):
@@ -271,10 +284,13 @@ def main():
             history.append({"ep": ep, "val_arg_kq": float(val_kq), "val_thr_kq": float(bt['v']),
                            "test_arg_kq": float(test_kq_arg), "test_thr_kq": float(test_kq_thr),
                            "thresholds": bt['t']})
-        # Save final per-seed predictions
-        L_va, yv = eval_split(val_dl); L_te, yt = eval_split(test_dl)
-        e_va = corn_predict_expected(L_va).numpy(); e_te = corn_predict_expected(L_te).numpy()
-        all_p_te.append(e_te); all_p_va.append(e_va)
+            # Track best checkpoint by val κ_q
+            if bt['v'] > best_val_kq:
+                best_val_kq = bt['v']
+                best_e_va = e_va.copy(); best_e_te = e_te.copy()
+                print(f"  *** new best val_kq={best_val_kq:.4f} at ep{ep} ***", flush=True)
+        # Use best-checkpoint predictions for ensemble (not last epoch)
+        all_p_te.append(best_e_te); all_p_va.append(best_e_va)
         y_te = yt; y_va = yv
         all_results.append({"seed": seed, "history": history})
 
