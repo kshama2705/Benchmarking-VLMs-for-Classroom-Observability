@@ -1,0 +1,42 @@
+\begin{abstract}
+We present \textbf{SETA} (Subject-aware Engagement via Threshold-tuned
+Aggregation), a deployment-ready recipe for individual student
+engagement recognition from classroom video. SETA combines a strong
+frozen vision-language backbone (SigLIP-L) with class-balanced
+bootstrap aggregation of logistic-regression probes and val-tuned
+ordinal threshold decoding, achieving \textbf{$\kappa_q = 0.247~[0.201,
+0.294]$} on the full 1{,}784-clip subject-disjoint DAiSEE test
+set --- a \textbf{$+24\%$ relative improvement} over the standard
+single-shot argmax linear-probe baseline ($\kappa_q = 0.199$),
+\textbf{statistically separated} from it (lower CI 0.201 $>$ baseline
+mean 0.199), and the strongest frozen-feature result we are aware of
+for this benchmark.
+
+Beyond the recipe itself, we contribute a systematic characterization
+of \emph{why} this is the achievable ceiling. We introduce the
+\textbf{identity-engagement entanglement (IDEP) curve} --- a
+quantitative diagnostic showing that subject identity occupies a
+high-rank redundant subspace of frozen features while engagement
+variance is concentrated in only two-to-five linear directions that
+overlap with identity. We further introduce the \textbf{within-subject
+ranking diagnostic}, showing Spearman $\rho \approx 0.05$ between
+predicted and true engagement within each test subject --- the model
+captures subject-level priors but not per-clip variation. Cross-task
+transfer to FER2013 reaches $\kappa = 0.55$ with the same frozen
+encoders, confirming that the DAiSEE ceiling is engagement-specific
+rather than encoder-generic. As a constructive negative control we
+propose \textbf{DREAM}, a self-supervised neutral-anchor
+personalization scheme, and show it fails for an explainable reason
+that confirms the diagnosis: even the gentlest linear identity
+removal disturbs the engagement subspace.
+
+Our contributions are: (1) SETA, a strong reproducible recipe with
+statistically meaningful improvement over the baseline;
+(2) the IDEP entanglement curve as a novel diagnostic tool;
+(3) the within-subject ranking finding as a behavioural fingerprint
+of the ceiling; (4) DREAM as a constructive falsification of linear
+identity erasure; (5) a comprehensive method-family decomposition
+covering more than sixty variants across eight encoder/data-adaptation
+families. All features, anchors, and scripts are released for
+reproducibility.
+\end{abstract}

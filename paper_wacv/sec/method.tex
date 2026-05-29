@@ -1,0 +1,109 @@
+\section{\textsc{Dream}: Anchor-Modulated Representation}
+\label{sec:dream}
+
+Given the entanglement diagnosis of Sec.~\ref{sec:ceiling}, the
+natural intervention is to give each subject a personalized
+\emph{reference} that captures their identity-correlated baseline so
+that downstream readouts can operate on the residual variation. Prior
+attempts at per-subject calibration (subtracting each subject's mean
+feature~\cite{tian2024tfic}) destroy signal because the mean over a
+subject's clips entangles their engagement distribution with their
+identity. We sidestep this by introducing a self-supervised,
+engagement-agnostic criterion for selecting \emph{anchor frames}.
+
+\subsection{Anchor selection}
+\label{sec:anchor-select}
+
+For each frame $x$ we compute MediaPipe's 52 blendshape activations
+$b(x) \in [0,1]^{52}$ and 6-d eye gaze $g(x) \in \mathbb{R}^6$ (left
+and right yaw, pitch, openness). We score each frame by a
+\emph{neutral score}:
+\begin{equation}
+\mathrm{neutral}(x) \;=\; \|b(x)\|_1 \;+\; \lambda \cdot \|g(x) - g^{\mathrm{fwd}}\|_2,
+\end{equation}
+where $g^{\mathrm{fwd}} = (0,0,1,0,0,1)$ is the canonical
+forward-gaze reference and $\lambda = 0.5$. Lower score $\Rightarrow$
+more neutral face (closed mouth, neutral eyes, eyes facing forward).
+The score is engagement-agnostic by construction: no engagement label
+enters its computation.
+
+For each subject $s$ we select the $K \in \{1, 3, 5, 10, 20\}$ frames
+with lowest neutral score as that subject's \emph{anchor set} $A_s$.
+For unseen test subjects we apply the same procedure to that
+subject's own \emph{unlabelled} clips---i.e., we use the test split's
+blendshapes but never its engagement labels. This is operationally
+equivalent to a deployment scenario in which a teacher records a
+student briefly before scoring begins.
+
+\paragraph{Anchor-label distribution.} Tab.~\ref{tab:anchor-dist}
+reports the engagement-label distribution of the selected anchor
+frames at $K = 5$ across protocols. Anchors are dominated by $L2$
+and $L3$ (the majority classes), matching the overall test-set
+distribution---confirming that neutral-face frames are
+\emph{behaviour-balanced}, not biased toward low-engagement clips.
+The criterion is genuinely engagement-agnostic.
+
+\begin{table}[t]
+\caption{Engagement-label distribution of selected anchor frames at
+$K=5$. ``All'' is the overall DAiSEE distribution for reference.}
+\label{tab:anchor-dist}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Source & $L0$ & $L1$ & $L2$ & $L3$\\
+\midrule
+P-train anchors (109 subjects $\times 5$) & 3 & 25 & 303 & 207\\
+P-zero anchors (109 subjects $\times 5$) & 3 & 40 & 263 & 232\\
+All DAiSEE clips (n=8571) & 61 & 440 & 4312 & 3758\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Anchor embedding and modulation}
+\label{sec:modulation}
+
+We compute the per-subject anchor embedding in the frozen
+SigLIP-L feature space as the mean over $A_s$:
+\begin{equation}
+\mathbf{a}_s \;=\; \frac{1}{|A_s|} \sum_{x \in A_s} f(x), \qquad
+f(x) \in \mathbb{R}^{1024}.
+\end{equation}
+
+We evaluate three modulation operators applied to each clip $x$
+from subject $s$:
+\begin{description}\itemsep0pt
+\item[\textsc{Sub}] $\phi_{\mathrm{sub}}(x) = f(x) - \mathbf{a}_s$
+(1024-d).
+\item[\textsc{Cat}] $\phi_{\mathrm{cat}}(x) = [f(x);\; f(x) - \mathbf{a}_s]$
+(2048-d): preserves the raw signal alongside the residual,
+allowing a linear classifier to use whichever is informative.
+\item[\textsc{FiLM}] $\phi_{\mathrm{film}}(x) = (1 + \gamma(\mathbf{a}_s))
+\odot f(x) + \beta(\mathbf{a}_s)$, with $\gamma, \beta$ learned linear
+maps from the anchor to per-dimension gain and bias. FiLM allows the
+model to ignore the anchor where it harms engagement decoding, at
+the cost of a small parameter overhead.
+\end{description}
+
+We probe each $\phi$ with a class-balanced LR + val-tuned ordinal
+thresholds, the strongest recipe identified in
+Sec.~\ref{sec:recipe}. The FiLM variant is implemented as a
+two-layer MLP head trained with class-balanced cross-entropy
+(see~Appendix~\ref{sec:training}).
+
+\subsection{Why we expected \textsc{Dream} to break the ceiling}
+
+The hypothesis was that $f(x) - \mathbf{a}_s$ would represent
+``deviation from the subject's neutral-state face,'' which is
+intuitively where engagement variation should live. Identity
+information would be removed (subtracted off via $\mathbf{a}_s$),
+while engagement signal would survive because $\mathbf{a}_s$ is
+computed only from neutral, engagement-agnostic frames. The
+\textsc{Cat} variant adds the safety net of retaining the raw
+signal so that a linear classifier could choose to ignore the
+modulation if it hurts. The \textsc{FiLM} variant goes one step
+further by letting an MLP head learn how to combine the anchor and
+the clip non-linearly.
+
+The reality is more sobering: all three variants fail. We discuss
+the result and its implications next.

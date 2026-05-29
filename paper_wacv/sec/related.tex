@@ -1,0 +1,65 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Engagement recognition in classroom video.} DAiSEE
+~\cite{gupta2016daisee} introduced the standard subject-disjoint
+ordinal four-class engagement benchmark (9,068 ten-second clips,
+112 students). Early supervised work---LRCN~\cite{donahue2015lrcn},
+3D-CNN baselines reported in~\cite{gupta2016daisee}---reaches
+$\approx 47\%$ accuracy on the test split. More recent supervised
+methods (CavT~\cite{ai2022cavt}, ViBED-Net~\cite{abedi2021vibednet},
+EngageNet, multi-modal AU+gaze fusion~\cite{abedi2021affect}) push
+the supervised ceiling to $60$--$73\%$ accuracy, but no published
+work investigates the frozen-feature/zero-shot regime in depth. Our
+work is complementary: rather than seek a higher supervised number,
+we characterise the regime that practitioners and zero-shot
+deployers actually encounter.
+
+\paragraph{Vision-language models as visual representation
+backbones.} CLIP~\cite{radford2021clip} and its
+successors---SigLIP~\cite{zhai2023siglip},
+DINOv2~\cite{oquab2023dinov2}, TIPSv2~\cite{cao2026tipsv2}---are
+routinely used as frozen backbones for downstream visual recognition
+\cite{wortsman2022robust,kumar2022finetuning}. Affect recognition
+benchmarks (FER2013~\cite{goodfellow2013fer2013},
+AffectNet~\cite{mollahosseini2017affectnet}) have been shown to
+benefit substantially from frozen CLIP features. We confirm this
+finding on FER2013 ($\kappa \approx 0.55$) and use it as a
+cross-task control bounding the scope of our DAiSEE claims.
+
+\paragraph{Linear probing and the role of identity.} Belrose
+~\etal~\cite{belrose2023leace} introduce Linear Erasure of Affine
+Concepts (LEACE), an optimal linear projection that removes any
+linear classifier of a concept while minimising distortion.
+\cite{ravfogel2020rlace} and~\cite{ravfogel2022linear} provide
+related iterative null-space projection methods (INLP). Both lines
+of work show that linear erasure is sufficient for some semantic
+concepts but can destroy correlated downstream signals. We apply
+LEACE to DAiSEE and find the engagement-identity entanglement is
+strong enough that linear erasure of identity also erases
+engagement, suggesting these methods are not a remedy for the
+DAiSEE-style affective benchmarks.
+
+\paragraph{Subject-invariant affect models and personalization.}
+Subject-invariant emotion recognition has a long tradition: DANN
+gradient-reversal heads~\cite{ganin2015dann}, person-invariant
+adversarial features~\cite{li2017cross}, supervised contrastive
+losses with subject-stratified negatives~\cite{khosla2020supcon}.
+Personalization at inference time has been studied in BCI
+\cite{lotte2018review} and affective computing~\cite{rudovic2018personalized}
+with success when a labelled support set per subject is available.
+We instead consider \emph{label-free} personalization---a single
+self-supervised neutral-anchor frame per subject---and show that
+in the linear regime it inherits the same identity-engagement
+entanglement that makes adversarial methods unstable.
+
+\paragraph{Ordinal classification.} For ordinal labels, $\kappa_q$
+is sensitive to the choice of decision boundaries. Frank \&\ Hall
+\cite{frank2001ordinal} and CORN~\cite{shi2023corn} provide
+threshold-based ordinal classifiers; Menon~\etal~\cite{menon2021logit}
+provide post-hoc logit-adjustment for class imbalance. We combine
+class-balanced LR with val-tuned ordinal thresholds (the
+expected-class~$\mathbb{E}[y]$ score binned at three thresholds);
+this single intervention is responsible for a $+0.025$ absolute
+$\kappa_q$ lift over argmax decoding---larger than any other
+intervention we tested.

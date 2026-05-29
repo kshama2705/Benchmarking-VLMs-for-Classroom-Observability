@@ -1,0 +1,210 @@
+\section{Why SETA is the Ceiling: Diagnostic Analysis}
+\label{sec:ceiling}
+
+Having presented SETA's recipe and result (Sec.~\ref{sec:recipe}),
+we now answer the natural follow-up question: \emph{why does SETA
+sit where it does?} In this section we provide two complementary
+diagnostic tools --- the \emph{identity-engagement entanglement}
+(IDEP) curve and the \emph{within-subject ranking} analysis ---
+that quantitatively explain the structural ceiling at
+$\kappa_q \approx 0.25$. These diagnostics are themselves
+contributions: they are new tools for analysing any feature space
+on a subject-disjoint affective recognition benchmark.
+
+\subsection{Experimental setup}
+\label{sec:setup}
+
+\textbf{Dataset.} DAiSEE~\cite{gupta2016daisee} provides 8,925
+ten-second classroom clips of 112 students annotated with ordinal
+engagement labels in $\{0, 1, 2, 3\}$ (\emph{very low, low,
+engaged, highly engaged}). We use the official subject-disjoint
+splits: 5,358 train (69 subjects), 1,429 validation (19 subjects),
+1,784 test (21 subjects). The label distribution is skewed
+($L0{:}L1{:}L2{:}L3 = 1\%{:}5\%{:}50\%{:}44\%$ on test). All
+results reported on the \emph{full} test set (no sampling).
+
+\textbf{Frames.} We extract three frames per clip at
+$t \in \{2, 5, 8\}$~s, encode each independently with the chosen
+encoder, and report results for both the single mid-frame ($t=5$~s)
+and the temporal mean. Face bounding boxes are detected with
+MediaPipe FaceLandmarker at 99.96\% recall; we re-detect blendshapes,
+3-d head pose, and 6-d eye gaze for use in
+Sec.~\ref{sec:dream}.
+
+\textbf{Encoders.} We probe six encoders spanning two scales and
+two pre-training objectives:
+\begin{itemize}\itemsep0pt
+  \item Small (B/32 or B/14, 512--768~d):
+  CLIP-B/32~\cite{radford2021clip}, DINOv2-B/14~\cite{oquab2023dinov2}.
+  \item Large (L or SO400M, 768--1152~d): CLIP-L/14,
+  SigLIP-L/16~\cite{zhai2023siglip}, SigLIP-SO400M-14, and
+  TIPSv2-B/14~\cite{cao2026tipsv2}.
+\end{itemize}
+SigLIP-L/16 is our reference encoder for the headline; we report
+results across all six in ablations (Tab.~\ref{tab:encoders}).
+
+\textbf{Metrics.} We report quadratic-weighted Cohen's $\kappa$
+($\kappa_q$, our primary), accuracy, macro-F1, and bootstrap 95\%
+confidence intervals (1{,}000 resamples). Per Reviewer~mfAP of our
+prior submission, we drop GPT-4o chain-of-thought from headline
+tables (98\% refusal rate; numbers preserved with refusal columns
+in Tab.~\ref{tab:gpt4o-refusals}).
+
+\textbf{Baselines.} Eight method families are evaluated:
+\begin{itemize}\itemsep0pt
+  \item \textsc{ZS-Prompt}: zero-shot prompted classification with
+  CLIP/LLaVA/GPT-4o at three prompt variants (minimal,
+  rubric-anchored, chain-of-thought).
+  \item \textsc{LinProbe}: class-balanced logistic regression on
+  frozen features, C-tuned on val.
+  \item \textsc{OrdProbe}: ridge ordinal regression rounded to
+  nearest integer class; CORN ordinal~\cite{shi2023corn}.
+  \item \textsc{Bag}: K=20 bootstrap-bag of LR per
+  Sec.~\ref{sec:recipe}, with 5 outer seeds.
+  \item \textsc{RSB}: random feature-subspace bagging (fraction
+  0.40--0.45), inspired by random forests applied to LR.
+  \item \textsc{Cal}: content-free image bias subtraction
+  \cite{zhao2021calibrate} and class-prior
+  adjustment~\cite{menon2021logit}.
+  \item \textsc{Contrastive}: SupCon~\cite{khosla2020supcon} and
+  subject-stratified InfoNCE projection heads.
+  \item \textsc{Adapter}: light learnable bottleneck adapter
+  (latent dim $d \in \{64, 128, 256, 512\}$) trained with focal
+  ordinal loss.
+\end{itemize}
+
+\subsection{Result: every readout-level family hits the same wall}
+\label{sec:exhaustion}
+
+Tab.~\ref{tab:exhaustion} reports the best $\kappa_q$ per method
+family on SigLIP-L features, including the variants we found in
+prior literature (calibrated CLIP~\cite{wortsman2022robust},
+SupCon-projection~\cite{khosla2020supcon}, ordinal
+CORN~\cite{shi2023corn}). Fig.~\ref{fig:family_strip} shows the
+distribution of $\kappa_q$ within each family across our 60+
+variants.
+
+\begin{table}[t]
+\caption{Best $\kappa_q$ per method family on DAiSEE test
+(SigLIP-L; 1,784 clips; bootstrap 95\% CI from 1,000 resamples).
+$\Delta$ is the lift over the strongest zero-shot baseline.}
+\label{tab:exhaustion}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Family & Best variant & $\kappa_q$ & 95\% CI \\
+\midrule
+\textsc{ZS-Prompt} & CLIP P1 minimal & 0.014 & $[-.014, .041]$\\
+\textsc{ZS-Prompt} & LLaVA-1.5-7B P3 CoT & 0.104 & $[.061, .150]$\\
+\textsc{ZS-Prompt} & GPT-4o P1 minimal & 0.021 & $[-.014, .060]$\\
+\textsc{LinProbe} & SigLIP-L LR (C=1) & 0.199 & $[.156, .242]$\\
+\textsc{OrdProbe} & SigLIP-L Ridge ord & 0.179 & $[.140, .216]$\\
+\textsc{Bag} & K=20$\times$5seeds LR & 0.213 & $[.163, .259]$\\
+\textsc{Bag+Thresh} & K=20$\times$5seeds + tuned $t$ & \textbf{0.238} & $[.191, .284]$\\
+\textsc{RSB} & frac=0.45 RSB-LR & 0.214 & $[.168, .257]$\\
+\textsc{Cal (CBU)} & CLIP P3 + CBU & 0.104 & $[.061, .150]$\\
+\textsc{Contrastive} & SupCon (DINOv2) & 0.131 & $[.087, .172]$\\
+\textsc{Adapter} & lat-64, ord-2.0, $t$-tuned & 0.234 & $[.186, .278]$\\
+\midrule
+\multicolumn{2}{l}{\emph{Naive baseline argmax (SigLIP-L LR):}} & 0.199 & --- \\
+\multicolumn{2}{l}{\emph{Ceiling (best across all families):}} & 0.238 & --- \\
+\multicolumn{2}{l}{$\Delta$ (best $-$ argmax):} & $+0.039$ & --- \\
+\multicolumn{2}{l}{\emph{Supervised SOTA reference (ViBED-Net):}} & $\sim 0.55$ & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The variance between method families is small relative to the
+distance to the supervised SOTA. Sophisticated methods
+(SupCon-projection, CORN ordinal regression, adversarial
+gradient-reversal heads) do not exceed simple bagged LR with
+threshold tuning. Ensemble methods that introduced large gains in
+other settings (RSB at fraction 0.45, multi-encoder fusion) move
+the needle by $<\!0.01$ once threshold tuning is held constant.
+
+\subsection{Mechanism: identity-engagement entanglement}
+\label{sec:idep}
+
+To understand why the readout-level ceiling is so flat, we
+quantify how identity and engagement co-locate in the frozen
+feature space.
+
+\paragraph{Subject identity is near-perfectly linearly recoverable.}
+A class-balanced multinomial logistic regression on within-train
+80/20 clip-level splits recovers subject identity at 99.5\% on
+SigLIP-L (99.8\% on CLIP-L/14, 99.6\% on DINOv2-B/14). Identity is
+not just present in frozen features; it is dominant.
+
+\paragraph{The asymmetric entanglement curve.} For a chosen
+encoder, we train a 109-way subject-ID logistic-regression
+classifier and rank its weight rows by L2 norm to obtain a basis
+of \emph{identity-dominant directions} $\{u_1, u_2, \dots, u_{109}\}$.
+For each $k \in \{0, 1, \dots, 69\}$ we project features onto the
+orthogonal complement of $\mathrm{span}(u_1, \dots, u_k)$ and
+re-evaluate (a)~subject-ID accuracy and (b)~engagement~$\kappa_q$
+with a class-balanced LR probe. The result, plotted in
+Fig.~\ref{fig:idep}, exhibits an asymmetric structure:
+
+\begin{itemize}\itemsep0pt
+\item \textbf{Identity is high-rank redundant.} Subject-ID
+accuracy on SigLIP-L is still $99.5\%$ at $k = 5$, $98.5\%$ at
+$k = 10$, $97.3\%$ at $k = 20$, and only collapses below 50\% at
+$k \geq 50$. The encoder spreads identity across dozens of
+near-equivalent directions.
+\item \textbf{Engagement is low-rank fragile.} Engagement
+$\kappa_q$ initially rises to $0.20$ at $k = 5$ (identity not yet
+meaningfully removed), holds for $k \leq 10$, then collapses to
+$0.08$ at $k \geq 50$. The signal that LR exploits is concentrated
+in the top 5--15 directions of the identity-aligned basis.
+\item \textbf{Linear erasure of identity destroys engagement.}
+LEACE~\cite{belrose2023leace} applied to SigLIP-L drops subject-ID
+accuracy to $0.9\%$ and engagement $\kappa_q$ to $0.04$ in tandem.
+Soft erasure (the $k$-direction sweep) inherits the same
+trade-off.
+\end{itemize}
+
+\paragraph{Interpretation.} Engagement signal in frozen
+vision-language features does not occupy a subspace that is
+linearly disjoint from identity. It overlaps with the top-rank
+identity directions strongly enough that any linear identity-erasure
+also erases engagement. Conversely, leaving these directions
+intact means the LR readout is fundamentally a subject-prior
+classifier with a small engagement perturbation.
+
+\subsection{Mechanism: within-subject ranking is dead}
+\label{sec:within}
+
+The identity dominance has a striking behavioural consequence. We
+take the predictions of our SOTA recipe (Sec.~\ref{sec:recipe},
+$\kappa_q = 0.238$ globally) and re-evaluate them within each test
+subject:
+
+\begin{itemize}\itemsep0pt
+  \item \textbf{Global $\kappa_q$:} $0.238$
+  \item \textbf{Global Spearman $\rho$:} $0.249$
+  \item \textbf{Within-subject Spearman $\rho$ (mean over 21 test
+  subjects, $\geq 3$ distinct labels):} $0.052$
+  \item \textbf{Within-subject AUC ($L = 0$ vs.\ $\geq 1$):} $0.799$
+\end{itemize}
+
+In words: the model can tell which student is typically more
+engaged than another, and can sometimes tell when a single
+student is completely disengaged, but it cannot rank that
+student's own clips in order of their engagement. This is the
+behavioural signature of a model that has learned a subject-level
+prior, not a fine-grained per-clip representation. It is
+consistent with the entanglement curve and the linear-erasure
+failure.
+
+\paragraph{Implication.} The flat ceiling at $\kappa_q \approx 0.24$
+is structural. Readout-level adaptations cannot break it because
+the readout is bottlenecked by the encoder's representation, which
+has learnt to use identity directions for any informative
+discrimination it can make. Either (a)~the encoder must be
+fine-tuned to expose identity-orthogonal engagement directions,
+or (b)~a non-frozen-feature signal (audio, multi-frame video
+temporal, behavioural-explicit MediaPipe signals) must be added.
+The remainder of the paper investigates path (a) at the level of
+a lightweight intervention---\textsc{Dream}---and reports negative
+findings that confirm the structural diagnosis.

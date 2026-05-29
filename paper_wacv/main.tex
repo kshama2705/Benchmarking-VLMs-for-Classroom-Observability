@@ -1,0 +1,96 @@
+% WACV 2027 submission — Aman Goyal, Kshama et al.
+% Compile with: pdflatex main.tex; bibtex main; pdflatex main.tex; pdflatex main.tex
+% Template: CVPR/WACV style
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{microtype}
+
+\input{preamble}
+
+\title{SETA: Subject-aware Engagement via Threshold-tuned Aggregation\\
+       --- A Strong Recipe and Structural Diagnostic for Classroom
+       Engagement Recognition}
+
+\author{Aman Goyal\thanks{Corresponding author.}\\
+Carnegie Mellon University\\
+{\tt\small aman.goyal1099@gmail.com}
+\and
+Kshama\\
+Anonymous Institution\\
+{\tt\small anon@anon.org}
+}
+
+\begin{document}
+
+\maketitle
+
+\input{sec/abstract}
+
+% Order:
+% 1. Intro (positions SETA as headline + previews diagnostic)
+% 2. Related
+% 3. SETA recipe (the positive method — comes BEFORE diagnostic analysis)
+% 4. Diagnostic (IDEP curve + within-subject — explains WHY SETA is the ceiling)
+% 5. DREAM method (constructive falsification, supports the diagnostic)
+% 6. Experiments (negative cohort + ablations + reviewer-attack reruns + cross-task)
+% 7. ENGAGENET-X (future-work supervised baseline, GPU-required)
+% 8. Discussion
+% 9. Conclusion
+
+\input{sec/intro}
+\input{sec/related}
+\input{sec/recipe}      % SETA — the positive method, presented first
+\input{sec/ceiling}     % Diagnostic: why SETA is the ceiling
+\input{sec/method}      % DREAM — constructive falsification
+\input{sec/results}     % Negative cohort, ablations, attacks, cross-task
+\input{sec/engagenet}   % ENGAGENET-X supervised baseline (placeholder)
+\input{sec/discussion}
+\input{sec/conclusion}
+
+% Bibliography
+\bibliographystyle{ieeenat_fullname}
+\bibliography{refs}
+
+% Supplementary appendix
+\clearpage
+\appendix
+\section{Anchor-frame qualitative examples}
+\label{sec:anchor-qual}
+[Placeholder for qualitative figure of anchor vs.\ engaged frame per subject]
+
+\section{Full method-family grid (60+ variants)}
+\label{sec:full-table}
+[Placeholder: 60+ variants in compact form for supplementary]
+
+\section{Per-subject Spearman histogram}
+\label{sec:per-subj-rho}
+[Placeholder: histogram of within-subject Spearman across 21 test subjects]
+
+\section{Training details (\textsc{Dream}-FiLM)}
+\label{sec:training}
+
+The FiLM variant trains a two-layer MLP (1024 $\to$ 256 $\to$ 4) with FiLM
+modulation from the anchor embedding. Class-balanced cross-entropy,
+AdamW (lr=$10^{-3}$, weight\_decay=$10^{-4}$), cosine schedule over 40
+epochs, batch size 128. Three seeds; final prediction is the mean
+softmax across seeds.
+
+\section{ENGAGENET-X (GPU-required supervised baseline)}
+\label{sec:engagenet-x-supp}
+
+Section~\ref{sec:engagenet} introduces ENGAGENET-X as the natural
+next step: end-to-end SigLIP-L fine-tune with an 8-frame temporal
+transformer head, CORN ordinal supervision, focal loss. The training
+script is in \texttt{scripts/180\_supervised\_e2e\_gpu.py};
+runbook in \texttt{GPU\_RUNBOOK.md}. Expected runtime on a single
+A100 is 12-24 hours; published comparable methods (ViBED-Net,
+CavT) reach $\kappa_q \approx 0.45$--$0.55$.
+
+\end{document}

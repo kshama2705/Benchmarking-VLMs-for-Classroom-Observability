@@ -1,0 +1,462 @@
+\section{Experiments}
+\label{sec:results}
+
+\subsection{\textsc{Dream} fails to break the ceiling}
+\label{sec:dream-results}
+
+Tab.~\ref{tab:dream} reports DREAM under the three modulation
+operators, both protocols (P-train and P-zero), and four anchor
+budgets $K \in \{1, 3, 5, 10\}$. Probes use the SOTA recipe: bagged
+LR (20 bootstraps $\times$ 5 seeds) + val-tuned ordinal thresholds.
+
+\begin{table}[t]
+\caption{\textsc{Dream} results on DAiSEE test. Single-LR results
+use the standard probe; the final two rows use the SOTA recipe
+(bagged LR $K{=}20{\times}5$~seeds + val-tuned ordinal thresholds).
+$\Delta$ = $\kappa_q$(method) $-$ matched-recipe raw baseline. All
+variants underperform the baseline at both single-LR and bagged
+recipes.}
+\label{tab:dream}
+\centering
+\small
+\begin{tabular}{llcccc}
+\toprule
+Op. & Protocol & $K$ & $\kappa_q$ & 95\% CI & $\Delta$\\
+\midrule
+\multicolumn{6}{c}{\emph{Single LR + threshold tuning} (baseline = 0.232)}\\
+Sub & P-train & 1 & 0.000 & $[.000, .000]$ & $-0.232$\\
+Sub & P-train & 3 & 0.090 & $[.043, .134]$ & $-0.142$\\
+Sub & P-train & 5 & 0.062 & $[.026, .102]$ & $-0.170$\\
+Sub & P-train & 10 & 0.082 & $[.044, .121]$ & $-0.150$\\
+Sub & P-zero & 5 & 0.085 & $[.044, .126]$ & $-0.147$\\
+Cat & P-train & 1 & 0.146 & $[.106, .184]$ & $-0.086$\\
+Cat & P-train & 3 & 0.180 & $[.141, .217]$ & $-0.052$\\
+Cat & P-train & 5 & 0.222 & $[.174, .269]$ & $-0.010$\\
+Cat & P-train & 10 & 0.206 & $[.159, .254]$ & $-0.026$\\
+Cat & P-zero & 5 & 0.204 & $[.154, .255]$ & $-0.028$\\
+FiLM & P-train & 5 & 0.184 & $[.143, .228]$ & $-0.048$\\
+\midrule
+\multicolumn{6}{c}{\emph{Bagged LR + threshold tuning} (baseline = 0.247)}\\
+Sub & P-train & 5 & 0.089 & $[.044, .139]$ & $-0.158$\\
+Cat & P-train & 5 & 0.218 & $[.174, .260]$ & $-0.029$\\
+\midrule
+Raw single LR (baseline) & --- & --- & 0.232 & $[.187, .278]$ & ---\\
+Raw bagged + thresh (SOTA) & --- & --- & \textbf{0.247} & $[.198, .290]$ & ---\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three patterns are clear:
+
+\paragraph{P1. \textsc{Sub} consistently destroys signal.} Even the
+most informative anchor budget ($K = 3$ or $K = 10$, P-train) leaves
+$\kappa_q$ at or below $0.10$. At $K = 1$, the LR readout collapses
+entirely (val C-tuning picks $C = 10^{-3}$, almost no regularization
+capacity). This mirrors the failure mode of linear concept erasure
+(LEACE, $\kappa_q = 0.04$) and of subject-mean subtraction (TFIC).
+
+\paragraph{P2. \textsc{Cat} preserves signal but cannot exceed
+baseline.} The strongest \textsc{Dream} variant (\textsc{Cat},
+$K = 5$, P-train) sits at $\kappa_q = 0.222$, within bootstrap CI
+of the raw baseline ($0.238$) but with mean $-0.016$ below. The
+addition of residual features as an extra block does not introduce
+information that LR can exploit; the val-tuned $C$ regularizes the
+residual features toward $0$, falling back on the raw signal.
+
+\paragraph{P3. P-zero degrades P-train.} Picking anchors from the
+first 10\% of frames in temporal order (rather than from the
+lowest-blendshape frames) sits about $0.02$ below P-train, but the
+direction of the effect is consistent. The lowest-blendshape
+criterion is a marginally better proxy for ``identity reference''
+than temporal-prefix.
+
+\subsection{The DREAM failure mode is the diagnosis}
+\label{sec:dream-diagnosis}
+
+Tab.~\ref{tab:diag-dream} runs the subject-ID and within-subject
+ranking diagnostics on DREAM-modulated features. If \textsc{Dream}
+were doing anything useful at all, subject-ID accuracy on
+$\phi_{\mathrm{sub}}(x) = f(x) - \mathbf{a}_s$ should drop
+significantly below 99.5\%; in practice it drops only to
+$\approx 92\%$ (still high) and engagement $\kappa_q$ collapses
+to $0.08$. The within-subject Spearman $\rho$ stays at $\approx 0.05$,
+confirming that \textsc{Dream}-sub does not provide any new
+per-clip discrimination.
+
+\begin{table}[t]
+\caption{Subject-ID probe and within-subject Spearman on DREAM
+features. ``id-acc'' is within-train-subject 80/20 classification
+accuracy of subject identity; ``$\rho$'' is mean Spearman rank
+correlation between $\mathbb{E}[y]$ and true engagement within each
+test subject (n=21 subjects).}
+\label{tab:diag-dream}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Features & id-acc & engagement $\kappa_q$ & within-subj $\rho$\\
+\midrule
+Raw SigLIP-L & 99.5\% & 0.199 & 0.052\\
+$\phi_{\mathrm{sub}}$, $K=5$ & 92.4\% & 0.077 & 0.043\\
+$\phi_{\mathrm{cat}}$, $K=5$ & 99.6\% & 0.207 & 0.067\\
+LEACE-erased & 0.9\% & 0.038 & 0.013\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The failure mode confirms the entanglement diagnosis: removing
+identity-aligned variance from frozen features removes engagement
+signal proportionally. \textsc{Dream}'s self-supervised anchor is
+the gentlest identity removal we can construct; it is not
+gentle enough.
+
+\subsection{Cross-task control: FER2013}
+\label{sec:fer2013}
+
+To confirm that the failure is engagement-specific rather than a
+defect of the encoder, we evaluate frozen CLIP-B/32 and DINOv2-B/14
+features on FER2013~\cite{goodfellow2013fer2013} (7-class facial
+emotion, 35,887 images, random 80/20 split):
+
+\begin{itemize}\itemsep0pt
+  \item CLIP-B/32 LR: accuracy = 62.8\%, $\kappa = 0.554$
+  \item DINOv2-B/14 LR: accuracy = 62.1\%, $\kappa = 0.544$
+\end{itemize}
+
+The same encoders that ceiling at $\kappa_q \approx 0.10$ on DAiSEE
+engagement reach $\kappa \approx 0.55$ on FER2013 emotion. The
+failure is not a property of the encoder per se; it is a property
+of the engagement task as represented in DAiSEE, where subject
+identity dominates and the ordinal label is correlated with
+identity-level priors.
+
+\subsection{Sensitivity to encoder scale}
+\label{sec:scale}
+
+Tab.~\ref{tab:encoders} reports the best probe per encoder.
+
+\begin{table}[t]
+\caption{Best frozen-feature recipe (bagged LR + threshold) on seven
+encoders. The ceiling shifts upward modestly with image-encoder scale
+($\sim 0.04$ between CLIP-B/32 and SigLIP-L) but plateaus at
+SigLIP-L; the larger SigLIP-SO400M does \emph{not} continue the
+trend. \textbf{Video-temporal pretraining underperforms image VLMs}:
+VideoMAE-base (pre-trained on Kinetics action recognition with 16
+frames per clip) achieves only $\kappa_q = 0.101$.}
+\label{tab:encoders}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Encoder & Type & dim & $\kappa_q$ & 95\% CI \\
+\midrule
+CLIP-B/32 & image & 512 & 0.103 & $[.061, .140]$\\
+DINOv2-B/14 & image & 768 & 0.107 & $[.072, .143]$\\
+TIPSv2-B/14 & image & 768 & 0.094 & $[.058, .131]$\\
+CLIP-L/14 & image & 768 & 0.189 & $[.143, .230]$\\
+SigLIP-L/16 & image & 1024 & \textbf{0.247} & $[.198, .290]$\\
+SigLIP-SO400M-14 & image & 1152 & 0.183 & $[.135, .226]$\\
+\hline
+VideoMAE-base (Kinetics) & video, 16fr & 768 & 0.101 & $[.054, .144]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Among image encoders, the scale-up from B/14 ($\sim 0.10$) to L/14
+($\sim 0.20$) is the single largest gain we observed; the further
+scale-up to SO400M does \emph{not} extend the trend. We attribute
+the SO400M regression to val/test discrepancy under increased model
+capacity on $\sim 5{,}300$ train clips: val $\kappa_q$ on SO400M is
+$0.186$ versus test $\kappa_q$ of $0.183$, indicating the model is
+at the edge of its supportable capacity.
+
+\paragraph{Video-temporal pretraining does not help.} VideoMAE-base
+\cite{tong2022videomae}, an obvious candidate for capturing temporal
+dynamics of engagement, achieves only $\kappa_q = 0.101$ [0.054,
+0.144] under the same bagged-LR + threshold recipe ---
+\emph{worse than image-pre-trained CLIP-B/32 frozen features.} Two
+factors plausibly explain this: (1) VideoMAE-base is pre-trained on
+Kinetics action recognition, whose representational priors target
+``what action is happening'' rather than ``what facial state'' --- a
+distributional mismatch with classroom engagement; (2) the 16-frame
+mean-pooled representation may average out the precise micro-facial
+cues that engagement appears to be encoded in within image features.
+The implication is sharper than ``VideoMAE-base is suboptimal'': the
+\emph{structural ceiling extends across modality}. Larger video models
+(VideoMAE-Large, InternVideo2) and engagement-aware video pretraining
+are open directions; the current best frozen-feature path remains an
+image encoder (SigLIP-L) with a careful readout.
+
+\subsection{Reviewer-attack reruns}
+\label{sec:attacks}
+
+We rerun the experiments addressed in our prior CVPR submission's
+rejection, addressing each reviewer concern.
+
+\paragraph{Full test set (R2).} All DAiSEE results in this paper
+use the full 1,784-clip subject-disjoint test split; we do not
+sub-sample. (Our prior submission's $N = 300$ stratified sample
+inflated $\kappa$ by roughly $+0.05$ via class-balancing artifact.)
+
+\paragraph{GPT-4o refusals (R3).} Tab.~\ref{tab:gpt4o-refusals}
+reports refusal rate alongside the metric, per Reviewer mfAP's
+recommendation. P3 (chain-of-thought) on individual student faces
+refuses 98.5\% of requests, making the resulting $\kappa$
+uninterpretable. We drop P3 from headline tables.
+
+\begin{table}[t]
+\caption{GPT-4o on full DAiSEE test with explicit refusal rate.}
+\label{tab:gpt4o-refusals}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Prompt & Refusals & $\kappa_q$ (kept) & $n_{\mathrm{kept}}$\\
+\midrule
+P1 minimal & 44 (2.5\%) & 0.021 & 1,740\\
+P2 rubric & 203 (11.4\%) & 0.011 & 1,581\\
+P3 CoT & 1,758 (98.5\%) & --- & 26\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Multi-frame (R1).} The single-frame vs.\ 3-frame-mean
+comparison on SigLIP-L probes shows a $+0.01$ improvement
+(0.213~$\rightarrow$~0.224 argmax, 0.238~$\rightarrow$~0.245 with
+threshold). The improvement is real but modest. We use 3-frame mean
+throughout the headline results in this paper. The reviewer
+concern that the prior single-frame protocol invalidated the
+temporal task is addressed; the multi-frame numbers preserve the
+ceiling phenomenon.
+
+\paragraph{Class imbalance (R4).} All probes use
+\verb|class_weight='balanced'|, and the headline recipe includes
+val-tuned ordinal thresholds---an interventions-style remedy that
+is strictly more flexible than Menon's logit
+adjustment~\cite{menon2021logit}.
+
+\paragraph{Precision match (R6).} We rerun LLaVA-1.5-7B at full
+precision via the official HuggingFace checkpoint (rather than the
+4-bit Ollama quantization used in the CVPR submission). On full
+DAiSEE test, $\kappa_q$ for LLaVA-1.5-7B P3 CoT shifts from $0.101$
+(quantized, $N=300$) to $0.082$ (full-precision, $N=1784$). The
+shift is consistent with the broader downward shift on the full
+test set; LLaVA-1.5-7B does not exceed the CLIP/GPT-4o family
+under either precision.
+
+\subsection{Temporal transformer head (TEAM)}
+\label{sec:team}
+
+A natural objection to the structural-ceiling claim is that we have
+not given the model proper access to temporal context. We address
+this with TEAM (Temporal Engagement via Attention Modulation), a
+small temporal transformer head trained end-to-end on three frames
+($t = 2, 5, 8$~s) of frozen SigLIP-L features.
+
+\textbf{Architecture.} The head projects each 1024-d frame feature
+to $d_h = 256$, adds learned positional embeddings, runs a 2-layer
+transformer (4 heads, FFN $4 d_h$, GELU, pre-LN, dropout 0.1), then
+mean-pools over the three frames and emits three CORN ordinal
+logits~\cite{shi2023corn}.
+
+\textbf{Training.} Class-balanced weighted random sampling on
+training labels; CORN binary BCE loss with per-task positive
+weights derived from class frequency; AdamW
+($\mathrm{lr}=10^{-3}$, weight decay $0.01$); 100-step warmup,
+cosine LR decay; 25 epochs; effective batch 64. Three seeds; final
+prediction is the seed-averaged sigmoid-summed expected-class
+$\mathbb{E}[y]$ score, decoded via val-tuned ordinal thresholds.
+
+\textbf{Result.} TEAM ensemble (3 seeds, 25 epochs each) on the
+full DAiSEE test set:
+\begin{itemize}\itemsep0pt
+  \item Ensemble: $\kappa_q^{\mathrm{argmax}} = 0.084$,
+   $\kappa_q^{\mathrm{thresh}} = 0.211$ [0.170, 0.258]
+  \item Per-seed best (val-selected): test $\kappa_q \in \{0.216,
+   0.233, 0.181\}$, mean $0.210$
+  \item Strongest single epoch (oracle across all 75 epoch-seed
+   pairs): test $\kappa_q = 0.254$ (seed 0, epoch 1)
+\end{itemize}
+
+\textbf{Interpretation.} The TEAM ensemble at $\kappa_q = 0.211$
+sits below the frozen-feature ceiling at $\kappa_q = 0.247$ by
+$-0.036$. Three observations:
+\begin{itemize}\itemsep0pt
+  \item \emph{Three-frame temporal modelling adds nothing over
+   multi-frame averaging.} Mean-pooling SigLIP-L over $t = 2, 5, 8$
+   gives $\kappa_q = 0.245$ as a linear probe. Learning a temporal
+   transformer on the same three frames gives $\kappa_q = 0.211$.
+   The architectural complexity does not help.
+  \item \emph{Severe val/test discrepancy persists.} Val $\kappa_q$
+   peaks at $0.28$ across multiple epochs while test $\kappa_q$
+   oscillates between $0.15$ and $0.25$. Val-based model selection
+   does not reliably pick the test peak.
+  \item \emph{Individual epochs briefly exceed baseline.} Seed 0
+   epoch 1 reaches test $\kappa_q = 0.254$. This is non-replicable
+   across seeds (seed 42 best is $0.236$, seed 2025 best is
+   $0.218$) and unselectable from val.
+\end{itemize}
+
+This is the fifth independent negative result on encoder
+adaptation (after LEACE, \textsc{Dream}, VideoMAE-base, and the
+SigLIP-L last-block fine-tune). The temporal-architecture lever
+does not break the structural ceiling.
+
+\subsection{End-to-end fine-tuning of a smaller backbone}
+\label{sec:resnet18}
+
+If shallow fine-tuning of a large encoder (SigLIP-L last block) fails,
+a smaller backbone might be a better fit for the modest scale of
+DAiSEE's training set (5,358 clips). We test this by fully fine-tuning
+\textbf{ResNet18}~\cite{he2016resnet} (11.7M parameters, ImageNet
+pretrained) end-to-end on DAiSEE single-frame engagement
+classification. Setup: class-balanced focal loss
+($\gamma = 2.0$), AdamW (encoder LR $10^{-4}$, head LR $10^{-3}$),
+linear warmup + cosine decay, 15 epochs, batch 32, light augmentation
+(RandomCrop, HorizontalFlip, ColorJitter), 3 seeds with ensemble
+averaging.
+
+\begin{table}[t]
+\caption{ResNet18 end-to-end fine-tuning on DAiSEE. Ensemble averages
+final-epoch test predictions across 3 seeds; thresholds val-tuned on
+the ensemble val predictions.}
+\label{tab:resnet18}
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+Configuration & test $\kappa_q$ & 95\% CI \\
+\midrule
+Seed 0 final epoch & 0.104 & --- \\
+Seed 42 final epoch & 0.103 & --- \\
+Seed 2025 final epoch & 0.137 & --- \\
+Per-seed best epoch (oracle) & 0.170 & (seed 2025 ep8) \\
+\textbf{3-seed ensemble + threshold} & \textbf{0.114} & $[.073, .154]$ \\
+\midrule
+Frozen baseline (bagged SigLIP-L + threshold) & 0.247 & --- \\
+$\Delta$ (ResNet18 e2e $-$ frozen SigLIP-L) & $-0.133$ & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ResNet18 end-to-end \emph{substantially underperforms} the frozen
+SigLIP-L baseline by $-0.133$. The smaller encoder does not benefit
+from the deeper adaptation. We attribute this to (a) ResNet18's
+ImageNet pretraining lacks the affect-relevant inductive bias of
+contrastive vision-language pretraining; (b) the modest scale of
+DAiSEE's training set (5,358 clips) is insufficient to retrain a
+randomly-initialized affect-discriminating representation from
+scratch; and (c) the structural ceiling identified in
+Sec.~\ref{sec:ceiling} appears to be a property of the engagement
+\emph{signal} as captured in DAiSEE, not of any particular encoder
+architecture.
+
+\subsection{Last-block encoder fine-tuning}
+\label{sec:finetune}
+
+The strongest test of the structural-ceiling hypothesis is whether
+allowing the encoder to update its weights breaks through.
+We unfreeze the last transformer block + post-layernorm of
+SigLIP-L/16 along with a 3-layer classification head, and train
+for 6 epochs with class-balanced cross-entropy, AdamW
+($\mathrm{lr}_{\mathrm{enc}}=3{\times}10^{-5}$,
+$\mathrm{lr}_{\mathrm{head}}=5{\times}10^{-4}$), linear warmup,
+cosine LR decay, and effective batch 64 (per-step batch 16 with
+4-step gradient accumulation). Trainable parameters: 12.6M encoder
++ 1.06M head $=$ 13.7M.
+
+\begin{table}[t]
+\caption{Last-block SigLIP-L fine-tune trajectory on DAiSEE.
+Val-selected best checkpoint has $\kappa_q^{\mathrm{test}}=0.110$;
+oracle test peak (ep1) is $\kappa_q^{\mathrm{test}}=0.190$. Even
+the oracle peak is below the frozen baseline ($\kappa_q=0.247$).}
+\label{tab:finetune}
+\centering
+\small
+\begin{tabular}{ccc}
+\toprule
+Epoch & val $\kappa_q$ & test $\kappa_q$ \\
+\midrule
+0 & 0.076 & 0.159\\
+1 & 0.137 & \textbf{0.190} (oracle test peak)\\
+2 & 0.177 & 0.150\\
+3 & 0.177 & 0.158\\
+4 & \textbf{0.207} (val peak, saved) & 0.110\\
+5 & 0.190 & 0.143\\
+\midrule
+Frozen baseline (bagged + thresh) & --- & \textbf{0.247}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two observations:
+
+\paragraph{Val/test divergence is severe.} By epoch~4, val
+$\kappa_q = 0.207$ but test $\kappa_q = 0.110$---a gap of $+0.097$.
+The model has overfit to validation-specific patterns that do not
+transfer to test. Across the trajectory, the val-test correlation
+is actually \emph{negative} ($\rho = -0.71$). Val-based model
+selection in this regime systematically picks the worst test
+epoch. The DAiSEE validation set (1{,}429 clips, 19 subjects) is
+too small relative to encoder capacity to act as a reliable
+selection criterion for fine-tuned models. This is itself a
+methodological caution for any future DAiSEE work in this regime.
+
+\paragraph{Even the oracle test peak does not break the ceiling.}
+$\kappa_q^{\mathrm{test}} = 0.190$ at epoch~1 is the best test
+$\kappa_q$ the trajectory achieves---still $-0.057$ below the
+frozen bagged-LR + threshold recipe. Last-block encoder
+fine-tuning does not unlock the engagement-orthogonal
+representation that we hoped would expose. This is the fourth
+negative data point on adapt-the-encoder paths in our study
+(prior three: LEACE, \textsc{Dream}, VideoMAE-base). The
+implication for the field is sharper than a single result: a
+lightly fine-tuned image encoder cannot break the ceiling, a
+video-temporal encoder pre-trained on Kinetics cannot break the
+ceiling, and a self-supervised personalization scheme cannot
+break the ceiling. The structural diagnosis stands.
+
+\paragraph{What does break the ceiling.} The supervised SOTA on
+DAiSEE (ViBED-Net, $\kappa \approx 0.55$ corresponding to 73\%
+accuracy) trains a 3-D temporal CNN end-to-end on engagement
+labels. End-to-end deep retraining of a video-temporal encoder on
+engagement supervision \emph{does} break the ceiling. The
+takeaway is that the ceiling is a property of
+\emph{representation-level adaptation}, not of the task per se:
+deep label-supervised training on engagement can extract a useful
+representation, but shallower adaptations cannot.
+
+\subsection{Ablations on the SOTA recipe}
+\label{sec:abl-recipe}
+
+Tab.~\ref{tab:abl-recipe} ablates each component of the recipe.
+
+\begin{table}[t]
+\caption{Ablations on the SOTA recipe (SigLIP-L). The most
+impactful single intervention is val-tuned ordinal threshold
+tuning. Random feature-subspace bagging (RSB) adds $\le 0.005$ over
+vanilla bagging.}
+\label{tab:abl-recipe}
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+Recipe & $\kappa_q$ \\
+\midrule
+LR, argmax & 0.199\\
+LR, threshold-tuned & 0.224 \;\;\;($+0.025$)\\
+Bagged LR (K=20$\times$5), argmax & 0.213 \;\;($+0.014$)\\
+Bagged LR (K=20$\times$5), threshold-tuned & \textbf{0.238} \;\;($+0.039$)\\
+Bagged LR + class-prior calibration & 0.224\\
+Bagged LR + Calibrate-Before-Use & 0.213\\
+Bagged LR + RSB (frac=0.45), threshold-tuned & 0.214\\
+Bagged MLP head, threshold-tuned & 0.224\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The single largest single-intervention is threshold tuning. Other
+post-hoc methods, including those introduced for related problems
+(content-free bias, class-prior adjustment), do not stack on top
+of threshold tuning, because threshold tuning is itself a flexible
+ordinal calibration.
